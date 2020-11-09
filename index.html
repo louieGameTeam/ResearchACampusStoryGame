@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    </head>    
+<style>
+body, html {
+    height: 100%;
+    margin: 0;
+}
+
+.bgimg {
+    background-color: #f5822f;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    color: white;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 25px;
+}
+
+.topleft {
+    position: absolute;
+    top: 0;
+    left: 16px;
+}
+
+.bottomleft {
+    position: absolute;
+    bottom: 0;
+    left: 16px;
+    font-size: 20px;
+}
+
+.middle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -70%);
+    text-align: center;
+}
+
+hr {
+    margin: auto;
+    width: 40%;
+}
+</style>
+<body>
+    
+    <SCRIPT>
+function passWord() {
+var testV = 1;
+var pass1 = prompt('Please Enter the Password Provided by the Professor','');
+while (testV < 3) {
+if (!pass1) 
+history.go(-1);
+if (pass1.toLowerCase() == "bim088ucd") {
+window.open('Game');
+break;
+} 
+testV+=1;
+var pass1 = 
+prompt('Access Denied - Password Incorrect, Please Try Again.','Password');
+}
+if (pass1.toLowerCase()!="password" & testV ==3) 
+history.go(-1);
+return " ";
+} 
+</SCRIPT>
+    
+
+<div class="bgimg">
+  <div class="middle">
+    <img src="logo.png" alt="logo"  title="Re:Search Logo">
+    <p>An Introduction to Research Concepts Through an RPG </p>
+    <p>Coming Soon.. </p>
+      <br>
+    <b><p style="color:black; font-size:20px; bold;"> If you're a UC student currently enrolled in "BIM 088V: Introduction to Research and Self Assessment", <a href="javascript:passWord()">click here</a> to access the game.</p></b>
+  </div>
+    
+    
+  <div class="bottomleft">
+    <p></p>
+    <p><a href="https://davisgamedev.com/">By UC Davis Game Development & Arts Club 🎮</a></p>
+
+  </div>
+</div>
+    
+    
+
+</body>
+</html>

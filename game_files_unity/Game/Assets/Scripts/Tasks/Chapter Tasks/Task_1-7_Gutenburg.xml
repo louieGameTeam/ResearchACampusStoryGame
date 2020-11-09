@@ -1,0 +1,87 @@
+﻿<level name="Strasbourg, Germany (1450’s)" scene="Ch_1-7">
+  <move x="40" y="-40"/>
+  <task>
+    <name>TalkToALPHA</name>
+    <description>Talk to ALPHA to get information about your current time period.</description>
+    <steps>
+      <dialogue/>
+    </steps>
+  </task>
+  <task>
+    <name>JGForge</name>
+    <description>Find Johannes Gutenberg at his forge.</description>
+    <steps>
+      <location name="ForgeCollider"/>
+    </steps>
+  </task>
+  <task>
+    <name>TalkToJG</name>
+    <description>Talk to Johannes Gutenberg to get an idea of who he was and what he did.</description>
+    <steps>
+      <dialogue/>
+    </steps>
+  </task>
+  <task>
+    <name>FindSK</name>
+    <description>Find the shopkeeper in the Shop in town.</description>
+    <steps>
+      <location name="ShopCollider"/>
+    </steps>
+  </task>
+  <task>
+    <name>TalkToSK</name>
+    <description>Talk to the shopkeeper and retrieve the Master of Playing Cards copper plate from her.</description>
+    <steps>
+      <dialogue/>
+    </steps>
+  </task>
+  <task>
+    <name>ReturnToJG</name>
+    <description>Return the copper plate to Johannes Gutenberg at his forge.</description>
+    <steps>
+      <dialogue/>
+    </steps>
+  </task>
+  <task>
+    <name>GoToBank</name>
+    <description>Find Johann Fust at the bank in town.</description>
+    <steps>
+      <location name="BankCollider"/>
+    </steps>
+  </task>
+  <task>
+    <name>TalkToJF</name>
+    <description>Give the printed playing cards to Johann Fust to secure a loan for Johannes Gutenberg.</description>
+    <steps>
+      <dialogue/>
+    </steps>
+  </task>
+  <task>
+    <name>FinishJG</name>
+    <description>Tell Johannes Gutenberg the good news about the loan.</description>
+    <steps>
+      <dialogue/>
+    </steps>
+  </task>
+  <task>
+    <name>GoToLib</name>
+    <description>Go to the library just north of Gutenberg's forge.</description>
+    <steps>
+      <location name="LibraryCollider"/>
+    </steps>
+  </task>
+  <task>
+    <name>TalkToLB</name>
+    <description>Ask the Librarian about information about research publications.</description>
+    <steps>
+      <dialogue/>
+    </steps>
+  </task>
+  <task>
+    <name>Leave</name>
+    <description>Talk to ALPHA to travel to the next time period.</description>
+    <steps>
+      <dialogue/>
+    </steps>
+  </task>
+</level>

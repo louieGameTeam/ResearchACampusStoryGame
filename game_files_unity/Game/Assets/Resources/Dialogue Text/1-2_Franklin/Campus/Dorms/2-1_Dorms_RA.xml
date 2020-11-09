@@ -1,0 +1,52 @@
+<dialog>
+  <page tag="start">Hey there! </page>
+  <if var="initialized" value="true">
+    <false>
+      <page>How was class? </page>
+      <say>It was good! I'm already learning a lot. </say>
+      <page>Nice! That's what I like to hear! </page>
+      <set var="initialized" value="true"/>
+    </false>
+  </if>
+  <if var="T:current" case="E" value="T:Ch_1-2/TalkingToRA/0">
+    <true>
+      <page>Did you get assigned that paper? </page>
+      <say>Yes, how did you know? </say>
+      <page>The one where you have to write about past great people? Everyone writes it eventually! </page>
+      <say>We were told to prepare early. I guess I should start thinking about it soon. </say>
+      <page>Well, you know, I did get the highest grade on my paper when I took the class. </page>
+      <say>The professor mentioned that! Could you give me some pointers? </say>
+      <page>Well... I don't tell everyone my secret to writing great papers...</page>
+      <page>But...</page>
+      <page>You seem trustworthy. </page>
+      <page>You should check out the library basement, there used to be this machine there that helps you out if you ask it. </page>
+      <say>Like a search engine? </say>
+      <page>Yeah, something like that. </page>
+      <page>I think it was something that the computer science department or the physics department cooked up back in the 60s.</page>
+      <page>Look for a door on the ground by the south wall of the library. </page>
+      <page>It kind of looks like a trap door. </page>
+      <say>Thanks, I'll start there then! </say>
+      <page>Good luck! You're going to have a blast! </page>
+      <say>A blast writing a paper? </say>
+      <say>Whatever you say...</say>
+      <advance/>
+    </true>
+  </if>
+  <page tag ="Help">Can I help you with anything? </page>
+  <reply>
+    <option>
+      <say>Where is the library? </say>
+      <page>Oh, the library is out past the quad. It’s pretty much straight north of here. </page>
+    </option>
+    <option>
+      <say>Where is the library basement? </say>
+      <page>Look for a door on the ground by the south wall of the library that looks like it leads to the basement. </page>
+    </option>
+    <option>
+      <say>Nope.  </say>
+      <page>Okay! Just stop by if you have any other questions then. </page>
+      <finish/>
+    </option>
+  </reply>
+  <goto tag="Help"/>
+</dialog>

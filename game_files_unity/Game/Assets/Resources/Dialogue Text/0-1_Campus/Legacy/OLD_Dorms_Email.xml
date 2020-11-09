@@ -1,0 +1,31 @@
+<dialog>
+    <reply>
+    <option>
+      <say>Log in.</say>
+    </option>
+  </reply>
+  <page>...</page>
+  <page>Welcome!</page>
+  <if var="N:Met Before" case="E" value="R:true">
+    <true>
+      <page>There's nothing left to do.</page>
+    </true>
+    <false>
+      <page>Send email to professor Watson?</page>
+      <reply>
+        <option>
+          <say>Yes.</say>
+          <page>Email sent.</page>
+        </option>
+      </reply>
+      <set var="N:Met Before" value="R:true"/>
+    </false>
+  </if>
+    <reply>
+    <option>
+      <say>Log out.</say>
+    </option>
+  </reply>
+  <page>...</page>
+  <page>Goodbye!</page>
+</dialog>

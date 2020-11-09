@@ -1,0 +1,75 @@
+<dialog>
+  <page tag="start">Hello.</page>
+  <if var="initialized" value="true">
+    <true>
+      <page>My food is getting cold.</page>
+    </true>
+    <false>
+      <page>It’s such a beautiful day today.</page>
+      <page>The slight dampness clinging to the air.</page>
+      <page>There’s nothing better than a hot bowl of soup on a day like this.</page>
+      <set var="initialized" value="true"/>
+    </false>
+  </if>
+  <if var="T:current" case="E" value="T:Ch_1-4/TestFour/0">
+    <true>
+      <say>Will you take a personality test?</say>
+      <page>Sure, why not.</page>
+      <page>I love taking tests while I eat.</page>
+      <page>
+        <color hex="74f442">[A blank tests has been removed from your inventory]</color>
+      </page>
+      <advance/>
+    </true>
+    <false>
+      <page>I need to get back to this.</page>
+    </false>
+  </if>
+  <if var="T:current" case="E" value="T:Ch_1-4/CollectTests/0">
+    <true>
+      <say>Are you finished?</say>
+      <page>I’m still working on my food, sorry. </page>
+      <page>Someone asked me to take this personality test so I haven’t eaten much of it yet.</page>
+      <page>Oh wait...</page>
+      <page>You’re not trying to collect dirty dishes are you...</page>
+      <say>...</say>
+      <page>...</page>
+      <say>...</say>
+      <page>This is awkward.</page>
+      <page>I’m done with the test, here.</page>
+      <page>
+        <color hex="74f442">[A completed test has been added to your inventory]</color>
+      </page>
+      <give item="Completed Test"/>
+    </true>
+    <false>
+      <page>This actually looks promising.</page>
+    </false>
+  </if>
+  <if var="T:current" case="E" value="T:Ch_1-4/ReportResults/0">
+    <true>
+      <page>Oh, it’s you again.</page>
+      <say>Do you want to hear your personality results?</say>
+      <page>I suppose...</page>
+      <page>You did walk all the way over here.</page>
+      <page>Go for it.</page>
+      <say>You are considered an “INTJ” type. </say>
+      <say>That stands for Introversion + Intuition + Thinking + Judging. </say>
+      <say>You’re fairly intelligent and independent.</say>
+      <say>Yet, you are bad at taking blame for things and can be arrogant and insensitive.</say>
+      <page>That’s interesting.</page>
+      <page>I’m great at communicating but I keep getting into awkward situations. Maybe it’s because others are too sensitive.</page>
+      <say>I think you missed the point...</say>
+      <page>Hmm?</page>
+      <page>
+        <color hex="74f442">[This person's test results have been removed from your inventory]</color>
+      </page>
+      <advance/>
+      <take item="Test Results"/>
+    </true>
+    <false>
+      <page>Hmm?</page>
+    </false>
+  </if>
+  <page>...</page>
+</dialog>

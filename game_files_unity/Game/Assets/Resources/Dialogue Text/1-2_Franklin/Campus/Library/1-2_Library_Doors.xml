@@ -1,0 +1,18 @@
+<dialog>
+  <page>A suspicious trap door. </page>
+  <if var="T:current" case="E" value="T:Ch_1-2/EnterBS/0">
+    <true>
+      <page>Enter the basement?</page>
+      <reply>
+        <option>
+          <say>Yes</say>
+          <say>Let's go!</say>
+          <advance/>
+        </option>
+        <option>
+          <say>No</say>
+        </option>
+      </reply>
+    </true>
+  </if>
+</dialog>

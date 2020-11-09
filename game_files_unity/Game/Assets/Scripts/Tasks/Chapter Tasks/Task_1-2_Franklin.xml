@@ -1,0 +1,109 @@
+﻿<level name="Something Strange" scene="Ch_1-2">
+  <move x="40" y="-40"/>
+  <task>
+    <name>TalkingToProf</name>
+    <description>Talk to your Professor to get information about your first assignment.</description>
+    <steps>
+      <dialogue/>
+    </steps>
+  </task>
+  <task>
+    <name>GoToDorm</name>
+    <description>Find your RA in the dorms.</description>
+    <steps>
+      <location name="DormCollider"/>
+    </steps>
+  </task>
+  <task>
+    <name>TalkingToRA</name>
+    <description>Talk to your RA for assistance on your paper.</description>
+    <steps>
+      <dialogue/>
+    </steps>
+  </task>
+  <task>
+    <name>GoToLB</name>
+    <description>Go to the Library basement entrance on the south wall of the Library.</description>
+    <steps>
+      <location name="OutsideBasementCollider"/>
+    </steps>
+  </task>
+  <task>
+    <name>EnterBS</name>
+    <description>Enter the Library basement.</description>
+    <steps>
+      <dialogue/>
+    </steps>
+  </task>
+  <move x="211.0" y="57.5"/>
+  <task>
+    <name>GoToBS</name>
+    <description>Look around the Library basement.</description>
+    <steps>
+      <location name="InsideBasementCollider"/>
+    </steps>
+  </task>
+  <task>
+    <name>TalkToALPHA</name>
+    <description>Talk to the weird blue thing.</description>
+    <steps>
+      <dialogue/>
+    </steps>
+  </task>
+  <task>
+    <name>EnterTM</name>
+    <description>Enter the time machine.</description>
+    <steps>
+      <location name="TimeMachineCollider"/>
+    </steps>
+  </task>
+  <task>
+    <name>TalkToALPHA</name>
+    <description>Talk to ALPHA to get more information about the time period.</description>
+    <steps>
+      <dialogue/>
+    </steps>
+  </task>
+  <task>
+    <name>GoToLab</name>
+    <description>Find Rosalind Franklin in her Lab which is located on the northern side of campus.</description>
+    <steps>
+      <location name="LabCollider"/>
+    </steps>
+  </task>
+  <task>
+    <name>TalkingToRF</name>
+    <description>Talk to Rosalind Franklin about her research.</description>
+    <steps>
+      <dialogue/>
+    </steps>
+  </task>
+  <task>
+    <name>GoToXRAY</name>
+    <description>Go to X-ray development room.</description>
+    <steps>
+      <location name="XrayCollider"/>
+    </steps>
+  </task>
+  <task>
+    <name>TalkToLabAsst</name>
+    <description>Talk to the Lab assistant to get the x-rays.</description>
+    <steps>
+      <dialogue/>
+    </steps>
+  </task>
+  <task>
+    <name>ReturnXRAY</name>
+    <description>Return the X-rays to Rosalind Franklin.</description>
+    <steps>
+      <dialogue/>
+    </steps>
+  </task>
+  <task>
+    <name>TalkToALPHA2</name>
+    <description>Talk to ALPHA to leave this time period.</description>
+    <steps>
+      <dialogue/>
+    </steps>
+  </task>
+</level>

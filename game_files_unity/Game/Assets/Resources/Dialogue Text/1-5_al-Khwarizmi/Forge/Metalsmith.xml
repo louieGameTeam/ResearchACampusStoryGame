@@ -1,0 +1,55 @@
+<dialog>
+  <page tag="start">Hey there.</page>
+  <if var="initialized" value="true">
+    <true>
+      <page>Working the forge in this heat is deadly...</page>
+    </true>
+    <false>
+      <page>Hey welcome to my forge.</page>
+      <page>Do you need me to make you any pieces?</page>
+      <say>I'm okay, thank you though.</say>
+      <set var="initialized" value="true"/>
+    </false>
+  </if>
+  <if var="T:current" case="E" value="T:Ch_1-5/TalkToMS1/0">
+    <true>
+      <page>What can I do for you then?</page>
+      <say>al-Khwarizmi sent me to get the plates for his astrolabe.</say>
+      <page>Oh right! Let me grab them.</page>
+      <page>...</page>
+      <page>Let's see...</page>
+      <page>...</page>
+      <page>*thud*</page>
+      <page>Oh shoot... I dropped one of them.</page>
+      <page>It should be fine.</page>
+      <page>My metal is the best in the land!</page>
+      <say>...</say>
+      <page>That's what my mom says at least...</page>
+      <page>Anyway, here you go.</page>
+      <give item="Astrolabe Plates" count="1"/>
+      <page><color hex="74f442">[The Astrolabe plates have been added to your inventory]</color></page>
+      <say>Thank you!</say>
+      <page>Stop by any time!</page>
+      <advance/>
+    </true>
+  </if>
+    <if var="T:current" case="E" value="T:Ch_1-5/TalkToMS2/0">
+    <true>
+      <say>The plates didn't work with al-Khwarizmi's astrolabe...</say>
+      <page>Oh man... there goes my reputation as a metalsmith...</page>
+      <page>I need to be more careful next time then...</page>
+      <say>Do you have al-Khwarizmi's original astrolabe plates?</say>
+      <page>Would you be mad if I said no..?</page>
+      <say>...</say>
+      <page>Don't be upset!</page>
+      <page>I gave the plates to the cartographer in the market!</page>
+      <page>She should still be there!</page>
+      <say>...</say>
+      <page>The market is just south of here!</page>
+      <page>...</page>
+      <page>I should really get back to work now...</page>
+      <advance/>
+    </true>
+  </if>
+  <page>Good day.</page>
+</dialog>

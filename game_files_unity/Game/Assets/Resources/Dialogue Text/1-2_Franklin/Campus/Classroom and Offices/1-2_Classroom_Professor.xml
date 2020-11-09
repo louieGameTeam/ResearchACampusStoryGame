@@ -1,0 +1,32 @@
+<dialog>
+  <if var="T:current" case="E" value="T:Ch_1-2/TalkingToProf/0">
+    <true>
+      <if var="initialized" value="true">
+        <true>
+          <page>Good luck on your paper! </page>
+        </true>
+        <false>
+          <page>And that is how research started, thanks to all the people who contributed to this crucial form of study. </page>
+          <page>Remember! </page>
+          <page>You have the research paper due at the end of the quarter. </page>
+          <page>I would recommend that you get started on it early! </page>
+          <say>Can you tell me more about the paper? </say>
+          <page>Sure. </page>
+          <page>You will need to learn about six researchers. </page>
+          <page>They don’t all have to be scientists but should be people who have helped advance their field. </page>
+          <page>All you have to do is write one paragraph on each. </page>
+          <page>If you have any additional questions about the paper, please talk to former students! </page>
+          <page>If you are staying in the dorms here on campus, the current RA there was a particularly good student who wrote an excellent paper.</page>
+          <page>You should ask him for some pointers! </page>
+          <advance/>
+          <set var="initialized" value="true"/>
+        </false>
+      </if>
+    </true>
+    <false>
+      <page>I need to get ready for my next class. </page>
+      <page>Go talk to the RA in the dorms for more information on how he wrote such a good paper. </page>
+    </false>
+  </if>
+  <page>Let's see, where did my notes go...</page>
+</dialog>

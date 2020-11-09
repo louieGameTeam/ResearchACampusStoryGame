@@ -1,0 +1,83 @@
+<dialog>
+  <page tag="start">Hmm?</page>
+  <if var="T:current" case="E" value="T:Ch_0-1/TalkingToTA/0">
+    <true>
+      <if var="initialized" value="true">
+        <true>
+            <page>Hello again! Are you ready for class?</page>
+            <reply>
+              <option>
+                <say>Yes. </say>
+                <page>Great! I'll see you in class.</page>
+                <finish/>
+              </option>
+              <option>
+                <say>No. </say>
+                <page tag ="Help2">Really? Well, let me help you out.</page>
+                <page>There is going to be a lot to learn, so pay attention.</page>
+                <page><color hex="f48f42">[If a character is talking a lot, you can skip dialogue by pressing ENTER or SPACE]</color></page>
+                <page>If you haven’t look over the syllabus yet, I would recommend that you do.</page>
+                <page>And read the textbook. It starts a little dense, but it is a really useful tool.</page>
+                <page>There won’t be a whole lot of homework.</page>
+                <page>It is nicely segmented into weeks, which the professor and I thought would be manageable.</page>
+                <page>The final will be comprehensive and cover all the work we have done in class.</page>
+                <page>There is also a paper, which you will need sources about various historical figures.</page>
+                <page>If you haven’t talked to the librarian, I would recommend it.</page>
+                <page>They always have the best advice on sources.</page>
+                <page>All in all, I think the class is going to be fun!</page>
+                <page>Did you catch all of that?</page>
+              </option>
+                <reply>
+                  <option>
+                    <say>Yes. </say>
+                    <page>Good!</page>
+                    <finish/>
+                  </option>
+                  <option>
+                    <say>No. </say>
+                    <goto tag="Help2"/>
+                  </option>
+                </reply>
+            </reply>
+        </true>
+        <false>
+          <page>Oh! Hi!</page>
+          <say>Hello. </say>
+          <page>Are you taking the Intro to Research class?</page>
+          <say>I am! </say>
+          <page>Righteous.</page>
+          <page tag ="Help1">I’m the TA for the class, though I think you could have figured that out.</page>
+          <page>There is going to be a lot to learn, so pay attention.</page>
+          <page><color hex="f48f42">(If a character is talking a lot, you can skip dialogue by pressing ENTER or SPACE)</color></page>
+          <page>If you haven’t looked over the syllabus yet, I would recommend that you do.</page>
+          <page>And read the textbook. It starts a little dense, but it is a really useful tool.</page>
+          <page>There won’t be a whole lot of homework.</page>
+          <page>It is nicely segmented into weeks, which the professor and I thought would be manageable.</page>
+          <page>The final will be comprehensive and cover all the work we have done in class.</page>
+          <page>There is also a paper, which you will need sources about various historical figures.</page>
+          <page>If you haven’t talked to the librarian, I would recommend it.</page>
+          <page>They always have the best advice on sources.</page>
+          <page>All in all, I think the class is going to be fun!</page>
+          <page>Did you catch all of that?</page>
+          <reply>
+            <option>
+              <say>Yes. </say>
+              <page>Good!</page>
+            </option>
+            <option>
+              <say>No. </say>
+              <goto tag="Help1"/>
+            </option>
+          </reply>
+          <advance/>
+          <set var="initialized" value="true"/>
+        </false>
+      </if>
+      <page>Now I'll get back to grading...</page>
+    </true>
+    <false>
+      <page>Sorry I have to grade these papers.</page>
+    </false>
+  </if>
+  <page>...</page>
+</dialog>

@@ -1,0 +1,12 @@
+<dialog>
+  <if var="T:current" case="E" value="T:Ch_0-1/TakeASeat/0">
+    <true>
+      <page><color hex="74f442">[You sit and prepare for class]</color></page>
+      <advance/>
+    </true>
+    <false>
+      <say>I have still have some time until class starts.</say>
+    </false>
+  </if>
+  <page>...</page>
+</dialog>

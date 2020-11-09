@@ -1,0 +1,11 @@
+<dialog>
+  <page>This new book is fascinating! I wonder what it’s alluding to…</page>
+  <if var="T:current" case="E" value="T:Ch_1-3/TalkToPartygoers/0">
+    <true>
+      <say>Do you know where I can find Alexander Pushkin?</say>
+      <page>Hmm? Don’t you know?</page>
+      <page>He’s in the study of course! Probably at that big desk!</page>
+      <advance/>
+    </true>
+  </if>
+</dialog>

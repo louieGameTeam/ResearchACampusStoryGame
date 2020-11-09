@@ -1,0 +1,20 @@
+<dialog>
+  <page tag="start">Going into the desert? We have maps!</page>
+  <if var="initialized" value="true">
+    <true>
+      <finish/>
+    </true>
+  </if>
+  <if var="T:current" case="E" value="T:Ch_2-8/TalkMarketPeople/0">
+    <true>
+      <say>Do you know anything about the recent burglaries? </say>
+      <page>Hmm... I'm not sure.</page>
+      <page>Can you sweeten the deal for some extra information?</page>
+      <page>Coins perhaps?</page>
+      <say>Erm... sorry... All out of cash.</say>
+      <page>No money, no information.</page>
+      <set var="initialized" value="true"/>
+      <advance/>
+    </true>
+  </if>
+</dialog>

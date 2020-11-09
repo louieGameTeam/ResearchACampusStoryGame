@@ -1,0 +1,5 @@
+<dialog>
+  <page>Do you know where I can checkout a textbook?</page>
+  <say>Try asking the librarian.</say>
+  <page>Oh, right...</page>
+</dialog>

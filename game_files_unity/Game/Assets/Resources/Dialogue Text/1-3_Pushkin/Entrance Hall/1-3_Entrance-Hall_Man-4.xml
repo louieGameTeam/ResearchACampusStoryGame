@@ -1,0 +1,32 @@
+<dialog>
+  <page tag="start">Hmm?</page>
+  <if var="T:current" case="E" value="T:Ch_1-3/TalkToGuy/0">
+    <true>
+      <say>I’ve been told that someone matching your description may have acquired a certain Tsarina’s slippers.</say>
+      <page>What? I have no idea what you’re talking about!</page>
+      <say>Come on now, I’m not like the others here. You can be honest with me.</say>
+      <page>You do seem a little different...</page>
+      <page>...</page>
+      <page>Just don’t tell anyone else it was me, okay?</page>
+      <say>Okay.</say>
+      <page>I’m just a poor blacksmith from a nearby village.</page>
+      <page>I snuck in to this party because I needed to fetch the Tsarina’s leather slippers in order to prove my love to a girl in my village.</page>
+      <page>I would have left by now, but it looks like it's going to start snowing and I don’t want to get caught out there in the middle of it.</page>
+      <page>Please understand, I only did it for love.</page>
+      <reply>
+        <option>
+          <say>There are other ways, return the slippers and I won’t tell anyone.</say>
+          <page>You know, I think you’re right. Please forgive me, I’ll just try to win her heart by being myself then!</page>
+          <page>I’ll put these back in the closet where I found them.</page>
+        </option>
+        <option>
+          <say>I understand, but you might want to leave the next chance you get before you get caught.</say>
+          <page>Oh thank you, I’m sure to win over my beloved now!</page>
+        </option>
+      </reply>
+      <say>Good luck!</say>
+      <page>Thank you!</page>
+      <advance/>
+    </true>
+  </if>
+</dialog>
