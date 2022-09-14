@@ -7,7 +7,7 @@
   </head>
   <body style="text-align: center; padding: 0; border: 0; margin: 0;">
     <canvas id="unity-canvas" width=960 height=600 style="width: 960px; height: 600px; background: #231F20"></canvas>
-    <script src="Build/game2022.loader.js"></script>
+    <script src="Build/game2022-b.loader.js"></script>
     <script>
       if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
         // Mobile device style: fill the whole browser client area with the game canvas:
@@ -25,9 +25,9 @@
       }
 
       createUnityInstance(document.querySelector("#unity-canvas"), {
-        dataUrl: "Build/game2022.data.gz",
-        frameworkUrl: "Build/game2022.framework.js.gz",
-        codeUrl: "Build/game2022.wasm.gz",
+        dataUrl: "Build/game2022-b.data.unityweb",
+        frameworkUrl: "Build/game2022-b.framework.js.unityweb",
+        codeUrl: "Build/game2022-b.wasm.unityweb",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "UC Davis",
         productName: "Game",
