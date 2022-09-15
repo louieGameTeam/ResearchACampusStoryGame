@@ -1,7 +1,7 @@
 {
 "companyName": "DefaultCompany",
 "productName": "Space-Zoologist",
-"productVersion": "0.0.2135",
+"productVersion": "0.0.2136",
 "dataUrl": "WebGL.data.unityweb",
 "wasmCodeUrl": "WebGL.wasm.code.unityweb",
 "wasmFrameworkUrl": "WebGL.wasm.framework.unityweb",
