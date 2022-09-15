@@ -7,7 +7,7 @@
   </head>
   <body style="text-align: center; padding: 0; border: 0; margin: 0;">
     <canvas id="unity-canvas" width=960 height=600 style="width: 960px; height: 600px; background: #231F20"></canvas>
-    <script src="Build/game2022-c.loader.js"></script>
+    <script src="Build/Game.loader.js"></script>
     <script>
       if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
         // Mobile device style: fill the whole browser client area with the game canvas:
@@ -35,6 +35,9 @@
         // matchWebGLToCanvasSize: false, // Uncomment this to separately control WebGL canvas render size and DOM element size.
         // devicePixelRatio: 1, // Uncomment this to override low DPI rendering on high DPI displays.
       });
+
+      // loading screen
+        var gameInstance = UnityLoader.instantiate("gameContainer", "Build/Game.json", {onProgress: UnityProgress});
     </script>
   </body>
 </html>
