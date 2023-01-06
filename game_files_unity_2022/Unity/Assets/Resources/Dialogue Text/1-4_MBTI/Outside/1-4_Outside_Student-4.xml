@@ -1,0 +1,16 @@
+<dialog>
+  <page tag="start">Have you heard about the Briggs people?</page>
+  <if var="initialized" value="true">
+    <true>
+      <page>They’re incredible!</page>
+    </true>
+    <false>
+      <page>They’re incredible!</page>
+      <say>Well would you be interested in taking a personality test?</say>
+      <page>Ehh…</page>
+      <page>I’m okay. </page>
+      <page>Thanks though!</page>
+      <set var="initialized" value="true"/>
+    </false>
+  </if>
+</dialog>

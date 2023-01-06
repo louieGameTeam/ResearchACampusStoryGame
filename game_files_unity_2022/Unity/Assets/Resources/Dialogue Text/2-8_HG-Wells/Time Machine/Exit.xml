@@ -1,0 +1,63 @@
+<dialog>
+  <page>The long road stretches out before you.</page>
+  <if var="T:current" case="E" value="T:Ch_2-8/GoToMarket1/0">
+    <true>
+      <page>Make the trip to the market?</page>
+      <reply>
+        <option>
+          <say>Yes</say>
+          <say>Let's go! </say>
+          <advance/>
+        </option>
+        <option>
+          <say>No</say>
+        </option>
+      </reply>
+    </true>
+  </if>
+  <if var="T:current" case="E" value="T:Ch_2-8/GoToMarket2/0">
+    <true>
+      <page>Make the trip to the market?</page>
+      <reply>
+        <option>
+          <say>Yes</say>
+          <say>Let's go... </say>
+          <advance/>
+        </option>
+        <option>
+          <say>No</say>
+        </option>
+      </reply>
+    </true>
+  </if>
+  <if var="T:current" case="E" value="T:Ch_2-8/LeaveMarket1/0">
+    <true>
+      <page>Make the trip back to the time machine?</page>
+      <reply>
+        <option>
+          <say>Yes</say>
+          <say>Let's go! </say>
+          <advance/>
+        </option>
+        <option>
+          <say>No</say>
+        </option>
+      </reply>
+    </true>
+  </if>
+  <if var="T:current" case="E" value="T:Ch_2-8/LeaveMarket2/0">
+    <true>
+      <page>Make the trip back to the time machine?</page>
+      <reply>
+        <option>
+          <say>Yes</say>
+          <say>Let's go... </say>
+          <advance/>
+        </option>
+        <option>
+          <say>No</say>
+        </option>
+      </reply>
+    </true>
+  </if>
+</dialog>

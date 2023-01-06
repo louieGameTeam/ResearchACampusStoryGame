@@ -1,0 +1,28 @@
+<dialog>
+  <page tag="start">Hello.</page>
+  <if var="initialized" value="true">
+    <false>
+      <page>I am sorry, but I am currently working on a project with some other cartographers.</page>
+      <page>I set sail in just a few hours and am just picking up some supplies for the journey.</page>
+      <set var="initialized" value="true"/>
+    </false>
+  </if>
+  <if var="T:current" case="E" value="T:Ch_1-5/TalkToCT/0">
+    <true>
+      <say>Before you set sail, could I retrieve al-Khwarizmi's astrolabe plates?</say>
+      <page>Oh, right! I almost forgot that I had those!</page>
+      <page>My apologies!</page>
+      <page>Here you are...</page>
+      <give item="Correct Astrolabe Plates" count="1"/>
+      <page><color hex="74f442">[The correct astrolabe plates have been added to your inventory]</color></page>
+      <page>I must get back to my preprations!</page>
+      <say>Thank you!</say>
+      <say>Safe travels!</say>
+      <advance/>
+    </true>
+    <false>
+      <say>Sorry, I was just looking around.</say>
+      <page>Good day to you, then.</page>
+    </false>
+  </if>
+</dialog>

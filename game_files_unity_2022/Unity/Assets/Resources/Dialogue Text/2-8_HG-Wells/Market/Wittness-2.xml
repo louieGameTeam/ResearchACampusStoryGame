@@ -1,0 +1,19 @@
+<dialog>
+  <page tag="start">Melons as fresh as can be!</page>
+  <if var="initialized" value="true">
+    <true>
+      <finish/>
+    </true>
+  </if>
+  <if var="T:current" case="E" value="T:Ch_2-8/TalkMarketPeople/0">
+    <true>
+      <say>Do you know anything about the recent burglaries? </say>
+      <page>Ah... those...</page>
+      <page>Can't say that I do.</page>
+      <page>A stranger has been hanging around the dry well just north of here though...</page>
+      <say>Ah, thank you!</say>
+      <set var="initialized" value="true"/>
+      <advance/>
+    </true>
+  </if>
+</dialog>

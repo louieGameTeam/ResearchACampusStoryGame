@@ -1,0 +1,22 @@
+<dialog>
+  <page tag="start">Hello and welcome traveler!</page>
+  <page>Interested in any squash?</page>
+  <say>Erm... no thanks.</say>
+  <if var="initialized" value="true">
+    <true>
+      <finish/>
+    </true>
+  </if>
+  <if var="T:current" case="E" value="T:Ch_2-8/TalkMarketPeople/0">
+    <true>
+      <say>Do you happen to know anything about the recent burglaries? </say>
+      <page>Hush! Keep your voice down!</page>
+      <page>I don't know much...</page>
+      <page>Aside from the fact that my mother's jewels went missing a few days ago.</page>
+      <page>All of us vendors think it's some traveler, but we can't be certain. </page>
+      <page>I've heard news about a shifty fellow being spotted, but I don't know more. Sorry.</page>
+      <set var="initialized" value="true"/>
+      <advance/>
+    </true>
+  </if>
+</dialog>

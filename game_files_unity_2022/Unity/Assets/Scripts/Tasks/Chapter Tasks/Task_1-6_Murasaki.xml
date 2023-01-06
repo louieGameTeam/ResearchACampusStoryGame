@@ -1,0 +1,129 @@
+﻿<level name=" Heian Era Court, Japan (1000s)" scene="Ch_1-6">
+  <move x="40" y="-40"/>
+  <task>
+    <name>TalkToALPHA</name>
+    <description>Talk to ALPHA to find out what time period you're in.</description>
+    <steps>
+      <dialogue/>
+    </steps>
+  </task>
+    <task>
+    <name>PickUpBook</name>
+    <description>Pick up the book on the table next to the time machine.</description>
+    <steps>
+      <dialogue/>
+    </steps>
+  </task>
+  <task>
+    <name>GoToMS</name>
+    <description>Find Murasaki Shikibu in the room north of the time machine.</description>
+    <steps>
+      <location name="MainCollider"/>
+    </steps>
+  </task>
+  <task>
+    <name>TalkToMS1</name>
+    <description>Talk to Murasaki Shikibu and return her journal.</description>
+    <steps>
+      <dialogue/>
+    </steps>
+  </task>
+  <task>
+    <name>GetChapters</name>
+    <description>Retrieve Murasaki Shikibu's four missing chapters.</description>
+    <steps>
+      <dialogue count = "4"/>
+    </steps>
+  </task>
+  <task>
+    <name>ReturnToMS1</name>
+    <description>Return the chapters to Murasaki Shikibu.</description>
+    <steps>
+      <dialogue/>
+    </steps>
+  </task>
+  <task>
+    <name>HelpLady1</name>
+    <description>Help one of the ladies in waiting.</description>
+    <steps>
+      <dialogue/>
+    </steps>
+  </task>
+  <task>
+    <name>GoToGate1</name>
+    <description>Go to the east side of the front gate and find the lord in the white armor.</description>
+    <steps>
+      <location name="GateCollider1"/>
+    </steps>
+  </task>
+  <task>
+    <name>GivePoem</name>
+    <description>Give the poem to the lord in the white armor.</description>
+    <steps>
+      <dialogue/>
+    </steps>
+  </task>
+  <task>
+    <name>ReturnToLady1</name>
+    <description>Return to the lady in the court.</description>
+    <steps>
+      <dialogue/>
+    </steps>
+  </task>
+  <task>
+    <name>ReturnToMS2</name>
+    <description>Return to Murasaki Shikibu.</description>
+    <steps>
+      <dialogue/>
+    </steps>
+  </task>
+  <task>
+    <name>GoToTea</name>
+    <description>Go to the tea room east of where Murasaki Shikibu is.</description>
+    <steps>
+      <location name="TeaCollider"/>
+    </steps>
+  </task>
+  <task>
+    <name>TalkBlue</name>
+    <description>Talk to the lord in the blue armor.</description>
+    <steps>
+      <dialogue/>
+    </steps>
+  </task>
+  <task>
+    <name>GoToGate2</name>
+    <description>Go to the west side of the front gate and find the lord in the red armor.</description>
+    <steps>
+      <location name="GateCollider2"/>
+    </steps>
+  </task>
+  <task>
+    <name>ResolveDispute</name>
+    <description>Resolve the dispute between the two brothers.</description>
+    <steps>
+      <dialogue/>
+    </steps>
+  </task>
+  <task>
+    <name>ReturnToBlue</name>
+    <description>Return to the lord in the blue armor in the tea room.</description>
+    <steps>
+      <dialogue/>
+    </steps>
+  </task>
+  <task>
+    <name>ReturnToMS3</name>
+    <description>Return to Murasaki Shikibu.</description>
+    <steps>
+      <dialogue/>
+    </steps>
+  </task>
+  <task>
+    <name>Leave</name>
+    <description>Return to ALPHA to leave this time period.</description>
+    <steps>
+      <dialogue/>
+    </steps>
+  </task>
+</level>

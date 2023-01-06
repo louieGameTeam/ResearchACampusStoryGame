@@ -1,0 +1,19 @@
+<dialog>
+  <page>Welcome back! </page>
+  <if var="T:current" case="E" value="T:Ch_1-2/GoToLB/0">
+    <true>
+      <page>Do you need help with something? </page>
+      <say>I'm looking for library basement. </say>
+      <page>Why on earth would you want to go down there? </page>
+      <page>It's filthy! </page>
+      <say>My RA told me there is something down there that can help with my essay. </say>
+      <page>Your RA must be pulling your leg...</page>
+      <page>At any rate, you can find the entrance to the basement just through the south doors of the library. </page>
+      <page>The entrance is just to the left of the exit. </page>
+    </true>
+    <false>
+      <page>Take a look around. Try not to make too much noise though, students are already studying! </page>
+    </false>
+  </if>
+  <page>Stop by again! </page>
+</dialog>

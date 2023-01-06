@@ -1,0 +1,376 @@
+{
+  "Nodes": [
+    {
+      "Annotation": "all_tundra_nodes",
+      "Action": "",
+      "Inputs": [],
+      "Outputs": [],
+      "ToBuildDependencies": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "AllowUnexpectedOutput": true,
+      "DebugActionIndex": 0
+    },
+    {
+      "Annotation": "ScriptAssemblies",
+      "Action": "",
+      "Inputs": [],
+      "Outputs": [],
+      "AllowUnexpectedOutput": true,
+      "DebugActionIndex": 1
+    },
+    {
+      "Annotation": "WriteResponseFile Library/Bee/artifacts/rsp/6097564273297756792.rsp",
+      "ActionType": "WriteTextFile",
+      "WriteTextFilePayload": "-a=\"/Users/bmmashat/Dropbox/My Mac (Bayan’s MacBook Pro)/Documents/GitHub/bmmashat.github.io/Unity/Library/PackageCache/com.unity.analytics@3.7.1/AnalyticsStandardEvents/Unity.Analytics.StandardEvents.dll\"\n-a=\"/Users/bmmashat/Dropbox/My Mac (Bayan’s MacBook Pro)/Documents/GitHub/bmmashat.github.io/Unity/Library/PackageCache/com.unity.analytics@3.7.1/Unity.Analytics.Editor.dll\"\n-a=\"/Users/bmmashat/Dropbox/My Mac (Bayan’s MacBook Pro)/Documents/GitHub/bmmashat.github.io/Unity/Library/PackageCache/com.unity.analytics@3.7.1/Unity.Analytics.Tracker.dll\"\n-a=\"/Users/bmmashat/Dropbox/My Mac (Bayan’s MacBook Pro)/Documents/GitHub/bmmashat.github.io/Unity/Library/PackageCache/com.unity.ext.nunit@1.0.6/net35/unity-custom/nunit.framework.dll\"\n-a=\"/Users/bmmashat/Dropbox/My Mac (Bayan’s MacBook Pro)/Documents/GitHub/bmmashat.github.io/Unity/Library/PackageCache/com.unity.nuget.newtonsoft-json@3.0.2/Runtime/Newtonsoft.Json.dll\"\n-a=\"/Users/bmmashat/Dropbox/My Mac (Bayan’s MacBook Pro)/Documents/GitHub/bmmashat.github.io/Unity/Library/ScriptAssemblies/Assembly-CSharp.dll\"\n-a=\"/Users/bmmashat/Dropbox/My Mac (Bayan’s MacBook Pro)/Documents/GitHub/bmmashat.github.io/Unity/Library/ScriptAssemblies/Assembly-CSharp-firstpass.dll\"\n-a=\"/Users/bmmashat/Dropbox/My Mac (Bayan’s MacBook Pro)/Documents/GitHub/bmmashat.github.io/Unity/Library/ScriptAssemblies/Purchasing.Common.dll\"\n-a=\"/Users/bmmashat/Dropbox/My Mac (Bayan’s MacBook Pro)/Documents/GitHub/bmmashat.github.io/Unity/Library/ScriptAssemblies/Unity.2D.PixelPerfect.dll\"\n-a=\"/Users/bmmashat/Dropbox/My Mac (Bayan’s MacBook Pro)/Documents/GitHub/bmmashat.github.io/Unity/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll\"\n-a=\"/Users/bmmashat/Dropbox/My Mac (Bayan’s MacBook Pro)/Documents/GitHub/bmmashat.github.io/Unity/Library/ScriptAssemblies/Unity.Services.Analytics.dll\"\n-a=\"/Users/bmmashat/Dropbox/My Mac (Bayan’s MacBook Pro)/Documents/GitHub/bmmashat.github.io/Unity/Library/ScriptAssemblies/Unity.Services.Core.Analytics.dll\"\n-a=\"/Users/bmmashat/Dropbox/My Mac (Bayan’s MacBook Pro)/Documents/GitHub/bmmashat.github.io/Unity/Library/ScriptAssemblies/Unity.Services.Core.Configuration.dll\"\n-a=\"/Users/bmmashat/Dropbox/My Mac (Bayan’s MacBook Pro)/Documents/GitHub/bmmashat.github.io/Unity/Library/ScriptAssemblies/Unity.Services.Core.Device.dll\"\n-a=\"/Users/bmmashat/Dropbox/My Mac (Bayan’s MacBook Pro)/Documents/GitHub/bmmashat.github.io/Unity/Library/ScriptAssemblies/Unity.Services.Core.dll\"\n-a=\"/Users/bmmashat/Dropbox/My Mac (Bayan’s MacBook Pro)/Documents/GitHub/bmmashat.github.io/Unity/Library/ScriptAssemblies/Unity.Services.Core.Environments.dll\"\n-a=\"/Users/bmmashat/Dropbox/My Mac (Bayan’s MacBook Pro)/Documents/GitHub/bmmashat.github.io/Unity/Library/ScriptAssemblies/Unity.Services.Core.Environments.Internal.dll\"\n-a=\"/Users/bmmashat/Dropbox/My Mac (Bayan’s MacBook Pro)/Documents/GitHub/bmmashat.github.io/Unity/Library/ScriptAssemblies/Unity.Services.Core.Internal.dll\"\n-a=\"/Users/bmmashat/Dropbox/My Mac (Bayan’s MacBook Pro)/Documents/GitHub/bmmashat.github.io/Unity/Library/ScriptAssemblies/Unity.Services.Core.Networking.dll\"\n-a=\"/Users/bmmashat/Dropbox/My Mac (Bayan’s MacBook Pro)/Documents/GitHub/bmmashat.github.io/Unity/Library/ScriptAssemblies/Unity.Services.Core.Registration.dll\"\n-a=\"/Users/bmmashat/Dropbox/My Mac (Bayan’s MacBook Pro)/Documents/GitHub/bmmashat.github.io/Unity/Library/ScriptAssemblies/Unity.Services.Core.Scheduler.dll\"\n-a=\"/Users/bmmashat/Dropbox/My Mac (Bayan’s MacBook Pro)/Documents/GitHub/bmmashat.github.io/Unity/Library/ScriptAssemblies/Unity.Services.Core.Telemetry.dll\"\n-a=\"/Users/bmmashat/Dropbox/My Mac (Bayan’s MacBook Pro)/Documents/GitHub/bmmashat.github.io/Unity/Library/ScriptAssemblies/Unity.Services.Core.Threading.dll\"\n-a=\"/Users/bmmashat/Dropbox/My Mac (Bayan’s MacBook Pro)/Documents/GitHub/bmmashat.github.io/Unity/Library/ScriptAssemblies/Unity.TextMeshPro.dll\"\n-a=\"/Users/bmmashat/Dropbox/My Mac (Bayan’s MacBook Pro)/Documents/GitHub/bmmashat.github.io/Unity/Library/ScriptAssemblies/Unity.Timeline.dll\"\n-a=\"/Users/bmmashat/Dropbox/My Mac (Bayan’s MacBook Pro)/Documents/GitHub/bmmashat.github.io/Unity/Library/ScriptAssemblies/UnityEngine.Advertisements.dll\"\n-a=\"/Users/bmmashat/Dropbox/My Mac (Bayan’s MacBook Pro)/Documents/GitHub/bmmashat.github.io/Unity/Library/ScriptAssemblies/UnityEngine.Purchasing.AppleCore.dll\"\n-a=\"/Users/bmmashat/Dropbox/My Mac (Bayan’s MacBook Pro)/Documents/GitHub/bmmashat.github.io/Unity/Library/ScriptAssemblies/UnityEngine.Purchasing.AppleMacosStub.dll\"\n-a=\"/Users/bmmashat/Dropbox/My Mac (Bayan’s MacBook Pro)/Documents/GitHub/bmmashat.github.io/Unity/Library/ScriptAssemblies/UnityEngine.Purchasing.AppleStub.dll\"\n-a=\"/Users/bmmashat/Dropbox/My Mac (Bayan’s MacBook Pro)/Documents/GitHub/bmmashat.github.io/Unity/Library/ScriptAssemblies/UnityEngine.Purchasing.Codeless.dll\"\n-a=\"/Users/bmmashat/Dropbox/My Mac (Bayan’s MacBook Pro)/Documents/GitHub/bmmashat.github.io/Unity/Library/ScriptAssemblies/UnityEngine.Purchasing.dll\"\n-a=\"/Users/bmmashat/Dropbox/My Mac (Bayan’s MacBook Pro)/Documents/GitHub/bmmashat.github.io/Unity/Library/ScriptAssemblies/UnityEngine.Purchasing.SecurityCore.dll\"\n-a=\"/Users/bmmashat/Dropbox/My Mac (Bayan’s MacBook Pro)/Documents/GitHub/bmmashat.github.io/Unity/Library/ScriptAssemblies/UnityEngine.Purchasing.SecurityStub.dll\"\n-a=\"/Users/bmmashat/Dropbox/My Mac (Bayan’s MacBook Pro)/Documents/GitHub/bmmashat.github.io/Unity/Library/ScriptAssemblies/UnityEngine.Purchasing.Stores.dll\"\n-a=\"/Users/bmmashat/Dropbox/My Mac (Bayan’s MacBook Pro)/Documents/GitHub/bmmashat.github.io/Unity/Library/ScriptAssemblies/UnityEngine.Purchasing.WinRTCore.dll\"\n-a=\"/Users/bmmashat/Dropbox/My Mac (Bayan’s MacBook Pro)/Documents/GitHub/bmmashat.github.io/Unity/Library/ScriptAssemblies/UnityEngine.Purchasing.WinRTStub.dll\"\n-a=\"/Users/bmmashat/Dropbox/My Mac (Bayan’s MacBook Pro)/Documents/GitHub/bmmashat.github.io/Unity/Library/ScriptAssemblies/UnityEngine.SpatialTracking.dll\"\n-a=\"/Users/bmmashat/Dropbox/My Mac (Bayan’s MacBook Pro)/Documents/GitHub/bmmashat.github.io/Unity/Library/ScriptAssemblies/UnityEngine.TestRunner.dll\"\n-a=\"/Users/bmmashat/Dropbox/My Mac (Bayan’s MacBook Pro)/Documents/GitHub/bmmashat.github.io/Unity/Library/ScriptAssemblies/UnityEngine.UI.dll\"\n-a=\"/Users/bmmashat/Dropbox/My Mac (Bayan’s MacBook Pro)/Documents/GitHub/bmmashat.github.io/Unity/Library/ScriptAssemblies/UnityEngine.XR.LegacyInputHelpers.dll\"\n-s=\"/Applications/Unity/Hub/Editor/2022.1.15f1/PlaybackEngines/WebGLSupport/Managed\"\n-s=\"/Applications/Unity/Hub/Editor/2022.1.15f1/Unity.app/Contents/Managed/UnityEngine\"\n-s=\"/Applications/Unity/Hub/Editor/2022.1.15f1/Unity.app/Contents/NetStandard/compat/2.1.0/shims/netfx\"\n-s=\"/Applications/Unity/Hub/Editor/2022.1.15f1/Unity.app/Contents/NetStandard/compat/2.1.0/shims/netstandard\"\n-s=\"/Applications/Unity/Hub/Editor/2022.1.15f1/Unity.app/Contents/NetStandard/Extensions/2.0.0\"\n-s=\"/Applications/Unity/Hub/Editor/2022.1.15f1/Unity.app/Contents/NetStandard/ref/2.1.0\"\n-s=\"/Users/bmmashat/Dropbox/My Mac (Bayan’s MacBook Pro)/Documents/GitHub/bmmashat.github.io/Unity/Library/PackageCache/com.unity.analytics@3.7.1\"\n-s=\"/Users/bmmashat/Dropbox/My Mac (Bayan’s MacBook Pro)/Documents/GitHub/bmmashat.github.io/Unity/Library/PackageCache/com.unity.analytics@3.7.1/AnalyticsStandardEvents\"\n-s=\"/Users/bmmashat/Dropbox/My Mac (Bayan’s MacBook Pro)/Documents/GitHub/bmmashat.github.io/Unity/Library/PackageCache/com.unity.ext.nunit@1.0.6/net35/unity-custom\"\n-s=\"/Users/bmmashat/Dropbox/My Mac (Bayan’s MacBook Pro)/Documents/GitHub/bmmashat.github.io/Unity/Library/PackageCache/com.unity.nuget.newtonsoft-json@3.0.2/Runtime\"\n-s=\"/Users/bmmashat/Dropbox/My Mac (Bayan’s MacBook Pro)/Documents/GitHub/bmmashat.github.io/Unity/Library/ScriptAssemblies\"\n-o=\"Library/BuildPlayerData/Editor\"\n-rn=\"\"\n-tn=\"TypeDb-All.json\"",
+      "Inputs": [],
+      "Outputs": [
+        "Library/Bee/artifacts/rsp/6097564273297756792.rsp"
+      ],
+      "AllowUnwrittenOutputFiles": true,
+      "DebugActionIndex": 2
+    },
+    {
+      "Annotation": "BuildPlayerDataGenerator Library/BuildPlayerData/Editor/TypeDb-All.json",
+      "Action": "\"/Applications/Unity/Hub/Editor/2022.1.15f1/Unity.app/Contents/Tools/netcorerun/netcorerun\" \"/Applications/Unity/Hub/Editor/2022.1.15f1/Unity.app/Contents/Tools/BuildPlayerDataGenerator/BuildPlayerDataGenerator.exe\" @\"Library/Bee/artifacts/rsp/6097564273297756792.rsp\"",
+      "Inputs": [
+        "/Applications/Unity/Hub/Editor/2022.1.15f1/Unity.app/Contents/Tools/netcorerun/netcorerun",
+        "/Applications/Unity/Hub/Editor/2022.1.15f1/Unity.app/Contents/Tools/BuildPlayerDataGenerator/BuildPlayerDataGenerator.exe",
+        "/Users/bmmashat/Dropbox/My Mac (Bayan’s MacBook Pro)/Documents/GitHub/bmmashat.github.io/Unity/Library/PackageCache/com.unity.analytics@3.7.1/AnalyticsStandardEvents/Unity.Analytics.StandardEvents.dll",
+        "/Users/bmmashat/Dropbox/My Mac (Bayan’s MacBook Pro)/Documents/GitHub/bmmashat.github.io/Unity/Library/PackageCache/com.unity.analytics@3.7.1/Unity.Analytics.Editor.dll",
+        "/Users/bmmashat/Dropbox/My Mac (Bayan’s MacBook Pro)/Documents/GitHub/bmmashat.github.io/Unity/Library/PackageCache/com.unity.analytics@3.7.1/Unity.Analytics.Tracker.dll",
+        "/Users/bmmashat/Dropbox/My Mac (Bayan’s MacBook Pro)/Documents/GitHub/bmmashat.github.io/Unity/Library/PackageCache/com.unity.ext.nunit@1.0.6/net35/unity-custom/nunit.framework.dll",
+        "/Users/bmmashat/Dropbox/My Mac (Bayan’s MacBook Pro)/Documents/GitHub/bmmashat.github.io/Unity/Library/PackageCache/com.unity.nuget.newtonsoft-json@3.0.2/Runtime/Newtonsoft.Json.dll",
+        "Library/ScriptAssemblies/Assembly-CSharp.dll",
+        "Library/ScriptAssemblies/Assembly-CSharp-firstpass.dll",
+        "Library/ScriptAssemblies/Purchasing.Common.dll",
+        "Library/ScriptAssemblies/Unity.2D.PixelPerfect.dll",
+        "Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll",
+        "Library/ScriptAssemblies/Unity.Services.Analytics.dll",
+        "Library/ScriptAssemblies/Unity.Services.Core.Analytics.dll",
+        "Library/ScriptAssemblies/Unity.Services.Core.Configuration.dll",
+        "Library/ScriptAssemblies/Unity.Services.Core.Device.dll",
+        "Library/ScriptAssemblies/Unity.Services.Core.dll",
+        "Library/ScriptAssemblies/Unity.Services.Core.Environments.dll",
+        "Library/ScriptAssemblies/Unity.Services.Core.Environments.Internal.dll",
+        "Library/ScriptAssemblies/Unity.Services.Core.Internal.dll",
+        "Library/ScriptAssemblies/Unity.Services.Core.Networking.dll",
+        "Library/ScriptAssemblies/Unity.Services.Core.Registration.dll",
+        "Library/ScriptAssemblies/Unity.Services.Core.Scheduler.dll",
+        "Library/ScriptAssemblies/Unity.Services.Core.Telemetry.dll",
+        "Library/ScriptAssemblies/Unity.Services.Core.Threading.dll",
+        "Library/ScriptAssemblies/Unity.TextMeshPro.dll",
+        "Library/ScriptAssemblies/Unity.Timeline.dll",
+        "Library/ScriptAssemblies/UnityEngine.Advertisements.dll",
+        "Library/ScriptAssemblies/UnityEngine.Purchasing.AppleCore.dll",
+        "Library/ScriptAssemblies/UnityEngine.Purchasing.AppleMacosStub.dll",
+        "Library/ScriptAssemblies/UnityEngine.Purchasing.AppleStub.dll",
+        "Library/ScriptAssemblies/UnityEngine.Purchasing.Codeless.dll",
+        "Library/ScriptAssemblies/UnityEngine.Purchasing.dll",
+        "Library/ScriptAssemblies/UnityEngine.Purchasing.SecurityCore.dll",
+        "Library/ScriptAssemblies/UnityEngine.Purchasing.SecurityStub.dll",
+        "Library/ScriptAssemblies/UnityEngine.Purchasing.Stores.dll",
+        "Library/ScriptAssemblies/UnityEngine.Purchasing.WinRTCore.dll",
+        "Library/ScriptAssemblies/UnityEngine.Purchasing.WinRTStub.dll",
+        "Library/ScriptAssemblies/UnityEngine.SpatialTracking.dll",
+        "Library/ScriptAssemblies/UnityEngine.TestRunner.dll",
+        "Library/ScriptAssemblies/UnityEngine.UI.dll",
+        "Library/ScriptAssemblies/UnityEngine.XR.LegacyInputHelpers.dll",
+        "Library/Bee/artifacts/rsp/6097564273297756792.rsp"
+      ],
+      "Outputs": [
+        "Library/BuildPlayerData/Editor/TypeDb-All.json"
+      ],
+      "ToBuildDependencies": [
+        2
+      ],
+      "FrontendResponseFiles": [
+        "Library/Bee/artifacts/rsp/6097564273297756792.rsp"
+      ],
+      "AllowUnexpectedOutput": true,
+      "DebugActionIndex": 3
+    },
+    {
+      "Annotation": "ScriptAssembliesAndTypeDB",
+      "Action": "",
+      "Inputs": [],
+      "Outputs": [],
+      "ToBuildDependencies": [
+        1,
+        3
+      ],
+      "AllowUnexpectedOutput": true,
+      "DebugActionIndex": 4
+    }
+  ],
+  "FileSignatures": [
+    {
+      "File": "/Applications/Unity/Hub/Editor/2022.1.15f1/Unity.app/Contents/Tools/BuildPipeline/Bee.BuildTools.dll"
+    },
+    {
+      "File": "/Applications/Unity/Hub/Editor/2022.1.15f1/Unity.app/Contents/Tools/BuildPipeline/Bee.Core.dll"
+    },
+    {
+      "File": "/Applications/Unity/Hub/Editor/2022.1.15f1/Unity.app/Contents/Tools/BuildPipeline/Bee.CSharpSupport.dll"
+    },
+    {
+      "File": "/Applications/Unity/Hub/Editor/2022.1.15f1/Unity.app/Contents/Tools/BuildPipeline/Bee.DotNet.dll"
+    },
+    {
+      "File": "/Applications/Unity/Hub/Editor/2022.1.15f1/Unity.app/Contents/Tools/BuildPipeline/Bee.NativeProgramSupport.dll"
+    },
+    {
+      "File": "/Applications/Unity/Hub/Editor/2022.1.15f1/Unity.app/Contents/Tools/BuildPipeline/Bee.Stevedore.Program.exe"
+    },
+    {
+      "File": "/Applications/Unity/Hub/Editor/2022.1.15f1/Unity.app/Contents/Tools/BuildPipeline/Bee.TinyProfiler2.dll"
+    },
+    {
+      "File": "/Applications/Unity/Hub/Editor/2022.1.15f1/Unity.app/Contents/Tools/BuildPipeline/Bee.Toolchain.GNU.dll"
+    },
+    {
+      "File": "/Applications/Unity/Hub/Editor/2022.1.15f1/Unity.app/Contents/Tools/BuildPipeline/Bee.Toolchain.LLVM.dll"
+    },
+    {
+      "File": "/Applications/Unity/Hub/Editor/2022.1.15f1/Unity.app/Contents/Tools/BuildPipeline/Bee.Toolchain.VisualStudio.dll"
+    },
+    {
+      "File": "/Applications/Unity/Hub/Editor/2022.1.15f1/Unity.app/Contents/Tools/BuildPipeline/Bee.Toolchain.Xcode.dll"
+    },
+    {
+      "File": "/Applications/Unity/Hub/Editor/2022.1.15f1/Unity.app/Contents/Tools/BuildPipeline/Bee.Tools.dll"
+    },
+    {
+      "File": "/Applications/Unity/Hub/Editor/2022.1.15f1/Unity.app/Contents/Tools/BuildPipeline/Bee.TundraBackend.dll"
+    },
+    {
+      "File": "/Applications/Unity/Hub/Editor/2022.1.15f1/Unity.app/Contents/Tools/BuildPipeline/Bee.VisualStudioSolution.dll"
+    },
+    {
+      "File": "/Applications/Unity/Hub/Editor/2022.1.15f1/Unity.app/Contents/Tools/BuildPipeline/BeeBuildProgramCommon.Data.dll"
+    },
+    {
+      "File": "/Applications/Unity/Hub/Editor/2022.1.15f1/Unity.app/Contents/Tools/BuildPipeline/BeeBuildProgramCommon.dll"
+    },
+    {
+      "File": "/Applications/Unity/Hub/Editor/2022.1.15f1/Unity.app/Contents/Tools/BuildPipeline/Newtonsoft.Json.dll"
+    },
+    {
+      "File": "/Applications/Unity/Hub/Editor/2022.1.15f1/Unity.app/Contents/Tools/BuildPipeline/NiceIO.dll"
+    },
+    {
+      "File": "/Applications/Unity/Hub/Editor/2022.1.15f1/Unity.app/Contents/Tools/BuildPipeline/PlayerBuildProgramLibrary.Data.dll"
+    },
+    {
+      "File": "/Applications/Unity/Hub/Editor/2022.1.15f1/Unity.app/Contents/Tools/BuildPipeline/PlayerBuildProgramLibrary.dll"
+    },
+    {
+      "File": "/Applications/Unity/Hub/Editor/2022.1.15f1/Unity.app/Contents/Tools/BuildPipeline/ScriptCompilationBuildProgram.Data.dll"
+    },
+    {
+      "File": "/Applications/Unity/Hub/Editor/2022.1.15f1/Unity.app/Contents/Tools/BuildPipeline/ScriptCompilationBuildProgram.exe"
+    },
+    {
+      "File": "/Applications/Unity/Hub/Editor/2022.1.15f1/Unity.app/Contents/Tools/BuildPipeline/SharpYaml.dll"
+    },
+    {
+      "File": "/Applications/Unity/Hub/Editor/2022.1.15f1/Unity.app/Contents/Tools/BuildPipeline/Unity.Api.Attributes.dll"
+    },
+    {
+      "File": "/Applications/Unity/Hub/Editor/2022.1.15f1/Unity.app/Contents/Tools/BuildPipeline/Unity.Cecil.dll"
+    },
+    {
+      "File": "/Applications/Unity/Hub/Editor/2022.1.15f1/Unity.app/Contents/Tools/BuildPipeline/Unity.Cecil.Mdb.dll"
+    },
+    {
+      "File": "/Applications/Unity/Hub/Editor/2022.1.15f1/Unity.app/Contents/Tools/BuildPipeline/Unity.Cecil.Pdb.dll"
+    },
+    {
+      "File": "/Applications/Unity/Hub/Editor/2022.1.15f1/Unity.app/Contents/Tools/BuildPipeline/Unity.Cecil.Rocks.dll"
+    },
+    {
+      "File": "/Applications/Unity/Hub/Editor/2022.1.15f1/Unity.app/Contents/Tools/BuildPipeline/Unity.IL2CPP.Api.dll"
+    },
+    {
+      "File": "/Applications/Unity/Hub/Editor/2022.1.15f1/Unity.app/Contents/Tools/BuildPipeline/Unity.IL2CPP.Bee.BuildLogic.dll"
+    },
+    {
+      "File": "/Applications/Unity/Hub/Editor/2022.1.15f1/Unity.app/Contents/Tools/BuildPipeline/Unity.IL2CPP.Bee.IL2CPPExeCompileCppBuildProgram.Data.dll"
+    },
+    {
+      "File": "/Applications/Unity/Hub/Editor/2022.1.15f1/Unity.app/Contents/Tools/BuildPipeline/Unity.Linker.Api.dll"
+    },
+    {
+      "File": "/Applications/Unity/Hub/Editor/2022.1.15f1/Unity.app/Contents/Tools/BuildPipeline/Unity.Options.dll"
+    },
+    {
+      "File": "Library/Bee/2000b0aESkipCompile-inputdata.json"
+    }
+  ],
+  "StatSignatures": [
+    {
+      "File": "/Users/bmmashat/Dropbox/My Mac (Bayan’s MacBook Pro)/Documents/GitHub/bmmashat.github.io/Unity/Library/PackageCache/com.unity.analytics@3.7.1/AnalyticsStandardEvents/Unity.Analytics.StandardEvents.dll"
+    },
+    {
+      "File": "/Users/bmmashat/Dropbox/My Mac (Bayan’s MacBook Pro)/Documents/GitHub/bmmashat.github.io/Unity/Library/PackageCache/com.unity.analytics@3.7.1/Unity.Analytics.Editor.dll"
+    },
+    {
+      "File": "/Users/bmmashat/Dropbox/My Mac (Bayan’s MacBook Pro)/Documents/GitHub/bmmashat.github.io/Unity/Library/PackageCache/com.unity.analytics@3.7.1/Unity.Analytics.Tracker.dll"
+    },
+    {
+      "File": "/Users/bmmashat/Dropbox/My Mac (Bayan’s MacBook Pro)/Documents/GitHub/bmmashat.github.io/Unity/Library/PackageCache/com.unity.ext.nunit@1.0.6/net35/unity-custom/nunit.framework.dll"
+    },
+    {
+      "File": "/Users/bmmashat/Dropbox/My Mac (Bayan’s MacBook Pro)/Documents/GitHub/bmmashat.github.io/Unity/Library/PackageCache/com.unity.nuget.newtonsoft-json@3.0.2/Runtime/Newtonsoft.Json.dll"
+    },
+    {
+      "File": "Assets/csc.rsp"
+    },
+    {
+      "File": "Assets/mcs.rsp"
+    },
+    {
+      "File": "Library/Bee/2000b0aESkipCompile-inputdata.json"
+    },
+    {
+      "File": "Library/ScriptAssemblies/Assembly-CSharp-firstpass.dll"
+    },
+    {
+      "File": "Library/ScriptAssemblies/Assembly-CSharp.dll"
+    },
+    {
+      "File": "Library/ScriptAssemblies/Purchasing.Common.dll"
+    },
+    {
+      "File": "Library/ScriptAssemblies/Unity.2D.PixelPerfect.dll"
+    },
+    {
+      "File": "Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll"
+    },
+    {
+      "File": "Library/ScriptAssemblies/Unity.Services.Analytics.dll"
+    },
+    {
+      "File": "Library/ScriptAssemblies/Unity.Services.Core.Analytics.dll"
+    },
+    {
+      "File": "Library/ScriptAssemblies/Unity.Services.Core.Configuration.dll"
+    },
+    {
+      "File": "Library/ScriptAssemblies/Unity.Services.Core.Device.dll"
+    },
+    {
+      "File": "Library/ScriptAssemblies/Unity.Services.Core.dll"
+    },
+    {
+      "File": "Library/ScriptAssemblies/Unity.Services.Core.Environments.dll"
+    },
+    {
+      "File": "Library/ScriptAssemblies/Unity.Services.Core.Environments.Internal.dll"
+    },
+    {
+      "File": "Library/ScriptAssemblies/Unity.Services.Core.Internal.dll"
+    },
+    {
+      "File": "Library/ScriptAssemblies/Unity.Services.Core.Networking.dll"
+    },
+    {
+      "File": "Library/ScriptAssemblies/Unity.Services.Core.Registration.dll"
+    },
+    {
+      "File": "Library/ScriptAssemblies/Unity.Services.Core.Scheduler.dll"
+    },
+    {
+      "File": "Library/ScriptAssemblies/Unity.Services.Core.Telemetry.dll"
+    },
+    {
+      "File": "Library/ScriptAssemblies/Unity.Services.Core.Threading.dll"
+    },
+    {
+      "File": "Library/ScriptAssemblies/Unity.TextMeshPro.dll"
+    },
+    {
+      "File": "Library/ScriptAssemblies/Unity.Timeline.dll"
+    },
+    {
+      "File": "Library/ScriptAssemblies/UnityEngine.Advertisements.dll"
+    },
+    {
+      "File": "Library/ScriptAssemblies/UnityEngine.Purchasing.AppleCore.dll"
+    },
+    {
+      "File": "Library/ScriptAssemblies/UnityEngine.Purchasing.AppleMacosStub.dll"
+    },
+    {
+      "File": "Library/ScriptAssemblies/UnityEngine.Purchasing.AppleStub.dll"
+    },
+    {
+      "File": "Library/ScriptAssemblies/UnityEngine.Purchasing.Codeless.dll"
+    },
+    {
+      "File": "Library/ScriptAssemblies/UnityEngine.Purchasing.dll"
+    },
+    {
+      "File": "Library/ScriptAssemblies/UnityEngine.Purchasing.SecurityCore.dll"
+    },
+    {
+      "File": "Library/ScriptAssemblies/UnityEngine.Purchasing.SecurityStub.dll"
+    },
+    {
+      "File": "Library/ScriptAssemblies/UnityEngine.Purchasing.Stores.dll"
+    },
+    {
+      "File": "Library/ScriptAssemblies/UnityEngine.Purchasing.WinRTCore.dll"
+    },
+    {
+      "File": "Library/ScriptAssemblies/UnityEngine.Purchasing.WinRTStub.dll"
+    },
+    {
+      "File": "Library/ScriptAssemblies/UnityEngine.SpatialTracking.dll"
+    },
+    {
+      "File": "Library/ScriptAssemblies/UnityEngine.TestRunner.dll"
+    },
+    {
+      "File": "Library/ScriptAssemblies/UnityEngine.UI.dll"
+    },
+    {
+      "File": "Library/ScriptAssemblies/UnityEngine.XR.LegacyInputHelpers.dll"
+    }
+  ],
+  "GlobSignatures": [
+    {
+      "Path": "/Applications/Unity/Hub/Editor/2022.1.15f1/Unity.app/Contents/Tools/BuildPipeline"
+    }
+  ],
+  "ContentDigestExtensions": [
+    ".rsp",
+    ".dll",
+    ".exe",
+    ".pdb"
+  ],
+  "StructuredLogFileName": "Library/Bee/tundra.log.json",
+  "StateFileName": "Library/Bee/TundraBuildState.state",
+  "StateFileNameTmp": "Library/Bee/TundraBuildState.state.tmp",
+  "StateFileNameMapped": "Library/Bee/TundraBuildState.state.map",
+  "ScanCacheFileName": "Library/Bee/tundra.scancache",
+  "ScanCacheFileNameTmp": "Library/Bee/tundra.scancache.tmp",
+  "DigestCacheFileName": "Library/Bee/tundra.digestcache",
+  "DigestCacheFileNameTmp": "Library/Bee/tundra.digestcache.tmp",
+  "EmitDataForBeeWhy": 0,
+        "NamedNodes": {
+          "all_tundra_nodes": 0,
+          "ScriptAssemblies": 1,
+          "ScriptAssembliesAndTypeDB": 4
+        }
+,  "DefaultNodes": [
+    0
+  ],
+  "SharedResources": [],
+  "Scanners": [],
+  "Identifier": "Library/Bee/2000b0aESkipCompile.dag.json",
+  "RelativePathToRoot": "../.."
+}

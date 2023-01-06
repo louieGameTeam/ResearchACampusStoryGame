@@ -1,0 +1,17 @@
+<dialog>
+  <page tag="start">What a lovely day!</page>
+  <if var="initialized" value="true">
+    <true>
+      <page>It’s almost winter—I can feel it.</page>
+      <page>And then we get SNOW!</page>
+    </true>
+    <false>
+      <page>It’s almost winter—I can feel it.</page>
+      <page>And then we get SNOW!</page>
+      <say>I’m here to give out personality tests.</say>
+      <page>Oh I’ve already taken one!</page>
+      <set var="initialized" value="true"/>
+    </false>
+  </if>
+  <page>...</page>
+</dialog>

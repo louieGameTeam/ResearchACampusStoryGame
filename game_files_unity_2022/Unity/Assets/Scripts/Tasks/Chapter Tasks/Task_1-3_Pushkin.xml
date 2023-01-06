@@ -1,0 +1,134 @@
+﻿<level name="Moscow, Russia (1830s)" scene="Ch_1-3">  
+  <move x="40" y="-39"/>
+  <task>
+    <name>TalkToALPHA</name>
+    <description>Talk to ALPHA to get information about your current time period.</description>
+    <steps>
+      <dialogue/>
+    </steps>
+  </task>
+  <task>
+    <name>TalkToPartygoers</name>
+    <description>Talk to some party goers to find out where Alexander Pushkin is.</description>
+    <steps>
+      <dialogue/>
+    </steps>
+  </task>
+  <task>
+    <name>GoToStudy</name>
+    <description>It seems that Alexander Pushkin is in the study.</description>
+    <steps>
+      <location name="StudyCollider"/>
+    </steps>
+  </task>
+  <task>
+    <name>TalkToAP</name>
+    <description>Talk to Alexander Pushkin to get an idea of who he was and what he did.</description>
+    <steps>
+      <dialogue/>
+    </steps>
+  </task>
+  <task>
+    <name>FindPaperThief</name>
+    <description>Find the paper thief somewhere in the Dining Hall.</description>
+    <steps>
+      <location name="DiningHallCollider"/>
+    </steps>
+  </task>
+  <task>
+    <name>GetThePaperBack</name>
+    <description>Confront the paper thief.</description>
+      <steps>
+      <dialogue/>
+    </steps>
+    <completion>
+      <give name="The Contemporary Draft" count="1"/>
+    </completion>
+  </task>
+  <task>
+    <name>FindNG</name>
+    <description>Find Nikolai Gogol in the Ballroom.</description>
+    <steps>
+      <location name="BallroomCollider"/>
+    </steps>
+  </task>
+  <task>
+    <name>TalkToNG1</name>
+    <description>Give Nikolai Gogol Pushkin's paper.</description>
+    <steps>
+      <dialogue/>
+    </steps>
+    <completion>
+      <take name="The Contemporary Draft" count="1"/>
+    </completion>
+  </task>
+  <task>
+    <name>HelpTsarina</name>
+    <description>Help the Tsarina.</description>
+    <steps>
+      <dialogue/>
+    </steps>
+  </task>
+  <task>
+    <name>GoToCourtyard</name>
+    <description>Go to the Courtyard.</description>
+    <steps>
+      <location name="CourtyardCollider"/>
+    </steps>
+  </task>
+  <task>
+    <name>LookForSlippers</name>
+    <description>Ask people in the courtyard about the misplaced slippers.</description>
+    <steps>
+      <dialogue/>
+    </steps>
+  </task>
+   <task>
+    <name>GoToEntry</name>
+    <description>Go to the Entrance Hall.</description>
+    <steps>
+      <location name="EntranceHallCollider"/>
+    </steps>
+  </task>
+  <task>
+    <name>TalkToGuy</name>
+    <description>Talk to the slipper stealer in the Entrance Hall.</description>
+    <steps>
+      <dialogue/>
+    </steps>
+  </task>
+  <task>
+    <name>ReturnToTsarina</name>
+    <description>Talk to the Tsarina.</description>
+    <steps>
+      <dialogue/>
+    </steps>
+  </task>
+  <task>
+    <name>TalkToNG2</name>
+    <description>Convince Nikolai Gogol to help with Pushkin's paper.</description>
+    <steps>
+      <dialogue/>
+    </steps>
+    <completion>
+      <give name="The Contemporary Draft" count="1"/>
+    </completion>
+  </task>
+  <task>
+    <name>ReturnToAP</name>
+    <description>Tell Pushkin the good news about his paper.</description>
+    <steps>
+      <dialogue/>
+    </steps>
+    <completion>
+      <take name="The Contemporary Draft" count="1"/>
+    </completion>
+  </task> 
+  <task>
+    <name>Leave</name>
+    <description>Talk to ALPHA to travel to the next time period.</description>
+    <steps>
+      <dialogue/>
+    </steps>
+  </task>
+</level>

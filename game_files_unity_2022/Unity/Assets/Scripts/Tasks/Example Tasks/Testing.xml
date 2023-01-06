@@ -1,0 +1,24 @@
+﻿<level name="Intro" scene="Sandbox">
+  <move x="40" y="-40"/>
+  <task>
+    <name>Talking</name>
+    <description>Talk to this guy.</description>
+    <steps>
+      <dialogue/>
+    </steps>
+  </task>
+  <task>
+    <name>Item</name>
+    <description>Get these items.</description>
+    <steps>
+      <item name="Notebook" count="1"/>
+    </steps>
+  </task>
+  <task>
+    <name>Location</name>
+    <description>Go to this place.</description>
+    <steps>
+      <location name="Test"/>
+    </steps>
+  </task>
+</level>
