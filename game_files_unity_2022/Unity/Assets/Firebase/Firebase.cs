@@ -105,7 +105,7 @@ public class Firebase : MonoBehaviour
 
     public void GetSchedule(UnityAction<List<float>> onReceived)
     {
-        RestClient.Get<Shedule>(scheduleLink).Then(res =>
+        RestClient.Get<Schedule>(scheduleLink).Then(res =>
         {
             onReceived.Invoke(res.floatDates);
         }).Catch(response => print(response.Message));
@@ -142,7 +142,7 @@ public class Firebase : MonoBehaviour
     }
 
     [SerializeField]
-    class Shedule
+    class Schedule
     {
         public List<string> dates = new List<string>()
         {

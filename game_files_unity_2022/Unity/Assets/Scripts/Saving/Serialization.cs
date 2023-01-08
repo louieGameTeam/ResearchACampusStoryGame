@@ -39,16 +39,13 @@ public static class Serialization
 
             Firebase.instance.SaveData(obj, () =>
             {
-                long ticks = Firebase.instance.currentTime.Ticks;
-                ticks += new System.DateTime(1970, 1, 1).Ticks;
-                System.DateTime time = new System.DateTime(ticks, System.DateTimeKind.Utc);
-                time = time.ToLocalTime();
+                Debug.Log(Firebase.instance.currentTime);
 
                 for (int i = 0; i < Tasks.levels.Count; i++)
                 {
                     float newProgress = Tasks.levels[i].progress;
                     if (newProgress > log.log[i].progress)
-                        log.log[i].lastProgress = time.ToString("G");
+                        log.log[i].lastProgress = Firebase.instance.currentTime.ToString("G");
                     log.log[i].progress = newProgress;
                 }
 
