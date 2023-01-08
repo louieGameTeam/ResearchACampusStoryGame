@@ -39,8 +39,6 @@ public static class Serialization
 
             Firebase.instance.SaveData(obj, () =>
             {
-                Debug.Log(Firebase.instance.currentTime);
-
                 for (int i = 0; i < Tasks.levels.Count; i++)
                 {
                     float newProgress = Tasks.levels[i].progress;
