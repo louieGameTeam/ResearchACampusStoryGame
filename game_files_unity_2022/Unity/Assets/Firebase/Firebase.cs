@@ -43,7 +43,7 @@ public class Firebase : MonoBehaviour
 
     User user = new User();
     SignInData signInData = new SignInData();
-    public System.DateTime currentTime => System.DateTime.Now;
+    public System.DateTime currentTime => GetCurrentTime();
 
     void Awake()
     {
@@ -54,6 +54,12 @@ public class Firebase : MonoBehaviour
         }
         DontDestroyOnLoad(gameObject);
 
+    }
+
+    private System.DateTime GetCurrentTime()
+    {
+        TimeZoneInfo tzi = TimeZoneInfo.FindSystemTimeZoneById("Pacific Standard Time");
+        return TimeZoneInfo.ConvertTime(DateTime.Now, TimeZoneInfo.Local, tzi);
     }
 
     public void SignUp(string email, string password, string fullName, UnityAction onComplete, UnityAction<Proyecto26.RequestException> onFailed)
