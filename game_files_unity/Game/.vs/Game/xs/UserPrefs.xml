@@ -1,0 +1,25 @@
+﻿<Properties StartupConfiguration="{DDFBC18F-9396-3137-9CFE-DEB2CDB74636}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Tasks/Chapter Tasks/Task_3-9_Ending.xml">
+    <Files>
+      <File FileName="Assets/Scripts/Tasks/Tasks.cs" Line="259" Column="20" />
+      <File FileName="Assets/Scripts/Login/LoginControl.cs" Line="28" Column="27" />
+      <File FileName="Assets/Scripts/Main Menu/MainMenu.cs" Line="15" Column="35" />
+      <File FileName="Assets/Scripts/MapSetting.cs" Line="103" Column="22" />
+      <File FileName="Assets/Scripts/MenuControl.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Fade/FadeManager.cs" Line="62" Column="1" NotebookId="1" />
+      <File FileName="Assets/Scripts/Fade/BlackFade.cs" Line="49" Column="38" NotebookId="1" />
+      <File FileName="Assets/Scripts/OptionsUpdater.cs" Line="39" Column="31" NotebookId="1" />
+      <File FileName="Assets/Scripts/Entities/PlayerControl.cs" Line="37" Column="27" NotebookId="1" />
+      <File FileName="Assets/CharacterCreation/Scripts/CustomizationUI.cs" Line="132" Column="1" NotebookId="1" />
+      <File FileName="Assets/Scripts/Tasks/Chapter Tasks/Task_3-9_Ending.xml" Line="50" Column="18" NotebookId="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.Game PreferredExecutionTarget="Unity.Editor" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="Unity.Editor" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
