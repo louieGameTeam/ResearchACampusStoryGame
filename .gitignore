@@ -2,20 +2,20 @@
 #
 # Get latest from https://github.com/github/gitignore/blob/main/Unity.gitignore
 #
-/[Ll]ibrary/
-/[Tt]emp/
-/[Oo]bj/
-/[Bb]uild/
-/[Bb]uilds/
-/[Ll]ogs/
-/[Uu]ser[Ss]ettings/
+game_files_unity_2022/Unity/[Ll]ibrary/
+game_files_unity_2022/Unity/[Tt]emp/
+game_files_unity_2022/Unity/[Oo]bj/
+game_files_unity_2022/Unity/[Bb]uild/
+game_files_unity_2022/Unity/[Bb]uilds/
+game_files_unity_2022/Unity/[Ll]ogs/
+game_files_unity_2022/Unity/[Uu]ser[Ss]ettings/
 
 # MemoryCaptures can get excessive in size.
 # They also could contain extremely sensitive data
-/[Mm]emoryCaptures/
+game_files_unity_2022/Unity/[Mm]emoryCaptures/
 
 # Recordings can get excessive in size
-/[Rr]ecordings/
+game_files_unity_2022/Unity/[Rr]ecordings/
 
 # Uncomment this line if you wish to ignore the asset store tools plugin
 # /[Aa]ssets/AssetStoreTools*
