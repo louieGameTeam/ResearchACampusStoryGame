@@ -40,6 +40,7 @@ public class LoginControl : MonoBehaviour
 
         resetButton.onClick.AddListener(ResetPassword);
         loggedIn = true;
+
         if (MainMenu.isOffline)
             MainPage();
     }
@@ -93,10 +94,12 @@ public class LoginControl : MonoBehaviour
 
     private void SignUpComplete()
     {
+        // First-time sign-up/login, grab schedule
         firebase.GetSchedule(schedule =>
         {
             LoginControl.schedule = schedule;
             scheduleTime = Time.realtimeSinceStartup;
+
             Serialization.cached = new SaveData();
             Serialization.cached.userInfo = new SaveData.UserInfo(signUpData.firstName.text, signUpData.lastName.text, signUpData.email.text);
 
@@ -126,6 +129,13 @@ public class LoginControl : MonoBehaviour
 
     private void LoginComplete()
     {
+        // Always grab schedule data on successful login
+        firebase.GetSchedule(schedule =>
+        {
+            LoginControl.schedule = schedule;
+            scheduleTime = Time.realtimeSinceStartup;
+        });
+
         firebase.GetData(data =>
         {
             Serialization.cached = data;

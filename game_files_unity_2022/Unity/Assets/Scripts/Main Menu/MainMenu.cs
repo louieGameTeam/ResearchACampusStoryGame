@@ -112,7 +112,8 @@ public class MainMenu : MonoBehaviour {
     IEnumerator LevelTimer(Text timer, int index) {
         string week = timer.text;
         float remaining = LoginControl.schedule[index] - (Time.realtimeSinceStartup - LoginControl.scheduleTime);
-        if (remaining < 0) yield break;
+        if (remaining < 0)
+            yield break;
         while (remaining > 0) {
             remaining = LoginControl.schedule[index] - (Time.realtimeSinceStartup - LoginControl.scheduleTime);
             timer.text = week + '\n' + FormatTime(remaining);
@@ -147,7 +148,7 @@ public class MainMenu : MonoBehaviour {
         int lastPlayable = Mathf.Min(index, levelSchedule - 1); // 0-based
         Transform list = levelsGrid.Find("Levels");
         if (!isOffline) {
-            int start = Mathf.Max(0, levelSchedule);
+            int start = Mathf.Max(0, lastPlayable);
             for (int i = start; i < list.childCount; i++) {
                 Text timer = list.GetChild(i).Find("Week").GetComponent<Text>();
                 timer.fontSize = 32;
