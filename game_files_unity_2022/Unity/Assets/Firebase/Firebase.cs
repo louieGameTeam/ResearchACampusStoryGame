@@ -43,8 +43,9 @@ public class Firebase : MonoBehaviour
 
     User user = new User();
     SignInData signInData = new SignInData();
-    public System.DateTime currentTime => LocalizeTimeToPST(DateTime.Now);
-
+    public TimeSpan PSTOffset = new TimeSpan(-7, 0, 0);
+    public System.DateTime currentTime => DateTime.UtcNow - PSTOffset;
+    
     void Awake()
     {
         if (instance != this)
@@ -53,13 +54,6 @@ public class Firebase : MonoBehaviour
             return;
         }
         DontDestroyOnLoad(gameObject);
-
-    }
-
-    public DateTime LocalizeTimeToPST(DateTime inputTime)
-    {
-        TimeZoneInfo tzi = TimeZoneInfo.FindSystemTimeZoneById("Pacific Standard Time");
-        return TimeZoneInfo.ConvertTime(inputTime, TimeZoneInfo.Local, tzi);
     }
 
     public void SignUp(string email, string password, string fullName, UnityAction onComplete, UnityAction<Proyecto26.RequestException> onFailed)
@@ -168,12 +162,12 @@ public class Firebase : MonoBehaviour
             get
             {
                 List<float> result = new List<float>();
-                TimeZoneInfo tzi = TimeZoneInfo.FindSystemTimeZoneById("Pacific Standard Time");
                 foreach (var date in dates)
                 {
                     DateTime startTime;
                     DateTime.TryParseExact(date, dateFormat, null, DateTimeStyles.None, out startTime);
-                    long elapsedTicks = TimeZoneInfo.ConvertTimeToUtc(startTime, tzi).Ticks - DateTime.UtcNow.Ticks;
+
+                    long elapsedTicks = (startTime - Firebase.instance.PSTOffset).Ticks - DateTime.UtcNow.Ticks;
                     TimeSpan elapsedSpan = new TimeSpan(elapsedTicks);
                     result.Add((float)elapsedSpan.TotalSeconds);
                 }
