@@ -39,11 +39,11 @@ public class Firebase : MonoBehaviour
     string progressLink => string.Format(databaseLink, "students/" + user.localId + "/progress");
     string dataLink => string.Format(databaseLink, "students/" + user.localId + "/data");
 
-    const string dateFormat = "MM/dd/yyyy hh:mm tt UTC";
+    const string dateFormat = "MM/dd/yyyy hh:mm tt";
 
     User user = new User();
     SignInData signInData = new SignInData();
-    public System.DateTime currentTime => GetCurrentTime();
+    public System.DateTime currentTime => LocalizeTimeToPST(DateTime.Now);
 
     void Awake()
     {
@@ -56,10 +56,10 @@ public class Firebase : MonoBehaviour
 
     }
 
-    private System.DateTime GetCurrentTime()
+    public DateTime LocalizeTimeToPST(DateTime inputTime)
     {
         TimeZoneInfo tzi = TimeZoneInfo.FindSystemTimeZoneById("Pacific Standard Time");
-        return TimeZoneInfo.ConvertTime(DateTime.Now, TimeZoneInfo.Local, tzi);
+        return TimeZoneInfo.ConvertTime(inputTime, TimeZoneInfo.Local, tzi);
     }
 
     public void SignUp(string email, string password, string fullName, UnityAction onComplete, UnityAction<Proyecto26.RequestException> onFailed)
@@ -168,11 +168,12 @@ public class Firebase : MonoBehaviour
             get
             {
                 List<float> result = new List<float>();
+                TimeZoneInfo tzi = TimeZoneInfo.FindSystemTimeZoneById("Pacific Standard Time");
                 foreach (var date in dates)
                 {
                     DateTime startTime;
                     DateTime.TryParseExact(date, dateFormat, null, DateTimeStyles.None, out startTime);
-                    long elapsedTicks = startTime.Ticks - DateTime.UtcNow.Ticks;
+                    long elapsedTicks = TimeZoneInfo.ConvertTimeToUtc(startTime, tzi).Ticks - DateTime.UtcNow.Ticks;
                     TimeSpan elapsedSpan = new TimeSpan(elapsedTicks);
                     result.Add((float)elapsedSpan.TotalSeconds);
                 }

@@ -157,7 +157,8 @@ public class MainMenu : MonoBehaviour {
         }
         if (demoMode || Tasks.game.finished)
             lastPlayable = list.childCount - 1;
-        if (lastPlayable < 0) return;
+        if (lastPlayable < 0)
+            return;
         activeScene = levels[lastPlayable].scene;
         for (int i = 0; i <= lastPlayable; i++) {
             float p = levels[i].progress;
