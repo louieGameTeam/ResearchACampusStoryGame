@@ -76,9 +76,6 @@
     <Compile Include="Assets\Third Party Assets\Tiled2Unity\Scripts\Editor\ImportTiled2Unity.Material.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Assets\Editor\RemoteSettings\link.xml" />
-  </ItemGroup>
-  <ItemGroup>
     <Reference Include="UnityEngine">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2022.1.15f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
     </Reference>
