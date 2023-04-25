@@ -44,7 +44,7 @@ public class Firebase : MonoBehaviour
     User user = new User();
     SignInData signInData = new SignInData();
     public TimeSpan PSTOffset = new TimeSpan(-7, 0, 0);
-    public System.DateTime currentTime => DateTime.UtcNow - PSTOffset;
+    public System.DateTime currentTime => DateTime.UtcNow + PSTOffset;
     
     void Awake()
     {
