@@ -160,6 +160,8 @@ struct DictionarySerializationSurrogate_2_tCD59AAA88A509DA6659A804AAF1C788940671
 struct DictionarySerializationSurrogate_2_t3195C026D2DE68FE52180CD644C646D8893FAE2D;
 // System.Collections.Generic.Dictionary`2<AmbientClip,System.Single>
 struct Dictionary_2_t7F48011D4F4CB94AF449F32332F172A8FD3B35A7;
+// System.Collections.Generic.Dictionary`2<System.Int32,System.Globalization.CultureInfo>
+struct Dictionary_2_t9FA6D82CAFC18769F7515BB51D1C56DAE09381C3;
 // System.Collections.Generic.Dictionary`2<System.Int32,System.Text.Encoding>
 struct Dictionary_2_t87EDE08B2E48F793A22DE50D6B3CC2E7EBB2DB54;
 // System.Collections.Generic.Dictionary`2<Item,System.Int32>
@@ -172,6 +174,8 @@ struct Dictionary_2_t14FE4A752A83D53771C584E4C8D14E01F2AFD7BA;
 struct Dictionary_2_t1E85CF9786F2C7C796C8CC2EB86ADA13A263ECAB;
 // System.Collections.Generic.Dictionary`2<System.String,SerializableNestedDictionary`2<System.String,System.String>>
 struct Dictionary_2_t0527092F4DECEC005794A408187769CC68DE7EAE;
+// System.Collections.Generic.Dictionary`2<System.String,System.Globalization.CultureInfo>
+struct Dictionary_2_tE1603CE612C16451D1E56FF4D4859D4FE4087C28;
 // System.Collections.Generic.Dictionary`2<System.String,System.Int32>
 struct Dictionary_2_t5C8F46F5D57502270DD9E1DA8303B23C7FE85588;
 // System.Collections.Generic.Dictionary`2<System.String,Item>
@@ -498,6 +502,8 @@ struct BinaryFormatter_t5A79B3E3328D1B8FDE8C57D1E17668AD47A4466F;
 struct Binder_t91BFCE95A7057FADF4D8A1A342AFE52872246235;
 // UnityEngine.UI.Button
 struct Button_t6786514A57F7AFDEE5431112FEA0CAB24F5AE098;
+// System.Globalization.Calendar
+struct Calendar_t0A117CC7532A54C17188C2EFEA1F79DB20DF3A3B;
 // UnityEngine.Canvas
 struct Canvas_t2DB4CEFDFF732884866C83F11ABF75F5AE8FFB26;
 // UnityEngine.CanvasRenderer
@@ -528,16 +534,24 @@ struct CodePageDataItem_t52460FA30AE37F4F26ACB81055E58002262F19F2;
 struct Collider2D_t6A17BA7734600EF3F26588E9ED903617D5B8EB52;
 // ColorSerializationSurrogate
 struct ColorSerializationSurrogate_tC9AB15C0DFF439A4596032A872A7A32E8DC3EA09;
+// System.Globalization.CompareInfo
+struct CompareInfo_t1B1A6AC3486B570C76ABA52149C9BD4CD82F9E57;
 // UnityEngine.Component
 struct Component_t39FBE53E5EFCF4409111FB22C15FF73717632EC3;
 // Controller
 struct Controller_t080F3A02FE42D755CC6A8B605F85CA157ED61BB9;
 // UnityEngine.Coroutine
 struct Coroutine_t85EA685566A254C23F3FD77AB5BDFFFF8799596B;
+// System.Globalization.CultureData
+struct CultureData_tEEFDCF4ECA1BBF6C0C8C94EB3541657245598F9D;
+// System.Globalization.CultureInfo
+struct CultureInfo_t9BA817D41AD55AC8BD07480DD8AC22F8FFA378E0;
 // DialogueVar.DataAccess
 struct DataAccess_t61A32843A6409A265A6E777AF423F5FFE1039B1D;
 // DialogueVar.DataSource
 struct DataSource_t7EE280B457E331DB3EEC55A10343AAD85E754113;
+// System.Globalization.DateTimeFormatInfo
+struct DateTimeFormatInfo_t0457520F9FA7B5C8EAAEB3AD50413B6AEEB7458A;
 // System.Text.DecoderFallback
 struct DecoderFallback_t7324102215E4ED41EC065C02EB501CB0BC23CD90;
 // System.Delegate
@@ -610,6 +624,8 @@ struct Hashtable_tEFC3B6496E6747787D8BB761B51F2AE3A8CFFE2D;
 struct IDictionary_t6D03155AF1FA9083817AA5B6AD7DEEACC26AB220;
 // System.Collections.IEnumerator
 struct IEnumerator_t7B609C2FFA6EB5167D9C62A0C32A21DE2F666DAA;
+// System.IFormatProvider
+struct IFormatProvider_tC202922D43BFF3525109ABF3FB79625F5646AB52;
 // System.Runtime.Serialization.IFormatterConverter
 struct IFormatterConverter_t726606DAC82C384B08C82471313C340968DDB609;
 // RSG.IPendingPromise
@@ -690,6 +706,8 @@ struct MusicControl_t7A811B941D113BF9D1C4E98EC9842C9A727AA4E6;
 struct NPC_tDB816C03B5E3F4AF97E5770EA272AC721310A7AA;
 // System.NotSupportedException
 struct NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A;
+// System.Globalization.NumberFormatInfo
+struct NumberFormatInfo_t8E26808B202927FEBF9064FCFEEA4D6E076E6472;
 // UnityEngine.Object
 struct Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C;
 // Tiled2Unity.ObjectLayer
@@ -798,6 +816,8 @@ struct Text_tD60B2346DAA6666BF0D822FF607F0B220C2B9E62;
 struct TextAsset_t2C64E93DA366D9DE5A8209E1802FA4884AC1BD69;
 // UnityEngine.TextGenerator
 struct TextGenerator_t85D00417640A53953556C01F9D4E7DDE1ABD8FEC;
+// System.Globalization.TextInfo
+struct TextInfo_tD3BAFCFD77418851E7D5CB8D2588F47019E414B4;
 // UnityEngine.Texture2D
 struct Texture2D_tE6505BC111DD8A424A9DBE8E05D7D09E11FFFCF4;
 // Tiled2Unity.TileAnimator
@@ -990,6 +1010,7 @@ IL2CPP_EXTERN_C RuntimeClass* ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF90
 IL2CPP_EXTERN_C RuntimeClass* ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* ColorSerializationSurrogate_tC9AB15C0DFF439A4596032A872A7A32E8DC3EA09_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* Color_tD001788D726C3A7F1379BEED0260B9591F440C1F_il2cpp_TypeInfo_var;
+IL2CPP_EXTERN_C RuntimeClass* CultureInfo_t9BA817D41AD55AC8BD07480DD8AC22F8FFA378E0_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* DataAccess_t61A32843A6409A265A6E777AF423F5FFE1039B1D_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* DataSourceU5BU5D_tF2183D45B632E133B70D78349A0FB52C05A33BA4_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var;
@@ -1176,7 +1197,7 @@ IL2CPP_EXTERN_C String_t* _stringLiteral366FE210AF29F349A6885C522E501EC509B748DF
 IL2CPP_EXTERN_C String_t* _stringLiteral3781CFEEF925855A4B7284E1783A7D715A6333F6;
 IL2CPP_EXTERN_C String_t* _stringLiteral37BC8547FF4191F84CE6B2F0EF08EBA615282893;
 IL2CPP_EXTERN_C String_t* _stringLiteral3818CF5AE60CBE5E09B0C6F2B2C25B959DE1E784;
-IL2CPP_EXTERN_C String_t* _stringLiteral3DCC6243286938BE75C3FA773B9BA71160A2E869;
+IL2CPP_EXTERN_C String_t* _stringLiteral3A971881AF6B7B211E34707E857DEC5F36487877;
 IL2CPP_EXTERN_C String_t* _stringLiteral40E83ACCE0D042A519B971EC5FA530E519DEAD8E;
 IL2CPP_EXTERN_C String_t* _stringLiteral419EDAE428632886DB3EEFCD9F6B9A43032748F7;
 IL2CPP_EXTERN_C String_t* _stringLiteral4609D79FE2FAD95C38B6DA64FC671E8594984D4C;
@@ -1223,6 +1244,7 @@ IL2CPP_EXTERN_C String_t* _stringLiteralA8FDDE698856460168FCA1F6943FA825363F9B72
 IL2CPP_EXTERN_C String_t* _stringLiteralA9145BA894AC681C06F6E921F9054DBC4A6037E9;
 IL2CPP_EXTERN_C String_t* _stringLiteralAA8377C0E73B7693B2561A3D923BAA006D1A5E37;
 IL2CPP_EXTERN_C String_t* _stringLiteralAD01DD502F08BDB50D6927CC1AEA7F3C8AF0E386;
+IL2CPP_EXTERN_C String_t* _stringLiteralADD20BC7D03A763D039BA0E7144FBBCDB0CA6F37;
 IL2CPP_EXTERN_C String_t* _stringLiteralAE75C1F9ACA3689B6DCBA69986E75AE604A117DF;
 IL2CPP_EXTERN_C String_t* _stringLiteralB2BA88FD55B6166C4E9E2B1F6008881258DE4A92;
 IL2CPP_EXTERN_C String_t* _stringLiteralB3959F17E24B23C57ED29A79C653091BC73F5B12;
@@ -1534,6 +1556,10 @@ IL2CPP_EXTERN_C const RuntimeType* Single_t4530F2FF86FCB0DC29F35385CA1BD21BE2947
 IL2CPP_EXTERN_C const RuntimeType* Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7_0_0_0_var;
 IL2CPP_EXTERN_C const RuntimeType* Version_tCAAD750D1E5BCAF684367D94141F1D6CB867D9CC_0_0_0_var;
 struct CertificateHandler_t148B524FA5DB39F3ABADB181CD420FC505C33804_marshaled_com;
+struct CultureData_tEEFDCF4ECA1BBF6C0C8C94EB3541657245598F9D_marshaled_com;
+struct CultureData_tEEFDCF4ECA1BBF6C0C8C94EB3541657245598F9D_marshaled_pinvoke;
+struct CultureInfo_t9BA817D41AD55AC8BD07480DD8AC22F8FFA378E0_marshaled_com;
+struct CultureInfo_t9BA817D41AD55AC8BD07480DD8AC22F8FFA378E0_marshaled_pinvoke;
 struct Delegate_t_marshaled_com;
 struct Delegate_t_marshaled_pinvoke;
 struct DownloadHandler_t1B56C7D3F65D97A1E4B566A14A1E783EA8AE4EBB_marshaled_com;
@@ -2330,6 +2356,149 @@ struct ColorSerializationSurrogate_tC9AB15C0DFF439A4596032A872A7A32E8DC3EA09  : 
 // Proyecto26.Common.Common
 struct Common_t068439077C7CC5EBEFF7350DD7C7E92B598EE2BD  : public RuntimeObject
 {
+};
+
+// System.Globalization.CultureInfo
+struct CultureInfo_t9BA817D41AD55AC8BD07480DD8AC22F8FFA378E0  : public RuntimeObject
+{
+	// System.Boolean System.Globalization.CultureInfo::m_isReadOnly
+	bool ___m_isReadOnly_3;
+	// System.Int32 System.Globalization.CultureInfo::cultureID
+	int32_t ___cultureID_4;
+	// System.Int32 System.Globalization.CultureInfo::parent_lcid
+	int32_t ___parent_lcid_5;
+	// System.Int32 System.Globalization.CultureInfo::datetime_index
+	int32_t ___datetime_index_6;
+	// System.Int32 System.Globalization.CultureInfo::number_index
+	int32_t ___number_index_7;
+	// System.Int32 System.Globalization.CultureInfo::default_calendar_type
+	int32_t ___default_calendar_type_8;
+	// System.Boolean System.Globalization.CultureInfo::m_useUserOverride
+	bool ___m_useUserOverride_9;
+	// System.Globalization.NumberFormatInfo modreq(System.Runtime.CompilerServices.IsVolatile) System.Globalization.CultureInfo::numInfo
+	NumberFormatInfo_t8E26808B202927FEBF9064FCFEEA4D6E076E6472* ___numInfo_10;
+	// System.Globalization.DateTimeFormatInfo modreq(System.Runtime.CompilerServices.IsVolatile) System.Globalization.CultureInfo::dateTimeInfo
+	DateTimeFormatInfo_t0457520F9FA7B5C8EAAEB3AD50413B6AEEB7458A* ___dateTimeInfo_11;
+	// System.Globalization.TextInfo modreq(System.Runtime.CompilerServices.IsVolatile) System.Globalization.CultureInfo::textInfo
+	TextInfo_tD3BAFCFD77418851E7D5CB8D2588F47019E414B4* ___textInfo_12;
+	// System.String System.Globalization.CultureInfo::m_name
+	String_t* ___m_name_13;
+	// System.String System.Globalization.CultureInfo::englishname
+	String_t* ___englishname_14;
+	// System.String System.Globalization.CultureInfo::nativename
+	String_t* ___nativename_15;
+	// System.String System.Globalization.CultureInfo::iso3lang
+	String_t* ___iso3lang_16;
+	// System.String System.Globalization.CultureInfo::iso2lang
+	String_t* ___iso2lang_17;
+	// System.String System.Globalization.CultureInfo::win3lang
+	String_t* ___win3lang_18;
+	// System.String System.Globalization.CultureInfo::territory
+	String_t* ___territory_19;
+	// System.String[] System.Globalization.CultureInfo::native_calendar_names
+	StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* ___native_calendar_names_20;
+	// System.Globalization.CompareInfo modreq(System.Runtime.CompilerServices.IsVolatile) System.Globalization.CultureInfo::compareInfo
+	CompareInfo_t1B1A6AC3486B570C76ABA52149C9BD4CD82F9E57* ___compareInfo_21;
+	// System.Void* System.Globalization.CultureInfo::textinfo_data
+	void* ___textinfo_data_22;
+	// System.Int32 System.Globalization.CultureInfo::m_dataItem
+	int32_t ___m_dataItem_23;
+	// System.Globalization.Calendar System.Globalization.CultureInfo::calendar
+	Calendar_t0A117CC7532A54C17188C2EFEA1F79DB20DF3A3B* ___calendar_24;
+	// System.Globalization.CultureInfo System.Globalization.CultureInfo::parent_culture
+	CultureInfo_t9BA817D41AD55AC8BD07480DD8AC22F8FFA378E0* ___parent_culture_25;
+	// System.Boolean System.Globalization.CultureInfo::constructed
+	bool ___constructed_26;
+	// System.Byte[] System.Globalization.CultureInfo::cached_serialized_form
+	ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031* ___cached_serialized_form_27;
+	// System.Globalization.CultureData System.Globalization.CultureInfo::m_cultureData
+	CultureData_tEEFDCF4ECA1BBF6C0C8C94EB3541657245598F9D* ___m_cultureData_28;
+	// System.Boolean System.Globalization.CultureInfo::m_isInherited
+	bool ___m_isInherited_29;
+};
+
+struct CultureInfo_t9BA817D41AD55AC8BD07480DD8AC22F8FFA378E0_StaticFields
+{
+	// System.Globalization.CultureInfo modreq(System.Runtime.CompilerServices.IsVolatile) System.Globalization.CultureInfo::invariant_culture_info
+	CultureInfo_t9BA817D41AD55AC8BD07480DD8AC22F8FFA378E0* ___invariant_culture_info_0;
+	// System.Object System.Globalization.CultureInfo::shared_table_lock
+	RuntimeObject* ___shared_table_lock_1;
+	// System.Globalization.CultureInfo System.Globalization.CultureInfo::default_current_culture
+	CultureInfo_t9BA817D41AD55AC8BD07480DD8AC22F8FFA378E0* ___default_current_culture_2;
+	// System.Globalization.CultureInfo modreq(System.Runtime.CompilerServices.IsVolatile) System.Globalization.CultureInfo::s_DefaultThreadCurrentUICulture
+	CultureInfo_t9BA817D41AD55AC8BD07480DD8AC22F8FFA378E0* ___s_DefaultThreadCurrentUICulture_34;
+	// System.Globalization.CultureInfo modreq(System.Runtime.CompilerServices.IsVolatile) System.Globalization.CultureInfo::s_DefaultThreadCurrentCulture
+	CultureInfo_t9BA817D41AD55AC8BD07480DD8AC22F8FFA378E0* ___s_DefaultThreadCurrentCulture_35;
+	// System.Collections.Generic.Dictionary`2<System.Int32,System.Globalization.CultureInfo> System.Globalization.CultureInfo::shared_by_number
+	Dictionary_2_t9FA6D82CAFC18769F7515BB51D1C56DAE09381C3* ___shared_by_number_36;
+	// System.Collections.Generic.Dictionary`2<System.String,System.Globalization.CultureInfo> System.Globalization.CultureInfo::shared_by_name
+	Dictionary_2_tE1603CE612C16451D1E56FF4D4859D4FE4087C28* ___shared_by_name_37;
+	// System.Globalization.CultureInfo System.Globalization.CultureInfo::s_UserPreferredCultureInfoInAppX
+	CultureInfo_t9BA817D41AD55AC8BD07480DD8AC22F8FFA378E0* ___s_UserPreferredCultureInfoInAppX_38;
+	// System.Boolean System.Globalization.CultureInfo::IsTaiwanSku
+	bool ___IsTaiwanSku_39;
+};
+// Native definition for P/Invoke marshalling of System.Globalization.CultureInfo
+struct CultureInfo_t9BA817D41AD55AC8BD07480DD8AC22F8FFA378E0_marshaled_pinvoke
+{
+	int32_t ___m_isReadOnly_3;
+	int32_t ___cultureID_4;
+	int32_t ___parent_lcid_5;
+	int32_t ___datetime_index_6;
+	int32_t ___number_index_7;
+	int32_t ___default_calendar_type_8;
+	int32_t ___m_useUserOverride_9;
+	NumberFormatInfo_t8E26808B202927FEBF9064FCFEEA4D6E076E6472* ___numInfo_10;
+	DateTimeFormatInfo_t0457520F9FA7B5C8EAAEB3AD50413B6AEEB7458A* ___dateTimeInfo_11;
+	TextInfo_tD3BAFCFD77418851E7D5CB8D2588F47019E414B4* ___textInfo_12;
+	char* ___m_name_13;
+	char* ___englishname_14;
+	char* ___nativename_15;
+	char* ___iso3lang_16;
+	char* ___iso2lang_17;
+	char* ___win3lang_18;
+	char* ___territory_19;
+	char** ___native_calendar_names_20;
+	CompareInfo_t1B1A6AC3486B570C76ABA52149C9BD4CD82F9E57* ___compareInfo_21;
+	void* ___textinfo_data_22;
+	int32_t ___m_dataItem_23;
+	Calendar_t0A117CC7532A54C17188C2EFEA1F79DB20DF3A3B* ___calendar_24;
+	CultureInfo_t9BA817D41AD55AC8BD07480DD8AC22F8FFA378E0_marshaled_pinvoke* ___parent_culture_25;
+	int32_t ___constructed_26;
+	Il2CppSafeArray/*NONE*/* ___cached_serialized_form_27;
+	CultureData_tEEFDCF4ECA1BBF6C0C8C94EB3541657245598F9D_marshaled_pinvoke* ___m_cultureData_28;
+	int32_t ___m_isInherited_29;
+};
+// Native definition for COM marshalling of System.Globalization.CultureInfo
+struct CultureInfo_t9BA817D41AD55AC8BD07480DD8AC22F8FFA378E0_marshaled_com
+{
+	int32_t ___m_isReadOnly_3;
+	int32_t ___cultureID_4;
+	int32_t ___parent_lcid_5;
+	int32_t ___datetime_index_6;
+	int32_t ___number_index_7;
+	int32_t ___default_calendar_type_8;
+	int32_t ___m_useUserOverride_9;
+	NumberFormatInfo_t8E26808B202927FEBF9064FCFEEA4D6E076E6472* ___numInfo_10;
+	DateTimeFormatInfo_t0457520F9FA7B5C8EAAEB3AD50413B6AEEB7458A* ___dateTimeInfo_11;
+	TextInfo_tD3BAFCFD77418851E7D5CB8D2588F47019E414B4* ___textInfo_12;
+	Il2CppChar* ___m_name_13;
+	Il2CppChar* ___englishname_14;
+	Il2CppChar* ___nativename_15;
+	Il2CppChar* ___iso3lang_16;
+	Il2CppChar* ___iso2lang_17;
+	Il2CppChar* ___win3lang_18;
+	Il2CppChar* ___territory_19;
+	Il2CppChar** ___native_calendar_names_20;
+	CompareInfo_t1B1A6AC3486B570C76ABA52149C9BD4CD82F9E57* ___compareInfo_21;
+	void* ___textinfo_data_22;
+	int32_t ___m_dataItem_23;
+	Calendar_t0A117CC7532A54C17188C2EFEA1F79DB20DF3A3B* ___calendar_24;
+	CultureInfo_t9BA817D41AD55AC8BD07480DD8AC22F8FFA378E0_marshaled_com* ___parent_culture_25;
+	int32_t ___constructed_26;
+	Il2CppSafeArray/*NONE*/* ___cached_serialized_form_27;
+	CultureData_tEEFDCF4ECA1BBF6C0C8C94EB3541657245598F9D_marshaled_com* ___m_cultureData_28;
+	int32_t ___m_isInherited_29;
 };
 
 // DialogueVar.DataAccess
@@ -8052,8 +8221,10 @@ inline void DictionarySerializationSurrogate_2__ctor_m38C1C762901E4EFBDEE5478AB7
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void BinaryFormatter_set_SurrogateSelector_m489336AE3997DB4E7950C5AFAE9CB465E7093358_inline (BinaryFormatter_t5A79B3E3328D1B8FDE8C57D1E17668AD47A4466F* __this, RuntimeObject* ___value0, const RuntimeMethod* method) ;
 // System.DateTime Firebase::get_currentTime()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR DateTime_t66193957C73913903DDAD89FEDC46139BCA5802D Firebase_get_currentTime_mB5220EAE3E516D1CCFE2A0EF3B55326519248630 (Firebase_tF8B9B878CC42B31DEFF61748288A461B4472FEBE* __this, const RuntimeMethod* method) ;
-// System.String System.DateTime::ToString(System.String)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* DateTime_ToString_m6963A84785C320DA776C9FCFFEDAF26C8F1A8D78 (DateTime_t66193957C73913903DDAD89FEDC46139BCA5802D* __this, String_t* ___format0, const RuntimeMethod* method) ;
+// System.Globalization.CultureInfo System.Globalization.CultureInfo::GetCultureInfo(System.String)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR CultureInfo_t9BA817D41AD55AC8BD07480DD8AC22F8FFA378E0* CultureInfo_GetCultureInfo_mF07467FB427362952D26EAC992010EB03CE41511 (String_t* ___name0, const RuntimeMethod* method) ;
+// System.String System.DateTime::ToString(System.String,System.IFormatProvider)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* DateTime_ToString_m27637E1131A10BED8A95639D64339023D5EBBF00 (DateTime_t66193957C73913903DDAD89FEDC46139BCA5802D* __this, String_t* ___format0, RuntimeObject* ___provider1, const RuntimeMethod* method) ;
 // System.Void Firebase::SaveProgress(GameLog,UnityEngine.Events.UnityAction)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Firebase_SaveProgress_m2CCEC2DBCC6884A78A4AB3BB0FD49AE15913303A (Firebase_tF8B9B878CC42B31DEFF61748288A461B4472FEBE* __this, GameLog_tCC85857BFFED3CC88489D437CB2785DEE7DAD583* ___gameLog0, UnityAction_t11A1F3B953B365C072A5DCC32677EE1796A962A7* ___onComplete1, const RuntimeMethod* method) ;
 // System.Void System.Runtime.Serialization.SerializationInfo::AddValue(System.String,System.Single)
@@ -15985,7 +16156,11 @@ IL_0105:
 		//     {
 		//         float newProgress = Tasks.levels[i].progress;
 		//         if (newProgress > log.log[i].progress)
-		//             log.log[i].lastProgress = Firebase.instance.currentTime.ToString("G");
+		//         {
+		//             log.log[i].lastProgress = Firebase.instance.currentTime.ToString("M/d/yyyy h:mm:ss tt", CultureInfo.GetCultureInfo("en-US"));
+		//             // Debug.Log($"SERIALIZED STRING: {Firebase.instance.currentTime.ToString("M/d/yyyy h:mm:ss tt", CultureInfo.GetCultureInfo("en-US"))}");
+		//         }
+		// 
 		//         log.log[i].progress = newProgress;
 		//     }
 		// 
@@ -16245,13 +16420,15 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__DisplayClass4_0_U3CSerializeU3E
 	static bool s_Il2CppMethodInitialized;
 	if (!s_Il2CppMethodInitialized)
 	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&CultureInfo_t9BA817D41AD55AC8BD07480DD8AC22F8FFA378E0_il2cpp_TypeInfo_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&List_1_get_Count_mD704624F329B9768AB7E557ABCCAFB3E3CDEED88_RuntimeMethod_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&List_1_get_Item_m6B42BA0E16B69DD7C44316824EF112281925B421_RuntimeMethod_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&List_1_get_Item_mEDC50F2855CFD384BB790E944F3DD6B116C06DBE_RuntimeMethod_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Serialization_t18DA609FA71535A155166109436F8BC3828B42DB_il2cpp_TypeInfo_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&U3CU3Ec__DisplayClass4_0_U3CSerializeU3Eb__1_m6A085ED0FD38D738796AF7E107550C52995CD8AA_RuntimeMethod_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&UnityAction_t11A1F3B953B365C072A5DCC32677EE1796A962A7_il2cpp_TypeInfo_var);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral3DCC6243286938BE75C3FA773B9BA71160A2E869);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral3A971881AF6B7B211E34707E857DEC5F36487877);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralADD20BC7D03A763D039BA0E7144FBBCDB0CA6F37);
 		s_Il2CppMethodInitialized = true;
 	}
 	int32_t V_0 = 0;
@@ -16268,7 +16445,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__DisplayClass4_0_U3CSerializeU3E
 	{
 		// for (int i = 0; i < Tasks.levels.Count; i++)
 		V_0 = 0;
-		goto IL_0073;
+		goto IL_007d;
 	}
 
 IL_0004:
@@ -16291,11 +16468,11 @@ IL_0004:
 		float L_9 = L_8->___progress_2;
 		if ((!(((float)L_4) > ((float)L_9))))
 		{
-			goto IL_0059;
+			goto IL_0063;
 		}
 	}
 	{
-		// log.log[i].lastProgress = Firebase.instance.currentTime.ToString("G");
+		// log.log[i].lastProgress = Firebase.instance.currentTime.ToString("M/d/yyyy h:mm:ss tt", CultureInfo.GetCultureInfo("en-US"));
 		GameLog_tCC85857BFFED3CC88489D437CB2785DEE7DAD583* L_10 = ((Serialization_t18DA609FA71535A155166109436F8BC3828B42DB_StaticFields*)il2cpp_codegen_static_fields_for(Serialization_t18DA609FA71535A155166109436F8BC3828B42DB_il2cpp_TypeInfo_var))->___log_2;
 		List_1_t55F71DAA09DA814E45EC8FA60333B35F7512E303* L_11 = L_10->___log_0;
 		int32_t L_12 = V_0;
@@ -16306,36 +16483,39 @@ IL_0004:
 		DateTime_t66193957C73913903DDAD89FEDC46139BCA5802D L_15;
 		L_15 = Firebase_get_currentTime_mB5220EAE3E516D1CCFE2A0EF3B55326519248630(L_14, NULL);
 		V_2 = L_15;
-		String_t* L_16;
-		L_16 = DateTime_ToString_m6963A84785C320DA776C9FCFFEDAF26C8F1A8D78((&V_2), _stringLiteral3DCC6243286938BE75C3FA773B9BA71160A2E869, NULL);
-		L_13->___lastProgress_3 = L_16;
-		Il2CppCodeGenWriteBarrier((void**)(&L_13->___lastProgress_3), (void*)L_16);
+		il2cpp_codegen_runtime_class_init_inline(CultureInfo_t9BA817D41AD55AC8BD07480DD8AC22F8FFA378E0_il2cpp_TypeInfo_var);
+		CultureInfo_t9BA817D41AD55AC8BD07480DD8AC22F8FFA378E0* L_16;
+		L_16 = CultureInfo_GetCultureInfo_mF07467FB427362952D26EAC992010EB03CE41511(_stringLiteral3A971881AF6B7B211E34707E857DEC5F36487877, NULL);
+		String_t* L_17;
+		L_17 = DateTime_ToString_m27637E1131A10BED8A95639D64339023D5EBBF00((&V_2), _stringLiteralADD20BC7D03A763D039BA0E7144FBBCDB0CA6F37, L_16, NULL);
+		L_13->___lastProgress_3 = L_17;
+		Il2CppCodeGenWriteBarrier((void**)(&L_13->___lastProgress_3), (void*)L_17);
 	}
 
-IL_0059:
+IL_0063:
 	{
 		// log.log[i].progress = newProgress;
-		GameLog_tCC85857BFFED3CC88489D437CB2785DEE7DAD583* L_17 = ((Serialization_t18DA609FA71535A155166109436F8BC3828B42DB_StaticFields*)il2cpp_codegen_static_fields_for(Serialization_t18DA609FA71535A155166109436F8BC3828B42DB_il2cpp_TypeInfo_var))->___log_2;
-		List_1_t55F71DAA09DA814E45EC8FA60333B35F7512E303* L_18 = L_17->___log_0;
-		int32_t L_19 = V_0;
-		LevelLog_t1BFE0C8616EBF92F8D6195D6B85246499E622238* L_20;
-		L_20 = List_1_get_Item_mEDC50F2855CFD384BB790E944F3DD6B116C06DBE(L_18, L_19, List_1_get_Item_mEDC50F2855CFD384BB790E944F3DD6B116C06DBE_RuntimeMethod_var);
-		float L_21 = V_1;
-		L_20->___progress_2 = L_21;
-		// for (int i = 0; i < Tasks.levels.Count; i++)
-		int32_t L_22 = V_0;
-		V_0 = ((int32_t)il2cpp_codegen_add(L_22, 1));
-	}
-
-IL_0073:
-	{
+		GameLog_tCC85857BFFED3CC88489D437CB2785DEE7DAD583* L_18 = ((Serialization_t18DA609FA71535A155166109436F8BC3828B42DB_StaticFields*)il2cpp_codegen_static_fields_for(Serialization_t18DA609FA71535A155166109436F8BC3828B42DB_il2cpp_TypeInfo_var))->___log_2;
+		List_1_t55F71DAA09DA814E45EC8FA60333B35F7512E303* L_19 = L_18->___log_0;
+		int32_t L_20 = V_0;
+		LevelLog_t1BFE0C8616EBF92F8D6195D6B85246499E622238* L_21;
+		L_21 = List_1_get_Item_mEDC50F2855CFD384BB790E944F3DD6B116C06DBE(L_19, L_20, List_1_get_Item_mEDC50F2855CFD384BB790E944F3DD6B116C06DBE_RuntimeMethod_var);
+		float L_22 = V_1;
+		L_21->___progress_2 = L_22;
 		// for (int i = 0; i < Tasks.levels.Count; i++)
 		int32_t L_23 = V_0;
-		List_1_t55401CEC543418D62641C8AC2EB6DA6C7B840D77* L_24;
-		L_24 = Tasks_get_levels_m5D0FF0688827A951955CC147F199DC753972408D(NULL);
-		int32_t L_25;
-		L_25 = List_1_get_Count_mD704624F329B9768AB7E557ABCCAFB3E3CDEED88_inline(L_24, List_1_get_Count_mD704624F329B9768AB7E557ABCCAFB3E3CDEED88_RuntimeMethod_var);
-		if ((((int32_t)L_23) < ((int32_t)L_25)))
+		V_0 = ((int32_t)il2cpp_codegen_add(L_23, 1));
+	}
+
+IL_007d:
+	{
+		// for (int i = 0; i < Tasks.levels.Count; i++)
+		int32_t L_24 = V_0;
+		List_1_t55401CEC543418D62641C8AC2EB6DA6C7B840D77* L_25;
+		L_25 = Tasks_get_levels_m5D0FF0688827A951955CC147F199DC753972408D(NULL);
+		int32_t L_26;
+		L_26 = List_1_get_Count_mD704624F329B9768AB7E557ABCCAFB3E3CDEED88_inline(L_25, List_1_get_Count_mD704624F329B9768AB7E557ABCCAFB3E3CDEED88_RuntimeMethod_var);
+		if ((((int32_t)L_24) < ((int32_t)L_26)))
 		{
 			goto IL_0004;
 		}
@@ -16346,36 +16526,36 @@ IL_0073:
 		//     saving = false;
 		//     cached = obj;
 		// });
-		Firebase_tF8B9B878CC42B31DEFF61748288A461B4472FEBE* L_26;
-		L_26 = Firebase_get_instance_m91CD572A6EBD80CBAF46E0EC5D5BFB4920870D9A(NULL);
-		GameLog_tCC85857BFFED3CC88489D437CB2785DEE7DAD583* L_27 = ((Serialization_t18DA609FA71535A155166109436F8BC3828B42DB_StaticFields*)il2cpp_codegen_static_fields_for(Serialization_t18DA609FA71535A155166109436F8BC3828B42DB_il2cpp_TypeInfo_var))->___log_2;
-		UnityAction_t11A1F3B953B365C072A5DCC32677EE1796A962A7* L_28 = __this->___U3CU3E9__1_1;
-		UnityAction_t11A1F3B953B365C072A5DCC32677EE1796A962A7* L_29 = L_28;
-		G_B6_0 = L_29;
-		G_B6_1 = L_27;
-		G_B6_2 = L_26;
-		if (L_29)
+		Firebase_tF8B9B878CC42B31DEFF61748288A461B4472FEBE* L_27;
+		L_27 = Firebase_get_instance_m91CD572A6EBD80CBAF46E0EC5D5BFB4920870D9A(NULL);
+		GameLog_tCC85857BFFED3CC88489D437CB2785DEE7DAD583* L_28 = ((Serialization_t18DA609FA71535A155166109436F8BC3828B42DB_StaticFields*)il2cpp_codegen_static_fields_for(Serialization_t18DA609FA71535A155166109436F8BC3828B42DB_il2cpp_TypeInfo_var))->___log_2;
+		UnityAction_t11A1F3B953B365C072A5DCC32677EE1796A962A7* L_29 = __this->___U3CU3E9__1_1;
+		UnityAction_t11A1F3B953B365C072A5DCC32677EE1796A962A7* L_30 = L_29;
+		G_B6_0 = L_30;
+		G_B6_1 = L_28;
+		G_B6_2 = L_27;
+		if (L_30)
 		{
-			G_B7_0 = L_29;
-			G_B7_1 = L_27;
-			G_B7_2 = L_26;
-			goto IL_00a9;
+			G_B7_0 = L_30;
+			G_B7_1 = L_28;
+			G_B7_2 = L_27;
+			goto IL_00b6;
 		}
 	}
 	{
-		UnityAction_t11A1F3B953B365C072A5DCC32677EE1796A962A7* L_30 = (UnityAction_t11A1F3B953B365C072A5DCC32677EE1796A962A7*)il2cpp_codegen_object_new(UnityAction_t11A1F3B953B365C072A5DCC32677EE1796A962A7_il2cpp_TypeInfo_var);
-		UnityAction__ctor_mC53E20D6B66E0D5688CD81B88DBB34F5A58B7131(L_30, __this, (intptr_t)((void*)U3CU3Ec__DisplayClass4_0_U3CSerializeU3Eb__1_m6A085ED0FD38D738796AF7E107550C52995CD8AA_RuntimeMethod_var), NULL);
-		UnityAction_t11A1F3B953B365C072A5DCC32677EE1796A962A7* L_31 = L_30;
-		V_3 = L_31;
-		__this->___U3CU3E9__1_1 = L_31;
-		Il2CppCodeGenWriteBarrier((void**)(&__this->___U3CU3E9__1_1), (void*)L_31);
-		UnityAction_t11A1F3B953B365C072A5DCC32677EE1796A962A7* L_32 = V_3;
-		G_B7_0 = L_32;
+		UnityAction_t11A1F3B953B365C072A5DCC32677EE1796A962A7* L_31 = (UnityAction_t11A1F3B953B365C072A5DCC32677EE1796A962A7*)il2cpp_codegen_object_new(UnityAction_t11A1F3B953B365C072A5DCC32677EE1796A962A7_il2cpp_TypeInfo_var);
+		UnityAction__ctor_mC53E20D6B66E0D5688CD81B88DBB34F5A58B7131(L_31, __this, (intptr_t)((void*)U3CU3Ec__DisplayClass4_0_U3CSerializeU3Eb__1_m6A085ED0FD38D738796AF7E107550C52995CD8AA_RuntimeMethod_var), NULL);
+		UnityAction_t11A1F3B953B365C072A5DCC32677EE1796A962A7* L_32 = L_31;
+		V_3 = L_32;
+		__this->___U3CU3E9__1_1 = L_32;
+		Il2CppCodeGenWriteBarrier((void**)(&__this->___U3CU3E9__1_1), (void*)L_32);
+		UnityAction_t11A1F3B953B365C072A5DCC32677EE1796A962A7* L_33 = V_3;
+		G_B7_0 = L_33;
 		G_B7_1 = G_B6_1;
 		G_B7_2 = G_B6_2;
 	}
 
-IL_00a9:
+IL_00b6:
 	{
 		Firebase_SaveProgress_m2CCEC2DBCC6884A78A4AB3BB0FD49AE15913303A(G_B7_2, G_B7_1, G_B7_0, NULL);
 		// });
