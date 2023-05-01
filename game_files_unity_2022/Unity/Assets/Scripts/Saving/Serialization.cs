@@ -3,6 +3,7 @@ using UnityEngine;
 using System.Runtime.Serialization;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
+using System.Globalization;
 using CharacterCreation;
 using Proyecto26;
 using UnityEngine.Events;
@@ -44,9 +45,8 @@ public static class Serialization
                     float newProgress = Tasks.levels[i].progress;
                     if (newProgress > log.log[i].progress)
                     {
-                        log.log[i].lastProgress = Firebase.instance.currentTime.ToString("G");
-                        Debug.Log($"CURRENT TIME: {Firebase.instance.currentTime}");
-                        Debug.Log($"SERIALIZED STRING: {Firebase.instance.currentTime.ToString("G")}");
+                        log.log[i].lastProgress = Firebase.instance.currentTime.ToString("M/d/yyyy h:mm:ss tt", CultureInfo.GetCultureInfo("en-US"));
+                        // Debug.Log($"SERIALIZED STRING: {Firebase.instance.currentTime.ToString("M/d/yyyy h:mm:ss tt", CultureInfo.GetCultureInfo("en-US"))}");
                     }
                         
                     log.log[i].progress = newProgress;
