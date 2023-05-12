@@ -12,10 +12,10 @@ import json, csv, pandas
 
 # Filenames
 # ALL RELEVANT INPUT AND OUTPUT FILES SHOULD BE IN THE SAME DIRECTORY AS THE SCRIPT FOR AN EASIER LIFE
-GRADES_INPUT_CSV = '2023 WQ Grades.csv'
+GRADES_INPUT_CSV = '2023 SQ Grades.csv'
 ROSTER_XLS_LIST = ['Section 1 Roster.xls', 'Section 2 Roster.xls']
 DATABASE_JSON = 'researchacampusstory-default-rtdb-export.json'
-GRADES_OUTPUT_CSV = 'BIM 088V 001 WQ2023 UpdatedGrades.csv'
+GRADES_OUTPUT_CSV = 'BIM 088V SQ2023 UpdatedGrades.csv'
 
 # Column headers in roster
 ROSTER_STUDENT_ID = 'Student ID'
@@ -41,15 +41,9 @@ FIRST_NAME = 'firstName'
 LAST_NAME = 'lastName'
 
 DEFAULT = 'default'
-# Additional entries may need to be added to this dict if more unexpected date/time strings appear in database input
-# This may become unnecessary in the future if the data saved to the database is made uniform with a UTC timezone format
-TZ_INFOS = {DEFAULT: tz.gettz('Pacific Standard Time'), 'SA': tz.gettz('Eastern Standard Time'), 'CH': tz.gettz('China Standard Time')}
 
-# Saved to variable to remain fixed during runtime
-CUR_DATE_TIME = datetime.now(tz = TZ_INFOS[DEFAULT])
-
-# Current Date/Time override if grades are provided late
-CUR_DATE_TIME = CUR_DATE_TIME.replace(day = 7)
+# Saved to variable to remain fixed during runtime, script assumed to be run from a machine using Pacific Standard Time
+CUR_DATE_TIME = datetime.now()
 
 
 
@@ -101,10 +95,7 @@ def ConstructReleaseDateDict(gameFields: dict, numLevels: int) -> dict[int: date
     output = dict()
 
     for levelNum in range(numLevels):
-        parse = parser.parse(' '.join(gameFields[SCHEDULE][DATES][levelNum].split(' ')[0:-1]))
-
-        if parse.tzinfo == None:
-            parse = parse.replace(tzinfo = TZ_INFOS[DEFAULT])
+        parse = parser.parse(gameFields[SCHEDULE][DATES][levelNum])
 
         output[levelNum] = parse
 
@@ -114,55 +105,24 @@ def ConstructDueDateDict(gameFields: dict, numLevels: int) -> dict[int: datetime
     output = dict()
 
     for levelNum in range(numLevels):
-        parse = parser.parse(' '.join(gameFields[SCHEDULE][DUE_DATES][levelNum].split(' ')[0:-1]))
-
-        if parse.tzinfo == None:
-            parse = parse.replace(tzinfo = TZ_INFOS[DEFAULT])
+        parse = parser.parse(gameFields[SCHEDULE][DUE_DATES][levelNum])
 
         output[levelNum] = parse
 
+    
     return output
 
 
 
-# May need to revisit helper function tzinfo once Unity code refactored
+# Assumes all provided times have already been localized to Pacific Standard Time
 def ConstructGradeList(levels: dict, curDateTime: datetime, releaseDateDict: dict, dueDateDict: dict) -> list[int]:
-    def CleanLastProgress(lastProgress: str) -> datetime:
-        # Contingencies for handling improper datetime formats, assumes most timezones are going to be in Pacific Standard Time
-        lastProgress = lastProgress.replace('-', '/')
-
-        try:
-            parsed = parser.parse(lastProgress, tzinfos = TZ_INFOS)
-
-            if parsed.tzinfo == None:
-                return parsed.replace(tzinfo = TZ_INFOS[DEFAULT])
-
-            return parsed
-
-        except parser.ParserError:
-            isPM = False
-            if 'PM' in lastProgress:
-                isPM = True
-                newInput = lastProgress.replace('PM', '')
-            elif 'AM' in lastProgress:
-                newInput = lastProgress.replace('AM', '')
-
-            newParse = parser.parse(newInput, tzinfos = TZ_INFOS)
-            if newParse.tzinfo == None:
-                newParse = newParse.replace(tzinfo = TZ_INFOS[DEFAULT])
-            if isPM and newParse.hour < 12:
-                return newParse.replace(hour = newParse.hour + 12)
-
-            return newParse
-
-
     progressList = list()
 
     for levelNum, levelFields in levels.items():
         # If there is progress data
         if levelFields[LAST_PROGRESS] != '':
             # Clean LAST_PROGRESS format to be usable in comparison against due dates
-            lastProgress = CleanLastProgress(levelFields[LAST_PROGRESS])
+            lastProgress = parser.parse(levelFields[LAST_PROGRESS])
 
             # If the level was completed before the due date
             if lastProgress <= dueDateDict[levelNum] and levelFields[PROGRESS] == 1:
@@ -324,6 +284,7 @@ if exists(GRADES_INPUT_CSV):
         csvReader = csv.reader(inputCSVFile)
         COLUMN_HEADERS = csvReader.__next__()[0:15] # Grab column headers
         csvReader.__next__() # Skip next row of column headers, thanks Canvas
+        csvReader.__next__() # Skip Points Possible header, wasn't a problem in WQ2023 but was in SQ2023
         loadedGradeDict = ConstructLoadedGradeDict(csvReader)
 
     # Update the loadedGradeDict with database data
