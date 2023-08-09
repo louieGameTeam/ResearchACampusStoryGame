@@ -146,6 +146,8 @@ public class LoginControl : MonoBehaviour
         },
         () =>
         {
+            //Bug fixable here
+            MainPage();
             ShowMessage("Server missing data!");
         });
 
