@@ -146,7 +146,9 @@ public class LoginControl : MonoBehaviour
         },
         () =>
         {
+            //If no player data, redirect back to main menu and sort there
             ShowMessage("Server missing data!");
+            MainPage();
         });
 
         firebase.GetProgress(data =>
