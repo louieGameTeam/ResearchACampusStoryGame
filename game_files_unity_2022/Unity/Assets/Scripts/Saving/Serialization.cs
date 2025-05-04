@@ -18,9 +18,9 @@ public static class Serialization
     public static float lastTime = 0;
     public static void Serialize(string path, SaveData obj)
     {
+	// Debug.Log("Attempt Serialize");
         if (!MainMenu.isOffline)
         {
-
             if (saving) return;
             saving = true;
 
@@ -48,17 +48,17 @@ public static class Serialization
                         log.log[i].lastProgress = Firebase.instance.currentTime.ToString("M/d/yyyy h:mm:ss tt", CultureInfo.GetCultureInfo("en-US"));
                         // Debug.Log($"SERIALIZED STRING: {Firebase.instance.currentTime.ToString("M/d/yyyy h:mm:ss tt", CultureInfo.GetCultureInfo("en-US"))}");
                     }
-                        
+
                     log.log[i].progress = newProgress;
                 }
 
                 Firebase.instance.SaveProgress(log, () =>
                 {
-                    saving = false;
                     cached = obj;
                 });
 
             });
+            saving = false; // Needed in case save fails once (i.e. momentary network drop). Otherwise will never attempt to save again.
             //new LogEventRequest()
             //    .SetEventKey("GET_DATE")
             //    .Send((response) =>
