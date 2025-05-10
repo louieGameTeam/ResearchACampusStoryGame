@@ -255,7 +255,7 @@ public class ChatManager : MonoBehaviour {
     // What happens when you click or press enter on a selected response
     void PickResponse () {
 		bool onPrevious = currentlySelected == 0 && displayedOptions.x != 0;
-		bool onMore = currentlySelected == optionsWithOverflow.Count - 1 && displayedOptions.y != chatting.options.Count - 1;
+		bool onMore = ((currentlySelected == optionsWithOverflow.Count - 1) && (displayedOptions.y != chatting.options.Count - 1));
 		if (chatting.currentType == Dialog.NodeType.Reply && (onPrevious || onMore)) {
 			if (onMore) {
 				displayedOptions = new Vector2(displayedOptions.y + 1, chatting.options.Count - 1);
@@ -350,9 +350,10 @@ public class ChatManager : MonoBehaviour {
 			if (item.x == displayedOptions.x)
 				displayedOptions = item;
 		}
-		for (int i = (int)displayedOptions.x; i <= (int)displayedOptions.y; i++)
+		for (int i = (int)displayedOptions.x; i <= (int)displayedOptions.y; i++) {
             optionsWithOverflow.Add(chatting.options[i]);
-		if (displayedOptions.y != chatting.options.Count - 1) {
+		}
+		if ((displayedOptions.y < chatting.options.Count - 1) && chatting.options.Count > 1) {
 			optionsWithOverflow.Add (GetCM().nextPage);
 		}
 		currentlySelected = Mathf.Clamp(currentlySelected + input, 0, optionsWithOverflow.Count - 1);
@@ -513,7 +514,7 @@ public class ChatManager : MonoBehaviour {
 						pageOverflow = input.Substring (i + 1, input.Length - i - 1);
 						i = input.Length;
 						continue;
-					} else if (chatting.currentType == Dialog.NodeType.Reply) {
+					} else if (chatting.currentType == Dialog.NodeType.Reply && optionsWithOverflow.Count > 2) {
 						displayedOptions -= Vector2.up * 1;
 						optionsWithOverflow.RemoveAt (optionsWithOverflow.Count - 2);
 						if (optionsWithOverflow [optionsWithOverflow.Count - 1] != nextPage) {

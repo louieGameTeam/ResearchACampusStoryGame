@@ -439,7 +439,7 @@ public class LocationStep : Step {
     }
 }
 
-// Location based step objective
+// Item based step objective
 //[System.Serializable]
 public class ItemStep : Step {
 
