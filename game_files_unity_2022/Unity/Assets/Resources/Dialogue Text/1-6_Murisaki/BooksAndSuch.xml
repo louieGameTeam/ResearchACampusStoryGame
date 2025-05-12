@@ -16,7 +16,7 @@
         <option>
           <say>Yes.</say>
           <give item="Mysterious Journal" count="1"/>
-          <page><color hex="74f442">[The mysterious journal has been removed from your inventory]</color></page>
+          <page><color hex="74f442">[The mysterious journal has been added to your inventory]</color></page>
           <advance/>
         </option>
         <option>
