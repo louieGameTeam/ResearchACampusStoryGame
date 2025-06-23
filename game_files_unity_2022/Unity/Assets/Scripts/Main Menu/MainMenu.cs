@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System.IO;
 using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour {
@@ -211,9 +212,6 @@ public class MainMenu : MonoBehaviour {
     }
 
     public void Logout () {
-        //new EndSessionRequest()
-        //.Send((response) => {
-        //    SceneManager.LoadScene("Login");
-        //});
+        BlackFade.LoadScene("Login");
     }
 }
