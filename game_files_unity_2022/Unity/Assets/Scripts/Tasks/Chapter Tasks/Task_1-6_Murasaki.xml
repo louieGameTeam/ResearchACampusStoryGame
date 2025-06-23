@@ -1,4 +1,4 @@
-﻿<level name=" Heian Era Court, Japan (1000s)" scene="Ch_1-6">
+﻿<level name="Heian Era Court, Japan (1000s)" scene="Ch_1-6">
   <move x="40" y="-40"/>
   <task>
     <name>TalkToALPHA</name>
