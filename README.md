@@ -9,11 +9,14 @@ The game is created using Unity, played in the browser (WebGL), uses GameSparks 
 File structre: 
 ``` C
 |--root
-  |-- game_files_unity //this is where the game files are in Unity -- Do not change
+  |-- game_files_unity //this is where the old game files are in Unity -- Do not change
+  |-- game_files_unity_2022 //this is where the current game files are in Unity -- Do not change
   |-- Demo // this is where the demo lives (Unity Build) -- Do not move
   |-- Game // this is where the game lives (Unity Build) -- Do not move
   |-- index.html // a simple webpage to access the game (protected with a password)
 ```
+
+To edit this project, you'll need Unity Hub (https://docs.unity3d.com/hub/manual/InstallHub.html)
 
 For questions, please feel free to contact project lead: Bayan Mashat
 [Website](https://www.bayanmashat.me/) -
