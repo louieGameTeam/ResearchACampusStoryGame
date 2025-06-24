@@ -1,9 +1,6 @@
 <dialog>
   <page tag="start">Hello there.</page>
   <if var="initialized" value="true">
-    <true>
-      <page>I'm working on making an astrolabe.</page>
-    </true>
     <false>
       <say>Hello, are you Muhammad ibn Musa al-Khwarizmi?</say>
       <page>I am indeed. What brings you to here?</page>

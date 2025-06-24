@@ -51,7 +51,7 @@
   </task>
   <task>
     <name>MSForge2</name>
-    <description>Return the broken part to the metalsmith.</description>
+    <description>Return to the metalsmith.</description>
     <steps>
       <location name="ForgeCollider"/>
     </steps>
