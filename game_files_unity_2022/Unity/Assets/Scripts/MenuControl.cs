@@ -41,18 +41,18 @@ public class MenuControl : MonoBehaviour {
                     optionsMenu.GetComponent<OptionsUpdater>().UpdateCard();
                 Show(optionsMenu);
             } else if (Input.GetKeyDown(journalKey)) {
-    			journalMenu.GetComponent<TaskUI>().UpdateUI();
-    			Show(journalMenu);
-    		} else if (Input.GetKeyDown(inventoryKey)) {
+                journalMenu.GetComponent<TaskUI>().UpdateUI();
+                Show(journalMenu);
+            } else if (Input.GetKeyDown(inventoryKey)) {
                 inventoryMenu.GetComponent<InventoryUI>().UpdateInventoryUI();
-    			Show(inventoryMenu);
+                Show(inventoryMenu);
             } else if (Input.GetKeyDown(mapKey)) {
-                Show(mapMenu);
                 mapMenu.GetComponent<MapSetting>().UpdateMap();
+                Show(mapMenu);
             } else if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.R)) {
                 if (currentMenu != null) {
                     Hide();
-                } else if (ChatManager.chatting == null) {
+                }   else if (ChatManager.chatting == null) {
                     optionsMenu.GetComponent<OptionsUpdater>().UpdateCard();
                     Show(optionsMenu);
                 }
