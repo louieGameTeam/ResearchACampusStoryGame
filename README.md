@@ -12,7 +12,7 @@ File structre:
   |-- game_files_unity //this is where the old game files are in Unity -- Do not change
   |-- game_files_unity_2022 //this is where the current game files are in Unity -- Do not change
   |-- Demo // this is where the demo lives (Unity Build) -- Do not move
-  |-- Game // this is where the game lives (Unity Build) -- Do not move
+  |-- ResearchaCampusStory // this is where the game lives (Unity Build) -- Do not move
   |-- index.html // a simple webpage to access the game (protected with a password)
 ```
 
