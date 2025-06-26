@@ -12,7 +12,7 @@ File structre:
   |-- game_files_unity //this is where the old game files are in Unity -- Do not change
   |-- game_files_unity_2022 //this is where the current game files are in Unity -- Do not change
   |-- Demo // this is where the demo lives (Unity Build) -- Do not move
-  |-- Game // this is where the game lives (Unity Build) -- Do not move
+  |-- ResearchaCampusStory // this is where the game lives (Unity Build) -- Do not move
   |-- index.html // a simple webpage to access the game (protected with a password)
 ```
 
@@ -21,6 +21,7 @@ If on Linux, you'll need to follow these steps to get it working:
 - https://discussions.unity.com/t/linux-editor-stuck-on-loading-because-of-bee-backend-w-workaround/854480
 - https://discussions.unity.com/t/workaround-for-libssl-issue-on-ubuntu-22-04/879165
     - Install both -dev version and 1.0.0 version
+- Make sure you have ffmpeg installed, otherwise audio won't work in the build
 
 For questions, please feel free to contact project lead: Bayan Mashat
 [Website](https://www.bayanmashat.me/) -
