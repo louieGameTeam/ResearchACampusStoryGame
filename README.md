@@ -21,6 +21,7 @@ If on Linux, you'll need to follow these steps to get it working:
 - https://discussions.unity.com/t/linux-editor-stuck-on-loading-because-of-bee-backend-w-workaround/854480
 - https://discussions.unity.com/t/workaround-for-libssl-issue-on-ubuntu-22-04/879165
     - Install both -dev version and 1.0.0 version
+- Make sure you have ffmpeg installed, otherwise audio won't work in the build
 
 For questions, please feel free to contact project lead: Bayan Mashat
 [Website](https://www.bayanmashat.me/) -
