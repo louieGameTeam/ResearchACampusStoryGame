@@ -135,8 +135,20 @@ ScriptsOnlyBuild:
     fullTypeName: OptionsUpdater
     methodName: ToggleMusic
   - assembly: Assembly-CSharp
+    fullTypeName: OptionsUpdater
+    methodName: OnHover
+  - assembly: Assembly-CSharp
+    fullTypeName: OptionsUpdater
+    methodName: OffHover
+  - assembly: Assembly-CSharp
     fullTypeName: MapSetting
     methodName: UpdateMap
+  - assembly: Assembly-CSharp
+    fullTypeName: OptionsUpdater
+    methodName: OnHover
+  - assembly: Assembly-CSharp
+    fullTypeName: OptionsUpdater
+    methodName: OffHover
   - assembly: Assembly-CSharp
     fullTypeName: OptionsUpdater
     methodName: ToggleSounds
@@ -144,41 +156,11 @@ ScriptsOnlyBuild:
     fullTypeName: OptionsUpdater
     methodName: ToggleMusic
   - assembly: Assembly-CSharp
-    fullTypeName: MapSetting
-    methodName: UpdateMap
+    fullTypeName: OptionsUpdater
+    methodName: OnHover
   - assembly: Assembly-CSharp
     fullTypeName: OptionsUpdater
-    methodName: ToggleSounds
-  - assembly: Assembly-CSharp
-    fullTypeName: OptionsUpdater
-    methodName: ToggleMusic
-  - assembly: Assembly-CSharp
-    fullTypeName: MapSetting
-    methodName: UpdateMap
-  - assembly: Assembly-CSharp
-    fullTypeName: OptionsUpdater
-    methodName: ToggleSounds
-  - assembly: Assembly-CSharp
-    fullTypeName: OptionsUpdater
-    methodName: ToggleMusic
-  - assembly: Assembly-CSharp
-    fullTypeName: MapSetting
-    methodName: UpdateMap
-  - assembly: Assembly-CSharp
-    fullTypeName: OptionsUpdater
-    methodName: ToggleSounds
-  - assembly: Assembly-CSharp
-    fullTypeName: OptionsUpdater
-    methodName: ToggleMusic
-  - assembly: Assembly-CSharp
-    fullTypeName: MapSetting
-    methodName: UpdateMap
-  - assembly: Assembly-CSharp
-    fullTypeName: OptionsUpdater
-    methodName: ToggleSounds
-  - assembly: Assembly-CSharp
-    fullTypeName: OptionsUpdater
-    methodName: ToggleMusic
+    methodName: OffHover
   - assembly: Assembly-CSharp
     fullTypeName: MapSetting
     methodName: UpdateMap
@@ -189,6 +171,12 @@ ScriptsOnlyBuild:
     fullTypeName: OptionsUpdater
     methodName: ToggleMusic
   - assembly: Assembly-CSharp
+    fullTypeName: OptionsUpdater
+    methodName: OnHover
+  - assembly: Assembly-CSharp
+    fullTypeName: OptionsUpdater
+    methodName: OffHover
+  - assembly: Assembly-CSharp
     fullTypeName: MapSetting
     methodName: UpdateMap
   - assembly: Assembly-CSharp
@@ -198,6 +186,12 @@ ScriptsOnlyBuild:
     fullTypeName: OptionsUpdater
     methodName: ToggleMusic
   - assembly: Assembly-CSharp
+    fullTypeName: OptionsUpdater
+    methodName: OnHover
+  - assembly: Assembly-CSharp
+    fullTypeName: OptionsUpdater
+    methodName: OffHover
+  - assembly: Assembly-CSharp
     fullTypeName: MapSetting
     methodName: UpdateMap
   - assembly: Assembly-CSharp
@@ -206,6 +200,72 @@ ScriptsOnlyBuild:
   - assembly: Assembly-CSharp
     fullTypeName: OptionsUpdater
     methodName: ToggleMusic
+  - assembly: Assembly-CSharp
+    fullTypeName: OptionsUpdater
+    methodName: OnHover
+  - assembly: Assembly-CSharp
+    fullTypeName: OptionsUpdater
+    methodName: OffHover
+  - assembly: Assembly-CSharp
+    fullTypeName: MapSetting
+    methodName: UpdateMap
+  - assembly: Assembly-CSharp
+    fullTypeName: OptionsUpdater
+    methodName: ToggleSounds
+  - assembly: Assembly-CSharp
+    fullTypeName: OptionsUpdater
+    methodName: ToggleMusic
+  - assembly: Assembly-CSharp
+    fullTypeName: OptionsUpdater
+    methodName: OnHover
+  - assembly: Assembly-CSharp
+    fullTypeName: OptionsUpdater
+    methodName: OffHover
+  - assembly: Assembly-CSharp
+    fullTypeName: MapSetting
+    methodName: UpdateMap
+  - assembly: Assembly-CSharp
+    fullTypeName: OptionsUpdater
+    methodName: ToggleSounds
+  - assembly: Assembly-CSharp
+    fullTypeName: OptionsUpdater
+    methodName: ToggleMusic
+  - assembly: Assembly-CSharp
+    fullTypeName: OptionsUpdater
+    methodName: OnHover
+  - assembly: Assembly-CSharp
+    fullTypeName: OptionsUpdater
+    methodName: OffHover
+  - assembly: Assembly-CSharp
+    fullTypeName: MapSetting
+    methodName: UpdateMap
+  - assembly: Assembly-CSharp
+    fullTypeName: OptionsUpdater
+    methodName: ToggleSounds
+  - assembly: Assembly-CSharp
+    fullTypeName: OptionsUpdater
+    methodName: ToggleMusic
+  - assembly: Assembly-CSharp
+    fullTypeName: OptionsUpdater
+    methodName: OnHover
+  - assembly: Assembly-CSharp
+    fullTypeName: OptionsUpdater
+    methodName: OffHover
+  - assembly: Assembly-CSharp
+    fullTypeName: MapSetting
+    methodName: UpdateMap
+  - assembly: Assembly-CSharp
+    fullTypeName: OptionsUpdater
+    methodName: ToggleSounds
+  - assembly: Assembly-CSharp
+    fullTypeName: OptionsUpdater
+    methodName: ToggleMusic
+  - assembly: Assembly-CSharp
+    fullTypeName: OptionsUpdater
+    methodName: OnHover
+  - assembly: Assembly-CSharp
+    fullTypeName: OptionsUpdater
+    methodName: OffHover
   - assembly: Assembly-CSharp
     fullTypeName: MapSetting
     methodName: UpdateMap
@@ -322,9 +382,9 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 5726}
     - Class: 114
-      Script: {instanceID: 6148}
+      Script: {instanceID: 6146}
     - Class: 114
-      Script: {instanceID: 6496}
+      Script: {instanceID: 6494}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 124
@@ -465,9 +525,9 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 5726}
     - Class: 114
-      Script: {instanceID: 6148}
+      Script: {instanceID: 6146}
     - Class: 114
-      Script: {instanceID: 6496}
+      Script: {instanceID: 6494}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 124
@@ -604,9 +664,9 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 5726}
     - Class: 114
-      Script: {instanceID: 6148}
+      Script: {instanceID: 6146}
     - Class: 114
-      Script: {instanceID: 6496}
+      Script: {instanceID: 6494}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 124
@@ -741,9 +801,9 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 5726}
     - Class: 114
-      Script: {instanceID: 6148}
+      Script: {instanceID: 6146}
     - Class: 114
-      Script: {instanceID: 6496}
+      Script: {instanceID: 6494}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 124
@@ -882,9 +942,9 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 5726}
     - Class: 114
-      Script: {instanceID: 6148}
+      Script: {instanceID: 6146}
     - Class: 114
-      Script: {instanceID: 6496}
+      Script: {instanceID: 6494}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 124
@@ -1023,9 +1083,9 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 5726}
     - Class: 114
-      Script: {instanceID: 6148}
+      Script: {instanceID: 6146}
     - Class: 114
-      Script: {instanceID: 6496}
+      Script: {instanceID: 6494}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 124
@@ -1164,9 +1224,9 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 5726}
     - Class: 114
-      Script: {instanceID: 6148}
+      Script: {instanceID: 6146}
     - Class: 114
-      Script: {instanceID: 6496}
+      Script: {instanceID: 6494}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 124
@@ -1307,9 +1367,9 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 5726}
     - Class: 114
-      Script: {instanceID: 6148}
+      Script: {instanceID: 6146}
     - Class: 114
-      Script: {instanceID: 6496}
+      Script: {instanceID: 6494}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 124
@@ -1442,11 +1502,11 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 5726}
     - Class: 114
-      Script: {instanceID: 6148}
+      Script: {instanceID: 6146}
     - Class: 114
-      Script: {instanceID: 6288}
+      Script: {instanceID: 6286}
     - Class: 114
-      Script: {instanceID: 6496}
+      Script: {instanceID: 6494}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 124
@@ -1515,7 +1575,7 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 3960}
     - Class: 114
-      Script: {instanceID: 6492}
+      Script: {instanceID: 6490}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 124
@@ -1592,11 +1652,11 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 5026}
     - Class: 114
-      Script: {instanceID: 6114}
+      Script: {instanceID: 6112}
     - Class: 114
-      Script: {instanceID: 6224}
+      Script: {instanceID: 6222}
     - Class: 114
-      Script: {instanceID: 61066}
+      Script: {instanceID: 263174}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 124
@@ -1659,7 +1719,7 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 5448}
     - Class: 114
-      Script: {instanceID: 6492}
+      Script: {instanceID: 6490}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 124
