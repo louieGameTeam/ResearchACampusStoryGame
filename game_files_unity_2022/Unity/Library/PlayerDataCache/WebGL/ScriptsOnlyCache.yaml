@@ -129,6 +129,15 @@ ScriptsOnlyBuild:
     fullTypeName: UnityEngine.GameObject
     methodName: SetActive
   - assembly: Assembly-CSharp
+    fullTypeName: CharacterCreation.CustomizationUI
+    methodName: UpdateName
+  - assembly: Assembly-CSharp
+    fullTypeName: CharacterCreation.CustomizationUI
+    methodName: UpdateName
+  - assembly: Assembly-CSharp
+    fullTypeName: CharacterCreation.CustomizationUI
+    methodName: UpdateName
+  - assembly: Assembly-CSharp
     fullTypeName: OptionsUpdater
     methodName: ToggleSounds
   - assembly: Assembly-CSharp
