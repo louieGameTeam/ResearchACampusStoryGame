@@ -18123,7 +18123,7 @@ IL_001d:
 IL_001e:
 	{
 		V_0 = (bool)G_B3_0;
-		// bool onMore = currentlySelected == optionsWithOverflow.Count - 1 && displayedOptions.y != chatting.options.Count - 1;
+		// bool onMore = ((currentlySelected == optionsWithOverflow.Count - 1) && (displayedOptions.y != chatting.options.Count - 1));
 		il2cpp_codegen_runtime_class_init_inline(ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C_il2cpp_TypeInfo_var);
 		int32_t L_2 = ((ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C_StaticFields*)il2cpp_codegen_static_fields_for(ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C_il2cpp_TypeInfo_var))->___currentlySelected_33;
 		List_1_tF470A3BE5C1B5B68E1325EF3F109D172E60BD7CD* L_3 = ((ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C_StaticFields*)il2cpp_codegen_static_fields_for(ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C_il2cpp_TypeInfo_var))->___optionsWithOverflow_34;
@@ -18660,13 +18660,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ChatManager_UpdateResponse_m91DF2360427E
 	Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 V_2;
 	memset((&V_2), 0, sizeof(V_2));
 	int32_t V_3 = 0;
+	int32_t G_B17_0 = 0;
+	Dialog_t1A3474C8E604C61E022BDF82747C68A6C1E11972* G_B17_1 = NULL;
 	int32_t G_B16_0 = 0;
 	Dialog_t1A3474C8E604C61E022BDF82747C68A6C1E11972* G_B16_1 = NULL;
-	int32_t G_B15_0 = 0;
-	Dialog_t1A3474C8E604C61E022BDF82747C68A6C1E11972* G_B15_1 = NULL;
-	int32_t G_B17_0 = 0;
-	int32_t G_B17_1 = 0;
-	Dialog_t1A3474C8E604C61E022BDF82747C68A6C1E11972* G_B17_2 = NULL;
+	int32_t G_B18_0 = 0;
+	int32_t G_B18_1 = 0;
+	Dialog_t1A3474C8E604C61E022BDF82747C68A6C1E11972* G_B18_2 = NULL;
 	{
 		// int oldResponse = currentlySelected;
 		il2cpp_codegen_runtime_class_init_inline(ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C_il2cpp_TypeInfo_var);
@@ -18762,7 +18762,7 @@ IL_0062_1:
 
 IL_007b:
 	{
-		// for (int i = (int)displayedOptions.x; i <= (int)displayedOptions.y; i++)
+		// for (int i = (int)displayedOptions.x; i <= (int)displayedOptions.y; i++) {
 		il2cpp_codegen_runtime_class_init_inline(ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C_il2cpp_TypeInfo_var);
 		float L_14 = (&((ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C_StaticFields*)il2cpp_codegen_static_fields_for(ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C_il2cpp_TypeInfo_var))->___displayedOptions_32)->___x_0;
 		V_3 = il2cpp_codegen_cast_double_to_int<int32_t>(L_14);
@@ -18780,14 +18780,14 @@ IL_0089:
 		String_t* L_19;
 		L_19 = List_1_get_Item_m21AEC50E791371101DC22ABCF96A2E46800811F8(L_17, L_18, List_1_get_Item_m21AEC50E791371101DC22ABCF96A2E46800811F8_RuntimeMethod_var);
 		List_1_Add_mF10DB1D3CBB0B14215F0E4F8AB4934A1955E5351_inline(L_15, L_19, List_1_Add_mF10DB1D3CBB0B14215F0E4F8AB4934A1955E5351_RuntimeMethod_var);
-		// for (int i = (int)displayedOptions.x; i <= (int)displayedOptions.y; i++)
+		// for (int i = (int)displayedOptions.x; i <= (int)displayedOptions.y; i++) {
 		int32_t L_20 = V_3;
 		V_3 = ((int32_t)il2cpp_codegen_add(L_20, 1));
 	}
 
 IL_00a7:
 	{
-		// for (int i = (int)displayedOptions.x; i <= (int)displayedOptions.y; i++)
+		// for (int i = (int)displayedOptions.x; i <= (int)displayedOptions.y; i++) {
 		int32_t L_21 = V_3;
 		il2cpp_codegen_runtime_class_init_inline(ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C_il2cpp_TypeInfo_var);
 		float L_22 = (&((ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C_StaticFields*)il2cpp_codegen_static_fields_for(ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C_il2cpp_TypeInfo_var))->___displayedOptions_32)->___y_1;
@@ -18797,110 +18797,121 @@ IL_00a7:
 		}
 	}
 	{
-		// if (displayedOptions.y != chatting.options.Count - 1) {
+		// if ((displayedOptions.y < chatting.options.Count - 1) && chatting.options.Count > 1) {
 		il2cpp_codegen_runtime_class_init_inline(ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C_il2cpp_TypeInfo_var);
 		float L_23 = (&((ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C_StaticFields*)il2cpp_codegen_static_fields_for(ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C_il2cpp_TypeInfo_var))->___displayedOptions_32)->___y_1;
 		Dialog_t1A3474C8E604C61E022BDF82747C68A6C1E11972* L_24 = ((ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C_StaticFields*)il2cpp_codegen_static_fields_for(ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C_il2cpp_TypeInfo_var))->___chatting_26;
 		List_1_tF470A3BE5C1B5B68E1325EF3F109D172E60BD7CD* L_25 = L_24->___options_2;
 		int32_t L_26;
 		L_26 = List_1_get_Count_mB63183A9151F4345A9DD444A7CBE0D6E03F77C7C_inline(L_25, List_1_get_Count_mB63183A9151F4345A9DD444A7CBE0D6E03F77C7C_RuntimeMethod_var);
-		if ((((float)L_23) == ((float)((float)((int32_t)il2cpp_codegen_subtract(L_26, 1))))))
+		if ((!(((float)L_23) < ((float)((float)((int32_t)il2cpp_codegen_subtract(L_26, 1)))))))
 		{
-			goto IL_00e7;
+			goto IL_00f9;
+		}
+	}
+	{
+		il2cpp_codegen_runtime_class_init_inline(ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C_il2cpp_TypeInfo_var);
+		Dialog_t1A3474C8E604C61E022BDF82747C68A6C1E11972* L_27 = ((ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C_StaticFields*)il2cpp_codegen_static_fields_for(ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C_il2cpp_TypeInfo_var))->___chatting_26;
+		List_1_tF470A3BE5C1B5B68E1325EF3F109D172E60BD7CD* L_28 = L_27->___options_2;
+		int32_t L_29;
+		L_29 = List_1_get_Count_mB63183A9151F4345A9DD444A7CBE0D6E03F77C7C_inline(L_28, List_1_get_Count_mB63183A9151F4345A9DD444A7CBE0D6E03F77C7C_RuntimeMethod_var);
+		if ((((int32_t)L_29) <= ((int32_t)1)))
+		{
+			goto IL_00f9;
 		}
 	}
 	{
 		// optionsWithOverflow.Add (GetCM().nextPage);
 		il2cpp_codegen_runtime_class_init_inline(ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C_il2cpp_TypeInfo_var);
-		List_1_tF470A3BE5C1B5B68E1325EF3F109D172E60BD7CD* L_27 = ((ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C_StaticFields*)il2cpp_codegen_static_fields_for(ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C_il2cpp_TypeInfo_var))->___optionsWithOverflow_34;
-		ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C* L_28;
-		L_28 = ChatManager_GetCM_m1CA1A210204D0131D6E4F29D8690C918A13B1189(NULL);
-		String_t* L_29 = L_28->___nextPage_21;
-		List_1_Add_mF10DB1D3CBB0B14215F0E4F8AB4934A1955E5351_inline(L_27, L_29, List_1_Add_mF10DB1D3CBB0B14215F0E4F8AB4934A1955E5351_RuntimeMethod_var);
+		List_1_tF470A3BE5C1B5B68E1325EF3F109D172E60BD7CD* L_30 = ((ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C_StaticFields*)il2cpp_codegen_static_fields_for(ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C_il2cpp_TypeInfo_var))->___optionsWithOverflow_34;
+		ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C* L_31;
+		L_31 = ChatManager_GetCM_m1CA1A210204D0131D6E4F29D8690C918A13B1189(NULL);
+		String_t* L_32 = L_31->___nextPage_21;
+		List_1_Add_mF10DB1D3CBB0B14215F0E4F8AB4934A1955E5351_inline(L_30, L_32, List_1_Add_mF10DB1D3CBB0B14215F0E4F8AB4934A1955E5351_RuntimeMethod_var);
 	}
 
-IL_00e7:
+IL_00f9:
 	{
 		// currentlySelected = Mathf.Clamp(currentlySelected + input, 0, optionsWithOverflow.Count - 1);
 		il2cpp_codegen_runtime_class_init_inline(ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C_il2cpp_TypeInfo_var);
-		int32_t L_30 = ((ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C_StaticFields*)il2cpp_codegen_static_fields_for(ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C_il2cpp_TypeInfo_var))->___currentlySelected_33;
-		int32_t L_31 = ___input0;
-		List_1_tF470A3BE5C1B5B68E1325EF3F109D172E60BD7CD* L_32 = ((ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C_StaticFields*)il2cpp_codegen_static_fields_for(ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C_il2cpp_TypeInfo_var))->___optionsWithOverflow_34;
-		int32_t L_33;
-		L_33 = List_1_get_Count_mB63183A9151F4345A9DD444A7CBE0D6E03F77C7C_inline(L_32, List_1_get_Count_mB63183A9151F4345A9DD444A7CBE0D6E03F77C7C_RuntimeMethod_var);
-		int32_t L_34;
-		L_34 = Mathf_Clamp_m4DC36EEFDBE5F07C16249DA568023C5ECCFF0E7B_inline(((int32_t)il2cpp_codegen_add(L_30, L_31)), 0, ((int32_t)il2cpp_codegen_subtract(L_33, 1)), NULL);
-		((ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C_StaticFields*)il2cpp_codegen_static_fields_for(ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C_il2cpp_TypeInfo_var))->___currentlySelected_33 = L_34;
+		int32_t L_33 = ((ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C_StaticFields*)il2cpp_codegen_static_fields_for(ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C_il2cpp_TypeInfo_var))->___currentlySelected_33;
+		int32_t L_34 = ___input0;
+		List_1_tF470A3BE5C1B5B68E1325EF3F109D172E60BD7CD* L_35 = ((ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C_StaticFields*)il2cpp_codegen_static_fields_for(ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C_il2cpp_TypeInfo_var))->___optionsWithOverflow_34;
+		int32_t L_36;
+		L_36 = List_1_get_Count_mB63183A9151F4345A9DD444A7CBE0D6E03F77C7C_inline(L_35, List_1_get_Count_mB63183A9151F4345A9DD444A7CBE0D6E03F77C7C_RuntimeMethod_var);
+		int32_t L_37;
+		L_37 = Mathf_Clamp_m4DC36EEFDBE5F07C16249DA568023C5ECCFF0E7B_inline(((int32_t)il2cpp_codegen_add(L_33, L_34)), 0, ((int32_t)il2cpp_codegen_subtract(L_36, 1)), NULL);
+		((ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C_StaticFields*)il2cpp_codegen_static_fields_for(ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C_il2cpp_TypeInfo_var))->___currentlySelected_33 = L_37;
 		// chatting.selectedResponse = (int)displayedOptions.x + currentlySelected + (displayedOptions.x == 0 ? 0 : -1);
-		Dialog_t1A3474C8E604C61E022BDF82747C68A6C1E11972* L_35 = ((ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C_StaticFields*)il2cpp_codegen_static_fields_for(ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C_il2cpp_TypeInfo_var))->___chatting_26;
-		float L_36 = (&((ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C_StaticFields*)il2cpp_codegen_static_fields_for(ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C_il2cpp_TypeInfo_var))->___displayedOptions_32)->___x_0;
-		int32_t L_37 = ((ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C_StaticFields*)il2cpp_codegen_static_fields_for(ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C_il2cpp_TypeInfo_var))->___currentlySelected_33;
-		float L_38 = (&((ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C_StaticFields*)il2cpp_codegen_static_fields_for(ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C_il2cpp_TypeInfo_var))->___displayedOptions_32)->___x_0;
-		G_B15_0 = ((int32_t)il2cpp_codegen_add(il2cpp_codegen_cast_double_to_int<int32_t>(L_36), L_37));
-		G_B15_1 = L_35;
-		if ((((float)L_38) == ((float)(0.0f))))
-		{
-			G_B16_0 = ((int32_t)il2cpp_codegen_add(il2cpp_codegen_cast_double_to_int<int32_t>(L_36), L_37));
-			G_B16_1 = L_35;
-			goto IL_012f;
-		}
-	}
-	{
-		G_B17_0 = (-1);
-		G_B17_1 = G_B15_0;
-		G_B17_2 = G_B15_1;
-		goto IL_0130;
-	}
-
-IL_012f:
-	{
-		G_B17_0 = 0;
-		G_B17_1 = G_B16_0;
-		G_B17_2 = G_B16_1;
-	}
-
-IL_0130:
-	{
-		G_B17_2->___selectedResponse_3 = ((int32_t)il2cpp_codegen_add(G_B17_1, G_B17_0));
-		// bool changed = oldResponse != currentlySelected;
-		int32_t L_39 = V_0;
-		il2cpp_codegen_runtime_class_init_inline(ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C_il2cpp_TypeInfo_var);
+		Dialog_t1A3474C8E604C61E022BDF82747C68A6C1E11972* L_38 = ((ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C_StaticFields*)il2cpp_codegen_static_fields_for(ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C_il2cpp_TypeInfo_var))->___chatting_26;
+		float L_39 = (&((ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C_StaticFields*)il2cpp_codegen_static_fields_for(ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C_il2cpp_TypeInfo_var))->___displayedOptions_32)->___x_0;
 		int32_t L_40 = ((ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C_StaticFields*)il2cpp_codegen_static_fields_for(ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C_il2cpp_TypeInfo_var))->___currentlySelected_33;
-		// if (changed && GetCM().playAudio)
-		if (!((((int32_t)((((int32_t)L_39) == ((int32_t)L_40))? 1 : 0)) == ((int32_t)0))? 1 : 0))
+		float L_41 = (&((ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C_StaticFields*)il2cpp_codegen_static_fields_for(ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C_il2cpp_TypeInfo_var))->___displayedOptions_32)->___x_0;
+		G_B16_0 = ((int32_t)il2cpp_codegen_add(il2cpp_codegen_cast_double_to_int<int32_t>(L_39), L_40));
+		G_B16_1 = L_38;
+		if ((((float)L_41) == ((float)(0.0f))))
 		{
-			goto IL_015e;
+			G_B17_0 = ((int32_t)il2cpp_codegen_add(il2cpp_codegen_cast_double_to_int<int32_t>(L_39), L_40));
+			G_B17_1 = L_38;
+			goto IL_0141;
+		}
+	}
+	{
+		G_B18_0 = (-1);
+		G_B18_1 = G_B16_0;
+		G_B18_2 = G_B16_1;
+		goto IL_0142;
+	}
+
+IL_0141:
+	{
+		G_B18_0 = 0;
+		G_B18_1 = G_B17_0;
+		G_B18_2 = G_B17_1;
+	}
+
+IL_0142:
+	{
+		G_B18_2->___selectedResponse_3 = ((int32_t)il2cpp_codegen_add(G_B18_1, G_B18_0));
+		// bool changed = oldResponse != currentlySelected;
+		int32_t L_42 = V_0;
+		il2cpp_codegen_runtime_class_init_inline(ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C_il2cpp_TypeInfo_var);
+		int32_t L_43 = ((ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C_StaticFields*)il2cpp_codegen_static_fields_for(ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C_il2cpp_TypeInfo_var))->___currentlySelected_33;
+		// if (changed && GetCM().playAudio)
+		if (!((((int32_t)((((int32_t)L_42) == ((int32_t)L_43))? 1 : 0)) == ((int32_t)0))? 1 : 0))
+		{
+			goto IL_0170;
 		}
 	}
 	{
 		il2cpp_codegen_runtime_class_init_inline(ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C_il2cpp_TypeInfo_var);
-		ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C* L_41;
-		L_41 = ChatManager_GetCM_m1CA1A210204D0131D6E4F29D8690C918A13B1189(NULL);
-		bool L_42 = L_41->___playAudio_17;
-		if (!L_42)
+		ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C* L_44;
+		L_44 = ChatManager_GetCM_m1CA1A210204D0131D6E4F29D8690C918A13B1189(NULL);
+		bool L_45 = L_44->___playAudio_17;
+		if (!L_45)
 		{
-			goto IL_015e;
+			goto IL_0170;
 		}
 	}
 	{
 		// GetCM().audioSource.Play();
 		il2cpp_codegen_runtime_class_init_inline(ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C_il2cpp_TypeInfo_var);
-		ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C* L_43;
-		L_43 = ChatManager_GetCM_m1CA1A210204D0131D6E4F29D8690C918A13B1189(NULL);
-		AudioSource_t871AC2272F896738252F04EE949AEF5B241D3299* L_44 = L_43->___audioSource_19;
-		AudioSource_Play_m95DF07111C61D0E0F00257A00384D31531D590C3(L_44, NULL);
+		ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C* L_46;
+		L_46 = ChatManager_GetCM_m1CA1A210204D0131D6E4F29D8690C918A13B1189(NULL);
+		AudioSource_t871AC2272F896738252F04EE949AEF5B241D3299* L_47 = L_46->___audioSource_19;
+		AudioSource_Play_m95DF07111C61D0E0F00257A00384D31531D590C3(L_47, NULL);
 	}
 
-IL_015e:
+IL_0170:
 	{
 		// string optionList = GetCM().OptionList ();
 		il2cpp_codegen_runtime_class_init_inline(ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C_il2cpp_TypeInfo_var);
-		ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C* L_45;
-		L_45 = ChatManager_GetCM_m1CA1A210204D0131D6E4F29D8690C918A13B1189(NULL);
-		String_t* L_46;
-		L_46 = ChatManager_OptionList_m0EC323E6A6A05FB80A439F3D5F5FCE70955DE96F(L_45, NULL);
+		ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C* L_48;
+		L_48 = ChatManager_GetCM_m1CA1A210204D0131D6E4F29D8690C918A13B1189(NULL);
+		String_t* L_49;
+		L_49 = ChatManager_OptionList_m0EC323E6A6A05FB80A439F3D5F5FCE70955DE96F(L_48, NULL);
 		// PlayString (optionList, false);
-		ChatManager_PlayString_mEE00101FD4DD20996776C2325051D58F5249A37B(L_46, (bool)0, NULL);
+		ChatManager_PlayString_mEE00101FD4DD20996776C2325051D58F5249A37B(L_49, (bool)0, NULL);
 		// }
 		return;
 	}
@@ -20102,13 +20113,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool U3CPlayStringCoroutineU3Ed__47_MoveNext_
 	RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* G_B10_2 = NULL;
 	RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* G_B13_0 = NULL;
 	RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* G_B12_0 = NULL;
+	int32_t G_B30_0 = 0;
+	Dialog_t1A3474C8E604C61E022BDF82747C68A6C1E11972* G_B30_1 = NULL;
 	int32_t G_B29_0 = 0;
 	Dialog_t1A3474C8E604C61E022BDF82747C68A6C1E11972* G_B29_1 = NULL;
-	int32_t G_B28_0 = 0;
-	Dialog_t1A3474C8E604C61E022BDF82747C68A6C1E11972* G_B28_1 = NULL;
-	int32_t G_B30_0 = 0;
-	int32_t G_B30_1 = 0;
-	Dialog_t1A3474C8E604C61E022BDF82747C68A6C1E11972* G_B30_2 = NULL;
+	int32_t G_B31_0 = 0;
+	int32_t G_B31_1 = 0;
+	Dialog_t1A3474C8E604C61E022BDF82747C68A6C1E11972* G_B31_2 = NULL;
 	{
 		int32_t L_0 = __this->___U3CU3E1__state_0;
 		V_0 = L_0;
@@ -20123,15 +20134,15 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool U3CPlayStringCoroutineU3Ed__47_MoveNext_
 			}
 			case 1:
 			{
-				goto IL_056f;
+				goto IL_057f;
 			}
 			case 2:
 			{
-				goto IL_0629;
+				goto IL_0639;
 			}
 			case 3:
 			{
-				goto IL_069b;
+				goto IL_06ab;
 			}
 		}
 	}
@@ -20273,7 +20284,7 @@ IL_00ea:
 		Il2CppCodeGenWriteBarrier((void**)(&__this->___U3CpageOverflowU3E5__2_5), (void*)L_43);
 		// for (int i = 0; i < input.Length; i++) {
 		V_9 = 0;
-		goto IL_0552;
+		goto IL_0562;
 	}
 
 IL_011e:
@@ -20515,7 +20526,7 @@ IL_0267:
 		Il2CppChar L_138 = V_10;
 		if ((!(((uint32_t)L_138) == ((uint32_t)((int32_t)10)))))
 		{
-			goto IL_0537;
+			goto IL_0547;
 		}
 	}
 
@@ -20613,7 +20624,7 @@ IL_0367:
 		float L_171 = L_170.___y_1;
 		if ((!(((float)L_169) < ((float)((-L_171))))))
 		{
-			goto IL_054c;
+			goto IL_055c;
 		}
 	}
 	{
@@ -20657,232 +20668,242 @@ IL_03b6:
 		L_183 = String_get_Length_m42625D67623FA5CC7A44D47425CE86FB946542D2_inline(L_182, NULL);
 		V_9 = L_183;
 		// continue;
-		goto IL_054c;
+		goto IL_055c;
 	}
 
 IL_03de:
 	{
-		// } else if (chatting.currentType == Dialog.NodeType.Reply) {
+		// } else if (chatting.currentType == Dialog.NodeType.Reply && optionsWithOverflow.Count > 2) {
 		il2cpp_codegen_runtime_class_init_inline(ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C_il2cpp_TypeInfo_var);
 		Dialog_t1A3474C8E604C61E022BDF82747C68A6C1E11972* L_184 = ((ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C_StaticFields*)il2cpp_codegen_static_fields_for(ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C_il2cpp_TypeInfo_var))->___chatting_26;
 		int32_t L_185;
 		L_185 = Dialog_get_currentType_m7A8FA0028CDF69E31F7D3C151FC0DB23DAA43453(L_184, NULL);
 		if ((!(((uint32_t)L_185) == ((uint32_t)2))))
 		{
-			goto IL_054c;
+			goto IL_055c;
+		}
+	}
+	{
+		il2cpp_codegen_runtime_class_init_inline(ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C_il2cpp_TypeInfo_var);
+		List_1_tF470A3BE5C1B5B68E1325EF3F109D172E60BD7CD* L_186 = ((ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C_StaticFields*)il2cpp_codegen_static_fields_for(ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C_il2cpp_TypeInfo_var))->___optionsWithOverflow_34;
+		int32_t L_187;
+		L_187 = List_1_get_Count_mB63183A9151F4345A9DD444A7CBE0D6E03F77C7C_inline(L_186, List_1_get_Count_mB63183A9151F4345A9DD444A7CBE0D6E03F77C7C_RuntimeMethod_var);
+		if ((((int32_t)L_187) <= ((int32_t)2)))
+		{
+			goto IL_055c;
 		}
 	}
 	{
 		// displayedOptions -= Vector2.up * 1;
 		il2cpp_codegen_runtime_class_init_inline(ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C_il2cpp_TypeInfo_var);
-		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_186 = ((ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C_StaticFields*)il2cpp_codegen_static_fields_for(ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C_il2cpp_TypeInfo_var))->___displayedOptions_32;
-		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_187;
-		L_187 = Vector2_get_up_m41067879408BB378593EF7406AF2525F176F0ABF_inline(NULL);
-		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_188;
-		L_188 = Vector2_op_Multiply_m2D984B613020089BF5165BA4CA10988E2DC771FE_inline(L_187, (1.0f), NULL);
+		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_188 = ((ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C_StaticFields*)il2cpp_codegen_static_fields_for(ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C_il2cpp_TypeInfo_var))->___displayedOptions_32;
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_189;
-		L_189 = Vector2_op_Subtraction_m44475FCDAD2DA2F98D78A6625EC2DCDFE8803837_inline(L_186, L_188, NULL);
-		((ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C_StaticFields*)il2cpp_codegen_static_fields_for(ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C_il2cpp_TypeInfo_var))->___displayedOptions_32 = L_189;
+		L_189 = Vector2_get_up_m41067879408BB378593EF7406AF2525F176F0ABF_inline(NULL);
+		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_190;
+		L_190 = Vector2_op_Multiply_m2D984B613020089BF5165BA4CA10988E2DC771FE_inline(L_189, (1.0f), NULL);
+		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_191;
+		L_191 = Vector2_op_Subtraction_m44475FCDAD2DA2F98D78A6625EC2DCDFE8803837_inline(L_188, L_190, NULL);
+		((ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C_StaticFields*)il2cpp_codegen_static_fields_for(ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C_il2cpp_TypeInfo_var))->___displayedOptions_32 = L_191;
 		// optionsWithOverflow.RemoveAt (optionsWithOverflow.Count - 2);
-		List_1_tF470A3BE5C1B5B68E1325EF3F109D172E60BD7CD* L_190 = ((ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C_StaticFields*)il2cpp_codegen_static_fields_for(ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C_il2cpp_TypeInfo_var))->___optionsWithOverflow_34;
-		List_1_tF470A3BE5C1B5B68E1325EF3F109D172E60BD7CD* L_191 = ((ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C_StaticFields*)il2cpp_codegen_static_fields_for(ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C_il2cpp_TypeInfo_var))->___optionsWithOverflow_34;
-		int32_t L_192;
-		L_192 = List_1_get_Count_mB63183A9151F4345A9DD444A7CBE0D6E03F77C7C_inline(L_191, List_1_get_Count_mB63183A9151F4345A9DD444A7CBE0D6E03F77C7C_RuntimeMethod_var);
-		List_1_RemoveAt_m031D3A21689276A872FCA7566C8F2F79F9581F0D(L_190, ((int32_t)il2cpp_codegen_subtract(L_192, 2)), List_1_RemoveAt_m031D3A21689276A872FCA7566C8F2F79F9581F0D_RuntimeMethod_var);
-		// if (optionsWithOverflow [optionsWithOverflow.Count - 1] != nextPage) {
+		List_1_tF470A3BE5C1B5B68E1325EF3F109D172E60BD7CD* L_192 = ((ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C_StaticFields*)il2cpp_codegen_static_fields_for(ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C_il2cpp_TypeInfo_var))->___optionsWithOverflow_34;
 		List_1_tF470A3BE5C1B5B68E1325EF3F109D172E60BD7CD* L_193 = ((ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C_StaticFields*)il2cpp_codegen_static_fields_for(ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C_il2cpp_TypeInfo_var))->___optionsWithOverflow_34;
-		List_1_tF470A3BE5C1B5B68E1325EF3F109D172E60BD7CD* L_194 = ((ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C_StaticFields*)il2cpp_codegen_static_fields_for(ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C_il2cpp_TypeInfo_var))->___optionsWithOverflow_34;
-		int32_t L_195;
-		L_195 = List_1_get_Count_mB63183A9151F4345A9DD444A7CBE0D6E03F77C7C_inline(L_194, List_1_get_Count_mB63183A9151F4345A9DD444A7CBE0D6E03F77C7C_RuntimeMethod_var);
-		String_t* L_196;
-		L_196 = List_1_get_Item_m21AEC50E791371101DC22ABCF96A2E46800811F8(L_193, ((int32_t)il2cpp_codegen_subtract(L_195, 1)), List_1_get_Item_m21AEC50E791371101DC22ABCF96A2E46800811F8_RuntimeMethod_var);
-		ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C* L_197 = V_1;
-		String_t* L_198 = L_197->___nextPage_21;
-		bool L_199;
-		L_199 = String_op_Inequality_m8C940F3CFC42866709D7CA931B3D77B4BE94BCB6(L_196, L_198, NULL);
-		if (!L_199)
+		int32_t L_194;
+		L_194 = List_1_get_Count_mB63183A9151F4345A9DD444A7CBE0D6E03F77C7C_inline(L_193, List_1_get_Count_mB63183A9151F4345A9DD444A7CBE0D6E03F77C7C_RuntimeMethod_var);
+		List_1_RemoveAt_m031D3A21689276A872FCA7566C8F2F79F9581F0D(L_192, ((int32_t)il2cpp_codegen_subtract(L_194, 2)), List_1_RemoveAt_m031D3A21689276A872FCA7566C8F2F79F9581F0D_RuntimeMethod_var);
+		// if (optionsWithOverflow [optionsWithOverflow.Count - 1] != nextPage) {
+		List_1_tF470A3BE5C1B5B68E1325EF3F109D172E60BD7CD* L_195 = ((ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C_StaticFields*)il2cpp_codegen_static_fields_for(ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C_il2cpp_TypeInfo_var))->___optionsWithOverflow_34;
+		List_1_tF470A3BE5C1B5B68E1325EF3F109D172E60BD7CD* L_196 = ((ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C_StaticFields*)il2cpp_codegen_static_fields_for(ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C_il2cpp_TypeInfo_var))->___optionsWithOverflow_34;
+		int32_t L_197;
+		L_197 = List_1_get_Count_mB63183A9151F4345A9DD444A7CBE0D6E03F77C7C_inline(L_196, List_1_get_Count_mB63183A9151F4345A9DD444A7CBE0D6E03F77C7C_RuntimeMethod_var);
+		String_t* L_198;
+		L_198 = List_1_get_Item_m21AEC50E791371101DC22ABCF96A2E46800811F8(L_195, ((int32_t)il2cpp_codegen_subtract(L_197, 1)), List_1_get_Item_m21AEC50E791371101DC22ABCF96A2E46800811F8_RuntimeMethod_var);
+		ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C* L_199 = V_1;
+		String_t* L_200 = L_199->___nextPage_21;
+		bool L_201;
+		L_201 = String_op_Inequality_m8C940F3CFC42866709D7CA931B3D77B4BE94BCB6(L_198, L_200, NULL);
+		if (!L_201)
 		{
-			goto IL_0475;
+			goto IL_0485;
 		}
 	}
 	{
 		// optionsWithOverflow [optionsWithOverflow.Count - 1] = nextPage;
 		il2cpp_codegen_runtime_class_init_inline(ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C_il2cpp_TypeInfo_var);
-		List_1_tF470A3BE5C1B5B68E1325EF3F109D172E60BD7CD* L_200 = ((ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C_StaticFields*)il2cpp_codegen_static_fields_for(ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C_il2cpp_TypeInfo_var))->___optionsWithOverflow_34;
-		List_1_tF470A3BE5C1B5B68E1325EF3F109D172E60BD7CD* L_201 = ((ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C_StaticFields*)il2cpp_codegen_static_fields_for(ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C_il2cpp_TypeInfo_var))->___optionsWithOverflow_34;
-		int32_t L_202;
-		L_202 = List_1_get_Count_mB63183A9151F4345A9DD444A7CBE0D6E03F77C7C_inline(L_201, List_1_get_Count_mB63183A9151F4345A9DD444A7CBE0D6E03F77C7C_RuntimeMethod_var);
-		ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C* L_203 = V_1;
-		String_t* L_204 = L_203->___nextPage_21;
-		List_1_set_Item_m6A72B7648178616800F05C13DB492E4EDB866B7C(L_200, ((int32_t)il2cpp_codegen_subtract(L_202, 1)), L_204, List_1_set_Item_m6A72B7648178616800F05C13DB492E4EDB866B7C_RuntimeMethod_var);
+		List_1_tF470A3BE5C1B5B68E1325EF3F109D172E60BD7CD* L_202 = ((ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C_StaticFields*)il2cpp_codegen_static_fields_for(ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C_il2cpp_TypeInfo_var))->___optionsWithOverflow_34;
+		List_1_tF470A3BE5C1B5B68E1325EF3F109D172E60BD7CD* L_203 = ((ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C_StaticFields*)il2cpp_codegen_static_fields_for(ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C_il2cpp_TypeInfo_var))->___optionsWithOverflow_34;
+		int32_t L_204;
+		L_204 = List_1_get_Count_mB63183A9151F4345A9DD444A7CBE0D6E03F77C7C_inline(L_203, List_1_get_Count_mB63183A9151F4345A9DD444A7CBE0D6E03F77C7C_RuntimeMethod_var);
+		ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C* L_205 = V_1;
+		String_t* L_206 = L_205->___nextPage_21;
+		List_1_set_Item_m6A72B7648178616800F05C13DB492E4EDB866B7C(L_202, ((int32_t)il2cpp_codegen_subtract(L_204, 1)), L_206, List_1_set_Item_m6A72B7648178616800F05C13DB492E4EDB866B7C_RuntimeMethod_var);
 		// displayedOptions -= Vector2.up;
-		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_205 = ((ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C_StaticFields*)il2cpp_codegen_static_fields_for(ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C_il2cpp_TypeInfo_var))->___displayedOptions_32;
-		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_206;
-		L_206 = Vector2_get_up_m41067879408BB378593EF7406AF2525F176F0ABF_inline(NULL);
-		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_207;
-		L_207 = Vector2_op_Subtraction_m44475FCDAD2DA2F98D78A6625EC2DCDFE8803837_inline(L_205, L_206, NULL);
-		((ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C_StaticFields*)il2cpp_codegen_static_fields_for(ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C_il2cpp_TypeInfo_var))->___displayedOptions_32 = L_207;
+		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_207 = ((ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C_StaticFields*)il2cpp_codegen_static_fields_for(ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C_il2cpp_TypeInfo_var))->___displayedOptions_32;
+		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_208;
+		L_208 = Vector2_get_up_m41067879408BB378593EF7406AF2525F176F0ABF_inline(NULL);
+		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_209;
+		L_209 = Vector2_op_Subtraction_m44475FCDAD2DA2F98D78A6625EC2DCDFE8803837_inline(L_207, L_208, NULL);
+		((ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C_StaticFields*)il2cpp_codegen_static_fields_for(ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C_il2cpp_TypeInfo_var))->___displayedOptions_32 = L_209;
 	}
 
-IL_0475:
+IL_0485:
 	{
 		// string newList = OptionList ();
-		ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C* L_208 = V_1;
-		String_t* L_209;
-		L_209 = ChatManager_OptionList_m0EC323E6A6A05FB80A439F3D5F5FCE70955DE96F(L_208, NULL);
+		ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C* L_210 = V_1;
+		String_t* L_211;
+		L_211 = ChatManager_OptionList_m0EC323E6A6A05FB80A439F3D5F5FCE70955DE96F(L_210, NULL);
 		// PlayString (newList, false);
 		il2cpp_codegen_runtime_class_init_inline(ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C_il2cpp_TypeInfo_var);
-		ChatManager_PlayString_mEE00101FD4DD20996776C2325051D58F5249A37B(L_209, (bool)0, NULL);
+		ChatManager_PlayString_mEE00101FD4DD20996776C2325051D58F5249A37B(L_211, (bool)0, NULL);
 		// stringPlaying = false;
 		((ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C_StaticFields*)il2cpp_codegen_static_fields_for(ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C_il2cpp_TypeInfo_var))->___stringPlaying_29 = (bool)0;
 		// currentlySelected = Mathf.Clamp(currentlySelected, 0, optionsWithOverflow.Count - 1);
-		int32_t L_210 = ((ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C_StaticFields*)il2cpp_codegen_static_fields_for(ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C_il2cpp_TypeInfo_var))->___currentlySelected_33;
-		List_1_tF470A3BE5C1B5B68E1325EF3F109D172E60BD7CD* L_211 = ((ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C_StaticFields*)il2cpp_codegen_static_fields_for(ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C_il2cpp_TypeInfo_var))->___optionsWithOverflow_34;
-		int32_t L_212;
-		L_212 = List_1_get_Count_mB63183A9151F4345A9DD444A7CBE0D6E03F77C7C_inline(L_211, List_1_get_Count_mB63183A9151F4345A9DD444A7CBE0D6E03F77C7C_RuntimeMethod_var);
-		int32_t L_213;
-		L_213 = Mathf_Clamp_m4DC36EEFDBE5F07C16249DA568023C5ECCFF0E7B_inline(L_210, 0, ((int32_t)il2cpp_codegen_subtract(L_212, 1)), NULL);
-		((ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C_StaticFields*)il2cpp_codegen_static_fields_for(ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C_il2cpp_TypeInfo_var))->___currentlySelected_33 = L_213;
+		int32_t L_212 = ((ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C_StaticFields*)il2cpp_codegen_static_fields_for(ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C_il2cpp_TypeInfo_var))->___currentlySelected_33;
+		List_1_tF470A3BE5C1B5B68E1325EF3F109D172E60BD7CD* L_213 = ((ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C_StaticFields*)il2cpp_codegen_static_fields_for(ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C_il2cpp_TypeInfo_var))->___optionsWithOverflow_34;
+		int32_t L_214;
+		L_214 = List_1_get_Count_mB63183A9151F4345A9DD444A7CBE0D6E03F77C7C_inline(L_213, List_1_get_Count_mB63183A9151F4345A9DD444A7CBE0D6E03F77C7C_RuntimeMethod_var);
+		int32_t L_215;
+		L_215 = Mathf_Clamp_m4DC36EEFDBE5F07C16249DA568023C5ECCFF0E7B_inline(L_212, 0, ((int32_t)il2cpp_codegen_subtract(L_214, 1)), NULL);
+		((ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C_StaticFields*)il2cpp_codegen_static_fields_for(ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C_il2cpp_TypeInfo_var))->___currentlySelected_33 = L_215;
 		// chatting.selectedResponse = (int)displayedOptions.x + currentlySelected + (displayedOptions.x == 0 ? 0 : -1);
-		Dialog_t1A3474C8E604C61E022BDF82747C68A6C1E11972* L_214 = ((ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C_StaticFields*)il2cpp_codegen_static_fields_for(ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C_il2cpp_TypeInfo_var))->___chatting_26;
-		float L_215 = (&((ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C_StaticFields*)il2cpp_codegen_static_fields_for(ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C_il2cpp_TypeInfo_var))->___displayedOptions_32)->___x_0;
-		int32_t L_216 = ((ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C_StaticFields*)il2cpp_codegen_static_fields_for(ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C_il2cpp_TypeInfo_var))->___currentlySelected_33;
+		Dialog_t1A3474C8E604C61E022BDF82747C68A6C1E11972* L_216 = ((ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C_StaticFields*)il2cpp_codegen_static_fields_for(ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C_il2cpp_TypeInfo_var))->___chatting_26;
 		float L_217 = (&((ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C_StaticFields*)il2cpp_codegen_static_fields_for(ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C_il2cpp_TypeInfo_var))->___displayedOptions_32)->___x_0;
-		G_B28_0 = ((int32_t)il2cpp_codegen_add(il2cpp_codegen_cast_double_to_int<int32_t>(L_215), L_216));
-		G_B28_1 = L_214;
-		if ((((float)L_217) == ((float)(0.0f))))
+		int32_t L_218 = ((ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C_StaticFields*)il2cpp_codegen_static_fields_for(ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C_il2cpp_TypeInfo_var))->___currentlySelected_33;
+		float L_219 = (&((ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C_StaticFields*)il2cpp_codegen_static_fields_for(ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C_il2cpp_TypeInfo_var))->___displayedOptions_32)->___x_0;
+		G_B29_0 = ((int32_t)il2cpp_codegen_add(il2cpp_codegen_cast_double_to_int<int32_t>(L_217), L_218));
+		G_B29_1 = L_216;
+		if ((((float)L_219) == ((float)(0.0f))))
 		{
-			G_B29_0 = ((int32_t)il2cpp_codegen_add(il2cpp_codegen_cast_double_to_int<int32_t>(L_215), L_216));
-			G_B29_1 = L_214;
-			goto IL_04cd;
+			G_B30_0 = ((int32_t)il2cpp_codegen_add(il2cpp_codegen_cast_double_to_int<int32_t>(L_217), L_218));
+			G_B30_1 = L_216;
+			goto IL_04dd;
 		}
 	}
 	{
-		G_B30_0 = (-1);
-		G_B30_1 = G_B28_0;
-		G_B30_2 = G_B28_1;
-		goto IL_04ce;
+		G_B31_0 = (-1);
+		G_B31_1 = G_B29_0;
+		G_B31_2 = G_B29_1;
+		goto IL_04de;
 	}
 
-IL_04cd:
+IL_04dd:
 	{
-		G_B30_0 = 0;
-		G_B30_1 = G_B29_0;
-		G_B30_2 = G_B29_1;
+		G_B31_0 = 0;
+		G_B31_1 = G_B30_0;
+		G_B31_2 = G_B30_1;
 	}
 
-IL_04ce:
+IL_04de:
 	{
-		G_B30_2->___selectedResponse_3 = ((int32_t)il2cpp_codegen_add(G_B30_1, G_B30_0));
+		G_B31_2->___selectedResponse_3 = ((int32_t)il2cpp_codegen_add(G_B31_1, G_B31_0));
 		// Vector2 range = displayedOptions;
 		il2cpp_codegen_runtime_class_init_inline(ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C_il2cpp_TypeInfo_var);
-		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_218 = ((ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C_StaticFields*)il2cpp_codegen_static_fields_for(ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C_il2cpp_TypeInfo_var))->___displayedOptions_32;
-		V_24 = L_218;
+		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_220 = ((ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C_StaticFields*)il2cpp_codegen_static_fields_for(ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C_il2cpp_TypeInfo_var))->___displayedOptions_32;
+		V_24 = L_220;
 		// bool replaced = false;
 		V_25 = (bool)0;
 		// for (int k = 0; k < pageRanges.Count; k++) {
 		V_26 = 0;
-		goto IL_0514;
+		goto IL_0524;
 	}
 
-IL_04e3:
+IL_04f3:
 	{
 		// if (pageRanges [k].x == range.x) {
 		il2cpp_codegen_runtime_class_init_inline(ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C_il2cpp_TypeInfo_var);
-		List_1_t8F3790B7F8C471B3A1336522C7415FB0AC36D47B* L_219 = ((ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C_StaticFields*)il2cpp_codegen_static_fields_for(ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C_il2cpp_TypeInfo_var))->___pageRanges_35;
-		int32_t L_220 = V_26;
-		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_221;
-		L_221 = List_1_get_Item_m1F8E226CAD72B83C5E75BB66B43025247806B543(L_219, L_220, List_1_get_Item_m1F8E226CAD72B83C5E75BB66B43025247806B543_RuntimeMethod_var);
-		float L_222 = L_221.___x_0;
-		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_223 = V_24;
+		List_1_t8F3790B7F8C471B3A1336522C7415FB0AC36D47B* L_221 = ((ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C_StaticFields*)il2cpp_codegen_static_fields_for(ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C_il2cpp_TypeInfo_var))->___pageRanges_35;
+		int32_t L_222 = V_26;
+		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_223;
+		L_223 = List_1_get_Item_m1F8E226CAD72B83C5E75BB66B43025247806B543(L_221, L_222, List_1_get_Item_m1F8E226CAD72B83C5E75BB66B43025247806B543_RuntimeMethod_var);
 		float L_224 = L_223.___x_0;
-		if ((!(((float)L_222) == ((float)L_224))))
+		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_225 = V_24;
+		float L_226 = L_225.___x_0;
+		if ((!(((float)L_224) == ((float)L_226))))
 		{
-			goto IL_050e;
+			goto IL_051e;
 		}
 	}
 	{
 		// pageRanges [k] = range;
 		il2cpp_codegen_runtime_class_init_inline(ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C_il2cpp_TypeInfo_var);
-		List_1_t8F3790B7F8C471B3A1336522C7415FB0AC36D47B* L_225 = ((ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C_StaticFields*)il2cpp_codegen_static_fields_for(ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C_il2cpp_TypeInfo_var))->___pageRanges_35;
-		int32_t L_226 = V_26;
-		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_227 = V_24;
-		List_1_set_Item_m4512A91B4D4ABD38CA845D6E56F471390A4EC2E0(L_225, L_226, L_227, List_1_set_Item_m4512A91B4D4ABD38CA845D6E56F471390A4EC2E0_RuntimeMethod_var);
+		List_1_t8F3790B7F8C471B3A1336522C7415FB0AC36D47B* L_227 = ((ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C_StaticFields*)il2cpp_codegen_static_fields_for(ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C_il2cpp_TypeInfo_var))->___pageRanges_35;
+		int32_t L_228 = V_26;
+		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_229 = V_24;
+		List_1_set_Item_m4512A91B4D4ABD38CA845D6E56F471390A4EC2E0(L_227, L_228, L_229, List_1_set_Item_m4512A91B4D4ABD38CA845D6E56F471390A4EC2E0_RuntimeMethod_var);
 		// replaced = true;
 		V_25 = (bool)1;
 	}
 
-IL_050e:
+IL_051e:
 	{
 		// for (int k = 0; k < pageRanges.Count; k++) {
-		int32_t L_228 = V_26;
-		V_26 = ((int32_t)il2cpp_codegen_add(L_228, 1));
+		int32_t L_230 = V_26;
+		V_26 = ((int32_t)il2cpp_codegen_add(L_230, 1));
 	}
 
-IL_0514:
+IL_0524:
 	{
 		// for (int k = 0; k < pageRanges.Count; k++) {
-		int32_t L_229 = V_26;
+		int32_t L_231 = V_26;
 		il2cpp_codegen_runtime_class_init_inline(ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C_il2cpp_TypeInfo_var);
-		List_1_t8F3790B7F8C471B3A1336522C7415FB0AC36D47B* L_230 = ((ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C_StaticFields*)il2cpp_codegen_static_fields_for(ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C_il2cpp_TypeInfo_var))->___pageRanges_35;
-		int32_t L_231;
-		L_231 = List_1_get_Count_mF1C0C56457C655BDFFC6EE5B46FAD8BAEC1F588B_inline(L_230, List_1_get_Count_mF1C0C56457C655BDFFC6EE5B46FAD8BAEC1F588B_RuntimeMethod_var);
-		if ((((int32_t)L_229) < ((int32_t)L_231)))
+		List_1_t8F3790B7F8C471B3A1336522C7415FB0AC36D47B* L_232 = ((ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C_StaticFields*)il2cpp_codegen_static_fields_for(ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C_il2cpp_TypeInfo_var))->___pageRanges_35;
+		int32_t L_233;
+		L_233 = List_1_get_Count_mF1C0C56457C655BDFFC6EE5B46FAD8BAEC1F588B_inline(L_232, List_1_get_Count_mF1C0C56457C655BDFFC6EE5B46FAD8BAEC1F588B_RuntimeMethod_var);
+		if ((((int32_t)L_231) < ((int32_t)L_233)))
 		{
-			goto IL_04e3;
+			goto IL_04f3;
 		}
 	}
 	{
 		// if (!replaced) {
-		bool L_232 = V_25;
-		if (L_232)
+		bool L_234 = V_25;
+		if (L_234)
 		{
-			goto IL_0535;
+			goto IL_0545;
 		}
 	}
 	{
 		// pageRanges.Add (displayedOptions);
 		il2cpp_codegen_runtime_class_init_inline(ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C_il2cpp_TypeInfo_var);
-		List_1_t8F3790B7F8C471B3A1336522C7415FB0AC36D47B* L_233 = ((ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C_StaticFields*)il2cpp_codegen_static_fields_for(ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C_il2cpp_TypeInfo_var))->___pageRanges_35;
-		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_234 = ((ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C_StaticFields*)il2cpp_codegen_static_fields_for(ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C_il2cpp_TypeInfo_var))->___displayedOptions_32;
-		List_1_Add_mB5FDF069171C4CB1778BFAC3B9015A22EA7DFBCD_inline(L_233, L_234, List_1_Add_mB5FDF069171C4CB1778BFAC3B9015A22EA7DFBCD_RuntimeMethod_var);
+		List_1_t8F3790B7F8C471B3A1336522C7415FB0AC36D47B* L_235 = ((ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C_StaticFields*)il2cpp_codegen_static_fields_for(ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C_il2cpp_TypeInfo_var))->___pageRanges_35;
+		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_236 = ((ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C_StaticFields*)il2cpp_codegen_static_fields_for(ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C_il2cpp_TypeInfo_var))->___displayedOptions_32;
+		List_1_Add_mB5FDF069171C4CB1778BFAC3B9015A22EA7DFBCD_inline(L_235, L_236, List_1_Add_mB5FDF069171C4CB1778BFAC3B9015A22EA7DFBCD_RuntimeMethod_var);
 	}
 
-IL_0535:
+IL_0545:
 	{
 		// yield break;
 		return (bool)0;
 	}
 
-IL_0537:
+IL_0547:
 	{
 		// lead += x * Vector2.right;
-		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_235 = V_5;
-		float L_236 = V_14;
-		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_237;
-		L_237 = Vector2_get_right_m99043ED6B3D5AEA5033313FE3DA9571F39D1B280_inline(NULL);
-		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_238;
-		L_238 = Vector2_op_Multiply_mC53581E703768BA2512A7C65283657C331994353_inline(L_236, L_237, NULL);
+		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_237 = V_5;
+		float L_238 = V_14;
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_239;
-		L_239 = Vector2_op_Addition_m8136742CE6EE33BA4EB81C5F584678455917D2AE_inline(L_235, L_238, NULL);
-		V_5 = L_239;
+		L_239 = Vector2_get_right_m99043ED6B3D5AEA5033313FE3DA9571F39D1B280_inline(NULL);
+		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_240;
+		L_240 = Vector2_op_Multiply_mC53581E703768BA2512A7C65283657C331994353_inline(L_238, L_239, NULL);
+		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_241;
+		L_241 = Vector2_op_Addition_m8136742CE6EE33BA4EB81C5F584678455917D2AE_inline(L_237, L_240, NULL);
+		V_5 = L_241;
 	}
 
-IL_054c:
+IL_055c:
 	{
 		// for (int i = 0; i < input.Length; i++) {
-		int32_t L_240 = V_9;
-		V_9 = ((int32_t)il2cpp_codegen_add(L_240, 1));
+		int32_t L_242 = V_9;
+		V_9 = ((int32_t)il2cpp_codegen_add(L_242, 1));
 	}
 
-IL_0552:
+IL_0562:
 	{
 		// for (int i = 0; i < input.Length; i++) {
-		int32_t L_241 = V_9;
-		String_t* L_242 = V_3;
-		int32_t L_243;
-		L_243 = String_get_Length_m42625D67623FA5CC7A44D47425CE86FB946542D2_inline(L_242, NULL);
-		if ((((int32_t)L_241) < ((int32_t)L_243)))
+		int32_t L_243 = V_9;
+		String_t* L_244 = V_3;
+		int32_t L_245;
+		L_245 = String_get_Length_m42625D67623FA5CC7A44D47425CE86FB946542D2_inline(L_244, NULL);
+		if ((((int32_t)L_243) < ((int32_t)L_245)))
 		{
 			goto IL_011e;
 		}
@@ -20895,49 +20916,49 @@ IL_0552:
 		return (bool)1;
 	}
 
-IL_056f:
+IL_057f:
 	{
 		__this->___U3CU3E1__state_0 = (-1);
 		// for (int i = 0; i < currentRegion.childCount; i++) {
 		__this->___U3CiU3E5__3_6 = 0;
-		goto IL_0667;
+		goto IL_0677;
 	}
 
-IL_0582:
+IL_0592:
 	{
 		// Text t = currentRegion.GetChild (i).GetComponent<Text> ();
 		il2cpp_codegen_runtime_class_init_inline(ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C_il2cpp_TypeInfo_var);
-		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_244 = ((ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C_StaticFields*)il2cpp_codegen_static_fields_for(ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C_il2cpp_TypeInfo_var))->___currentRegion_36;
-		int32_t L_245 = __this->___U3CiU3E5__3_6;
-		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_246;
-		L_246 = Transform_GetChild_mE686DF0C7AAC1F7AEF356967B1C04D8B8E240EAF(L_244, L_245, NULL);
-		Text_tD60B2346DAA6666BF0D822FF607F0B220C2B9E62* L_247;
-		L_247 = Component_GetComponent_TisText_tD60B2346DAA6666BF0D822FF607F0B220C2B9E62_mB85C5C0EEF6535E3FC0DBFC14E39FA5A51B6F888(L_246, Component_GetComponent_TisText_tD60B2346DAA6666BF0D822FF607F0B220C2B9E62_mB85C5C0EEF6535E3FC0DBFC14E39FA5A51B6F888_RuntimeMethod_var);
-		__this->___U3CtU3E5__4_7 = L_247;
-		Il2CppCodeGenWriteBarrier((void**)(&__this->___U3CtU3E5__4_7), (void*)L_247);
+		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_246 = ((ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C_StaticFields*)il2cpp_codegen_static_fields_for(ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C_il2cpp_TypeInfo_var))->___currentRegion_36;
+		int32_t L_247 = __this->___U3CiU3E5__3_6;
+		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_248;
+		L_248 = Transform_GetChild_mE686DF0C7AAC1F7AEF356967B1C04D8B8E240EAF(L_246, L_247, NULL);
+		Text_tD60B2346DAA6666BF0D822FF607F0B220C2B9E62* L_249;
+		L_249 = Component_GetComponent_TisText_tD60B2346DAA6666BF0D822FF607F0B220C2B9E62_mB85C5C0EEF6535E3FC0DBFC14E39FA5A51B6F888(L_248, Component_GetComponent_TisText_tD60B2346DAA6666BF0D822FF607F0B220C2B9E62_mB85C5C0EEF6535E3FC0DBFC14E39FA5A51B6F888_RuntimeMethod_var);
+		__this->___U3CtU3E5__4_7 = L_249;
+		Il2CppCodeGenWriteBarrier((void**)(&__this->___U3CtU3E5__4_7), (void*)L_249);
 		// if (scrolling) {
-		bool L_248 = __this->___scrolling_4;
-		if (!L_248)
+		bool L_250 = __this->___scrolling_4;
+		if (!L_250)
 		{
-			goto IL_0642;
+			goto IL_0652;
 		}
 	}
 	{
 		// float time = 1f / charactersPerSecond;
-		ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C* L_249 = V_1;
-		float L_250 = L_249->___charactersPerSecond_9;
-		__this->___U3CtimeU3E5__5_8 = ((float)((1.0f)/L_250));
-		goto IL_0630;
+		ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C* L_251 = V_1;
+		float L_252 = L_251->___charactersPerSecond_9;
+		__this->___U3CtimeU3E5__5_8 = ((float)((1.0f)/L_252));
+		goto IL_0640;
 	}
 
-IL_05bc:
+IL_05cc:
 	{
 		// if (chatting == null) yield break;
 		il2cpp_codegen_runtime_class_init_inline(ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C_il2cpp_TypeInfo_var);
-		Dialog_t1A3474C8E604C61E022BDF82747C68A6C1E11972* L_251 = ((ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C_StaticFields*)il2cpp_codegen_static_fields_for(ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C_il2cpp_TypeInfo_var))->___chatting_26;
-		if (L_251)
+		Dialog_t1A3474C8E604C61E022BDF82747C68A6C1E11972* L_253 = ((ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C_StaticFields*)il2cpp_codegen_static_fields_for(ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C_il2cpp_TypeInfo_var))->___chatting_26;
+		if (L_253)
 		{
-			goto IL_05c5;
+			goto IL_05d5;
 		}
 	}
 	{
@@ -20945,19 +20966,19 @@ IL_05bc:
 		return (bool)0;
 	}
 
-IL_05c5:
+IL_05d5:
 	{
 		// t.enabled = true;
-		Text_tD60B2346DAA6666BF0D822FF607F0B220C2B9E62* L_252 = __this->___U3CtU3E5__4_7;
-		Behaviour_set_enabled_mF1DCFE60EB09E0529FE9476CA804A3AA2D72B16A(L_252, (bool)1, NULL);
+		Text_tD60B2346DAA6666BF0D822FF607F0B220C2B9E62* L_254 = __this->___U3CtU3E5__4_7;
+		Behaviour_set_enabled_mF1DCFE60EB09E0529FE9476CA804A3AA2D72B16A(L_254, (bool)1, NULL);
 		// if (Input.GetButtonDown (cont))
-		ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C* L_253 = V_1;
-		String_t* L_254 = L_253->___cont_23;
-		bool L_255;
-		L_255 = Input_GetButtonDown_mEF5F80C9E8F04104E807D9CBD6F70CDB98751579(L_254, NULL);
-		if (!L_255)
+		ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C* L_255 = V_1;
+		String_t* L_256 = L_255->___cont_23;
+		bool L_257;
+		L_257 = Input_GetButtonDown_mEF5F80C9E8F04104E807D9CBD6F70CDB98751579(L_256, NULL);
+		if (!L_257)
 		{
-			goto IL_05e5;
+			goto IL_05f5;
 		}
 	}
 	{
@@ -20965,38 +20986,38 @@ IL_05c5:
 		__this->___scrolling_4 = (bool)0;
 	}
 
-IL_05e5:
+IL_05f5:
 	{
 		// time -= Time.unscaledDeltaTime;
-		float L_256 = __this->___U3CtimeU3E5__5_8;
-		float L_257;
-		L_257 = Time_get_unscaledDeltaTime_mF057EECA857E5C0F90A3F910D26D3EE59F27C4B5(NULL);
-		__this->___U3CtimeU3E5__5_8 = ((float)il2cpp_codegen_subtract(L_256, L_257));
+		float L_258 = __this->___U3CtimeU3E5__5_8;
+		float L_259;
+		L_259 = Time_get_unscaledDeltaTime_mF057EECA857E5C0F90A3F910D26D3EE59F27C4B5(NULL);
+		__this->___U3CtimeU3E5__5_8 = ((float)il2cpp_codegen_subtract(L_258, L_259));
 		// if (i % charactersPerClick == 0 && playAudio) {
-		int32_t L_258 = __this->___U3CiU3E5__3_6;
-		ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C* L_259 = V_1;
-		int32_t L_260 = L_259->___charactersPerClick_22;
-		if (((int32_t)(L_258%L_260)))
+		int32_t L_260 = __this->___U3CiU3E5__3_6;
+		ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C* L_261 = V_1;
+		int32_t L_262 = L_261->___charactersPerClick_22;
+		if (((int32_t)(L_260%L_262)))
 		{
-			goto IL_0619;
+			goto IL_0629;
 		}
 	}
 	{
-		ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C* L_261 = V_1;
-		bool L_262 = L_261->___playAudio_17;
-		if (!L_262)
+		ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C* L_263 = V_1;
+		bool L_264 = L_263->___playAudio_17;
+		if (!L_264)
 		{
-			goto IL_0619;
+			goto IL_0629;
 		}
 	}
 	{
 		// audioSource.Play();
-		ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C* L_263 = V_1;
-		AudioSource_t871AC2272F896738252F04EE949AEF5B241D3299* L_264 = L_263->___audioSource_19;
-		AudioSource_Play_m95DF07111C61D0E0F00257A00384D31531D590C3(L_264, NULL);
+		ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C* L_265 = V_1;
+		AudioSource_t871AC2272F896738252F04EE949AEF5B241D3299* L_266 = L_265->___audioSource_19;
+		AudioSource_Play_m95DF07111C61D0E0F00257A00384D31531D590C3(L_266, NULL);
 	}
 
-IL_0619:
+IL_0629:
 	{
 		// yield return null;
 		__this->___U3CU3E2__current_1 = NULL;
@@ -21005,71 +21026,71 @@ IL_0619:
 		return (bool)1;
 	}
 
-IL_0629:
+IL_0639:
 	{
 		__this->___U3CU3E1__state_0 = (-1);
 	}
 
-IL_0630:
+IL_0640:
 	{
 		// while (time > 0) {
-		float L_265 = __this->___U3CtimeU3E5__5_8;
-		if ((((float)L_265) > ((float)(0.0f))))
+		float L_267 = __this->___U3CtimeU3E5__5_8;
+		if ((((float)L_267) > ((float)(0.0f))))
 		{
-			goto IL_05bc;
+			goto IL_05cc;
 		}
 	}
 	{
-		goto IL_064e;
+		goto IL_065e;
 	}
 
-IL_0642:
+IL_0652:
 	{
 		// t.enabled = true;
-		Text_tD60B2346DAA6666BF0D822FF607F0B220C2B9E62* L_266 = __this->___U3CtU3E5__4_7;
-		Behaviour_set_enabled_mF1DCFE60EB09E0529FE9476CA804A3AA2D72B16A(L_266, (bool)1, NULL);
+		Text_tD60B2346DAA6666BF0D822FF607F0B220C2B9E62* L_268 = __this->___U3CtU3E5__4_7;
+		Behaviour_set_enabled_mF1DCFE60EB09E0529FE9476CA804A3AA2D72B16A(L_268, (bool)1, NULL);
 	}
 
-IL_064e:
+IL_065e:
 	{
 		// }
 		__this->___U3CtU3E5__4_7 = (Text_tD60B2346DAA6666BF0D822FF607F0B220C2B9E62*)NULL;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->___U3CtU3E5__4_7), (void*)(Text_tD60B2346DAA6666BF0D822FF607F0B220C2B9E62*)NULL);
 		// for (int i = 0; i < currentRegion.childCount; i++) {
-		int32_t L_267 = __this->___U3CiU3E5__3_6;
-		V_27 = L_267;
-		int32_t L_268 = V_27;
-		__this->___U3CiU3E5__3_6 = ((int32_t)il2cpp_codegen_add(L_268, 1));
+		int32_t L_269 = __this->___U3CiU3E5__3_6;
+		V_27 = L_269;
+		int32_t L_270 = V_27;
+		__this->___U3CiU3E5__3_6 = ((int32_t)il2cpp_codegen_add(L_270, 1));
 	}
 
-IL_0667:
+IL_0677:
 	{
 		// for (int i = 0; i < currentRegion.childCount; i++) {
-		int32_t L_269 = __this->___U3CiU3E5__3_6;
+		int32_t L_271 = __this->___U3CiU3E5__3_6;
 		il2cpp_codegen_runtime_class_init_inline(ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C_il2cpp_TypeInfo_var);
-		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_270 = ((ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C_StaticFields*)il2cpp_codegen_static_fields_for(ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C_il2cpp_TypeInfo_var))->___currentRegion_36;
-		int32_t L_271;
-		L_271 = Transform_get_childCount_mE9C29C702AB662CC540CA053EDE48BDAFA35B4B0(L_270, NULL);
-		if ((((int32_t)L_269) < ((int32_t)L_271)))
+		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_272 = ((ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C_StaticFields*)il2cpp_codegen_static_fields_for(ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C_il2cpp_TypeInfo_var))->___currentRegion_36;
+		int32_t L_273;
+		L_273 = Transform_get_childCount_mE9C29C702AB662CC540CA053EDE48BDAFA35B4B0(L_272, NULL);
+		if ((((int32_t)L_271) < ((int32_t)L_273)))
 		{
-			goto IL_0582;
+			goto IL_0592;
 		}
 	}
 	{
 		// if (!string.IsNullOrEmpty (pageOverflow)) {
-		String_t* L_272 = __this->___U3CpageOverflowU3E5__2_5;
-		bool L_273;
-		L_273 = String_IsNullOrEmpty_mEA9E3FB005AC28FE02E69FCF95A7B8456192B478(L_272, NULL);
-		if (L_273)
+		String_t* L_274 = __this->___U3CpageOverflowU3E5__2_5;
+		bool L_275;
+		L_275 = String_IsNullOrEmpty_mEA9E3FB005AC28FE02E69FCF95A7B8456192B478(L_274, NULL);
+		if (L_275)
 		{
-			goto IL_06bc;
+			goto IL_06cc;
 		}
 	}
 	{
-		goto IL_06a2;
+		goto IL_06b2;
 	}
 
-IL_068b:
+IL_069b:
 	{
 		// yield return null;
 		__this->___U3CU3E2__current_1 = NULL;
@@ -21078,39 +21099,39 @@ IL_068b:
 		return (bool)1;
 	}
 
-IL_069b:
+IL_06ab:
 	{
 		__this->___U3CU3E1__state_0 = (-1);
 	}
 
-IL_06a2:
+IL_06b2:
 	{
 		// while (!Input.GetButtonDown (cont))
-		ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C* L_274 = V_1;
-		String_t* L_275 = L_274->___cont_23;
-		bool L_276;
-		L_276 = Input_GetButtonDown_mEF5F80C9E8F04104E807D9CBD6F70CDB98751579(L_275, NULL);
-		if (!L_276)
+		ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C* L_276 = V_1;
+		String_t* L_277 = L_276->___cont_23;
+		bool L_278;
+		L_278 = Input_GetButtonDown_mEF5F80C9E8F04104E807D9CBD6F70CDB98751579(L_277, NULL);
+		if (!L_278)
 		{
-			goto IL_068b;
+			goto IL_069b;
 		}
 	}
 	{
 		// PlayString (pageOverflow);
-		String_t* L_277 = __this->___U3CpageOverflowU3E5__2_5;
+		String_t* L_279 = __this->___U3CpageOverflowU3E5__2_5;
 		il2cpp_codegen_runtime_class_init_inline(ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C_il2cpp_TypeInfo_var);
-		ChatManager_PlayString_m6CB7C42F8FAAFA98B55D347700B7F80C04E73642(L_277, NULL);
-		goto IL_06c2;
+		ChatManager_PlayString_m6CB7C42F8FAAFA98B55D347700B7F80C04E73642(L_279, NULL);
+		goto IL_06d2;
 	}
 
-IL_06bc:
+IL_06cc:
 	{
 		// stringPlaying = false;
 		il2cpp_codegen_runtime_class_init_inline(ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C_il2cpp_TypeInfo_var);
 		((ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C_StaticFields*)il2cpp_codegen_static_fields_for(ChatManager_t9A760BEBDD5EAD513061C76E7ACFE21B88FE409C_il2cpp_TypeInfo_var))->___stringPlaying_29 = (bool)0;
 	}
 
-IL_06c2:
+IL_06d2:
 	{
 		// }
 		return (bool)0;

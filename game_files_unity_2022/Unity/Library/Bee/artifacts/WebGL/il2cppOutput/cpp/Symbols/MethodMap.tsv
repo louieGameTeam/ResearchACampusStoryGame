@@ -26901,8 +26901,6 @@ U3CU3Ec__DisplayClass3_0_U3CGetU3Eb__1_m129236EAD89BCDF394C44F28D4ECCFC10761E0B5
 U3CU3Ec__DisplayClass3_0_U3CGetU3Eb__2_mFBEE16C4C04D41290B63A23EEFF5BCA71BCEA6C6	RSG.IPromise`1<Models.Photo[]> MainScript/<>c__DisplayClass3_0::<Get>b__2(Models.User[])	Assembly-CSharp
 U3CU3Ec__DisplayClass3_0_U3CGetU3Eb__3_mE6B7237074F01FCC65E6EDF84D8FD41AB91EBF8E	System.Void MainScript/<>c__DisplayClass3_0::<Get>b__3(Models.Photo[])	Assembly-CSharp
 U3CU3Ec__DisplayClass3_0_U3CGetU3Eb__4_m802E0FE01483720E19629583659C8FC03112286F	System.Void MainScript/<>c__DisplayClass3_0::<Get>b__4(System.Exception)	Assembly-CSharp
-U3CU3Ec__DisplayClass11_0__ctor_m301D6CE211A8A85E8B5092B9578637E43816CB66	System.Void MapSetting/<>c__DisplayClass11_0::.ctor()	Assembly-CSharp
-U3CU3Ec__DisplayClass11_0_U3CSetMapU3Eb__0_m54761D3AE182C016CF26B4993B0776CB601EF61B	System.Void MapSetting/<>c__DisplayClass11_0::<SetMap>b__0()	Assembly-CSharp
 Map__ctor_m3C102C47A70B8900D463BDD2B5201471C5405086	System.Void MapSetting/Map::.ctor()	Assembly-CSharp
 Map_Contains_m1CA0CAE424E338398DC2EEF2F4B0D9D4B249AAC0	System.Boolean MapSetting/Map::Contains(UnityEngine.Vector2)	Assembly-CSharp
 Map_Normalize_m897843C37D79AE34A956B5975F5158AA0CA768ED	UnityEngine.Vector2 MapSetting/Map::Normalize(UnityEngine.Vector2)	Assembly-CSharp
