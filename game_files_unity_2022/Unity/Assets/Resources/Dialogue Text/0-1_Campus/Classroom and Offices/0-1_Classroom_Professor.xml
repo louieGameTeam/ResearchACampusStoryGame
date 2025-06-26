@@ -20,7 +20,7 @@
           <set var="initialized" value="true"/>
         </false>
       </if>
-      <page>Class will be starting soon so why don't you take a seat.</page>
+      <page>Class will be starting soon, so why don't you take a seat?</page>
     </true>
     <false>
       <page>You still have some time before class starts.</page>
