@@ -2,6 +2,7 @@
 using System.Xml;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Globalization;
 
 
 
@@ -271,8 +272,8 @@ public class Level : ProgressType {
             if (task.Name == "move") {
                 hasMove = true;
                 destination = new Vector2(
-                    float.Parse(task.Attributes.GetNamedItem("x").Value),
-                    float.Parse(task.Attributes.GetNamedItem("y").Value)
+                    float.Parse(task.Attributes.GetNamedItem("x").Value, CultureInfo.InvariantCulture),
+                    float.Parse(task.Attributes.GetNamedItem("y").Value, CultureInfo.InvariantCulture)
                 );
             } else if (task.Name == "task") {
                 Task toAdd = new Task(task);

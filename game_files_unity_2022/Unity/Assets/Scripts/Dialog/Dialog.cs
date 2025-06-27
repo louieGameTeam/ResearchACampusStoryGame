@@ -3,6 +3,7 @@ using System.Xml;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Reflection;
+using System.Globalization;
 
 
 public class Dialog {
@@ -150,7 +151,7 @@ public class Dialog {
                 foreach (XmlNode node in allOptions) {
                     XmlNode w = node.Attributes.GetNamedItem("weight");
                     if (w != null) {
-                        defined += float.Parse(w.Value);
+                        defined += float.Parse(w.Value, CultureInfo.InvariantCulture);
                         definedCount++;
                     }
                 }
@@ -161,7 +162,7 @@ public class Dialog {
                     if (assigned) continue;
 					float i = undefined;
 					XmlNode w = node.Attributes.GetNamedItem("weight");
-					if (w != null) i = float.Parse(w.Value);
+					if (w != null) i = float.Parse(w.Value, CultureInfo.InvariantCulture);
                     defined += i;
                     if (defined > selection) {
 						current = node.ChildNodes[0];
