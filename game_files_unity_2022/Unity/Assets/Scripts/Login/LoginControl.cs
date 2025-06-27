@@ -121,7 +121,7 @@ public class LoginControl : MonoBehaviour
         }
     }
 
-    void OnLogInClick()
+    public void OnLogInClick()
     {
         this.message.enabled = false;
         firebase.SignIn(email.text, password.text, LoginComplete, LogInFailed);
@@ -232,7 +232,7 @@ public class LoginControl : MonoBehaviour
             }
             else if (password.text.Length < 6)
             {
-                onInputVerificationFailed.Invoke("Password needs to be at least 6 character!");
+                onInputVerificationFailed.Invoke("Password needs to be at least 6 characters!");
                 return;
             }
             else if (confirmPassword.text != password.text)
