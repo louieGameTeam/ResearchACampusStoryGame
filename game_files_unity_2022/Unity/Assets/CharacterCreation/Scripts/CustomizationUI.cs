@@ -120,9 +120,11 @@ namespace CharacterCreation {
 		public void Randomize() {
             int tabIndex = tabs.IndexOf(currentTab);
             int featureIndex = currentTab.features.IndexOf(currentTab.currentFeature);
+            string savedName = cs.name;
             Character c = FindObjectOfType<Character>();
             cs = new CharacterSetting(c.transform);
             c.cs = cs;
+            cs.name = savedName;
             tabs = BuildTabs();
             TabClick(tabIndex);
             FeatureClick(featureIndex);
