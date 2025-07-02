@@ -106,6 +106,8 @@ public class LoginControl : MonoBehaviour
             Serialization.log = new GameLog();
             MainPage();
         });
+        SaveData sd = SaveData.CreateInitialSave(new SaveData.UserInfo(signUpData.firstName.text, signUpData.lastName.text, signUpData.email.text));
+        Serialization.Serialize(SaveData.filePath, sd);
     }
 
     private void SignUpFailed(Proyecto26.RequestException exception)

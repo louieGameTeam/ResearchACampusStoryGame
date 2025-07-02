@@ -79,7 +79,8 @@ public class MainMenu : MonoBehaviour {
         // Go to Character Creation if this is the first load
         if (target == levelsGrid) {
             SaveData sd = SaveData.ReadGameSave();
-            if (sd == null || (sd != null && sd.character == null)) {
+            if (sd == null || sd.character == null || sd.character.locations == null) {
+                sd.character = null;
                 BlackFade.LoadScene("CharacterCreation");
                 return;
             }

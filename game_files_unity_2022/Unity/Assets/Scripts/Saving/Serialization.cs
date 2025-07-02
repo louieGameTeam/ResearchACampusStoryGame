@@ -26,20 +26,11 @@ public static class Serialization
 
             string json = JsonUtility.ToJson(obj);
 
-            if (log == null || log.log.Count == 0)
-            {
-                log = new GameLog();
-                foreach (Level item in Tasks.levels)
-                    log.log.Add(new LevelLog(item.name, 0, 0, string.Empty));
-            }
-            float toAdd = Time.realtimeSinceStartup - lastTime;
-            lastTime = Time.realtimeSinceStartup;
             int index = Tasks.levels.IndexOf(Tasks.currentLevel);
-            if (index < log.log.Count && index >= 0)
-                log.log[index].seconds += toAdd;
-
+            log = UpdateGamelog(log);
             Firebase.instance.SaveData(obj, () =>
             {
+                log = UpdateGamelog(log);
                 for (int i = 0; i < Tasks.levels.Count; i++)
                 {
                     float newProgress = Tasks.levels[i].progress;
@@ -48,7 +39,6 @@ public static class Serialization
                         log.log[i].lastProgress = Firebase.instance.currentTime.ToString("M/d/yyyy h:mm:ss tt", CultureInfo.GetCultureInfo("en-US"));
                         // Debug.Log($"SERIALIZED STRING: {Firebase.instance.currentTime.ToString("M/d/yyyy h:mm:ss tt", CultureInfo.GetCultureInfo("en-US"))}");
                     }
-
                     log.log[i].progress = newProgress;
                 }
 
@@ -96,6 +86,26 @@ public static class Serialization
             file.Close();
             file.Dispose();
         }
+    }
+
+    private static GameLog UpdateGamelog(GameLog log)
+    {
+        if (log == null || log.log.Count == 0)
+        {
+            log = new GameLog();
+            foreach (Level item in Tasks.levels)
+            {
+                log.log.Add(new LevelLog(item.name, 0, 0, string.Empty));
+            }
+        }
+        float toAdd = Time.realtimeSinceStartup - lastTime;
+        lastTime = Time.realtimeSinceStartup;
+        int index = Tasks.levels.IndexOf(Tasks.currentLevel);
+        if (index < log.log.Count && index >= 0)
+        {
+            log.log[index].seconds += toAdd;
+        }
+        return log;
     }
 
 

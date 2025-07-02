@@ -95,7 +95,7 @@ public class SaveData {
                 cs = item.cs;
         }
         if (cs == null)
-            return null;
+            return null;    
         sd.character = cs;
 
         Serialization.Serialize(SaveData.filePath, sd);
@@ -104,6 +104,23 @@ public class SaveData {
 
     public static SaveData ReadGameSave () {
         return (SaveData)Serialization.Deserialize(filePath);
+    }
+
+    public static SaveData CreateInitialSave(UserInfo newUserInfo)
+    {
+        SaveData sd = new SaveData();
+        sd.taskProgress = "Welcome to University!/GoToOA/0/0";
+        sd.playerPos = new Vector2(40, -40);
+        sd.dialogMemory = new Dictionary<string, SerializableNestedDictionary<string, string>>();
+        foreach (Chattable item in GameObject.FindObjectsOfType<Chattable>()) {
+            SerializableNestedDictionary<string, string> d = new SerializableNestedDictionary<string, string>(item.properties);
+            sd.dialogMemory.Add(item.GetInstanceHash(), d);
+        }
+        sd.playerMemory = Dialog.playerProperties;
+        sd.character = null;
+        sd.muteSettings = new MuteSettings();
+        sd.userInfo = newUserInfo;
+        return sd;
     }
 
     [System.Serializable]
