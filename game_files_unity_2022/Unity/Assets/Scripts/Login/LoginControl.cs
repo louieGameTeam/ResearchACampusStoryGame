@@ -59,7 +59,7 @@ public class LoginControl : MonoBehaviour
         }
         else
         {
-            ShowMessage("Email not valid!");
+            ShowMessage("Email not valid! Make sure to use your @ucdavis.edu email address.");
         }
     }
 
@@ -67,7 +67,7 @@ public class LoginControl : MonoBehaviour
     {
         Regex regex = new Regex(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$");
         Match match = regex.Match(email);
-        return match.Success;
+        return match.Success && email.EndsWith("ucdavis.edu");
     }
     private void OnPasswordResetCompleted()
     {
@@ -224,7 +224,7 @@ public class LoginControl : MonoBehaviour
             }
             else if (!IsValid(email.text))
             {
-                onInputVerificationFailed.Invoke("Email is not valid!");
+                onInputVerificationFailed.Invoke("Email not valid! Make sure to use your @ucdavis.edu email address.");
                 return;
             }
             else if (password.text == string.Empty)
