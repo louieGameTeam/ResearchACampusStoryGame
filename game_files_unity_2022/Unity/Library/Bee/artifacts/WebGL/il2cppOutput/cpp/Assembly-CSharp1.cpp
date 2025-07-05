@@ -1186,7 +1186,6 @@ IL2CPP_EXTERN_C String_t* _stringLiteral2386E77CF610F786B06A91AF2C1B3FD2282D2745
 IL2CPP_EXTERN_C String_t* _stringLiteral2AB3A00AEBB659B967BDF1741D7115AA3F759C79;
 IL2CPP_EXTERN_C String_t* _stringLiteral2B3AD6333F669606E87648FD08F4CF7B98B051B5;
 IL2CPP_EXTERN_C String_t* _stringLiteral2B9B6C84CC15492CCB290C4B79418FA6D7DD24C1;
-IL2CPP_EXTERN_C String_t* _stringLiteral2F38A876C5D70446222DE0A936B914D7287BC101;
 IL2CPP_EXTERN_C String_t* _stringLiteral2FEDB549020AF1A6DFFA16802066145ED48ECE1D;
 IL2CPP_EXTERN_C String_t* _stringLiteral304B1BC7B1FAA5EA26BCEEA9C69D283F782FD8FC;
 IL2CPP_EXTERN_C String_t* _stringLiteral366FE210AF29F349A6885C522E501EC509B748DF;
@@ -1203,10 +1202,10 @@ IL2CPP_EXTERN_C String_t* _stringLiteral4C37184ABD38BF9788EE23119802EC101741E082
 IL2CPP_EXTERN_C String_t* _stringLiteral52B306B7843BAADD97772D377ADAA3A8F4335C7A;
 IL2CPP_EXTERN_C String_t* _stringLiteral5612E6131CAE3293027EFFCC907512CA15BE3C3E;
 IL2CPP_EXTERN_C String_t* _stringLiteral565A02CDB13DB545C4951504D2557024FDE785EB;
-IL2CPP_EXTERN_C String_t* _stringLiteral57452D2F9AC7563CD4D13827BB4835A2868E1D9A;
 IL2CPP_EXTERN_C String_t* _stringLiteral5828E419DB92F6FC8462EFF765A27CD02ED740BA;
 IL2CPP_EXTERN_C String_t* _stringLiteral5B58EBE31E594BF8FA4BEA3CD075473149322B18;
 IL2CPP_EXTERN_C String_t* _stringLiteral5C058FE20FD7652D620A17B5F9D6AE4EEFA76795;
+IL2CPP_EXTERN_C String_t* _stringLiteral5D3CB0E5BA7EBF07F3D4BAC33A14AAE1FE9AE0F8;
 IL2CPP_EXTERN_C String_t* _stringLiteral64058CC688A96A90239811EF06C9D20DB0499C3E;
 IL2CPP_EXTERN_C String_t* _stringLiteral69520730213CDED741A5919BB83F6E4B8610EDBA;
 IL2CPP_EXTERN_C String_t* _stringLiteral6A3DC03FAB995208C3FADE9A0B2C8AB2D193AF3E;
@@ -1268,6 +1267,7 @@ IL2CPP_EXTERN_C String_t* _stringLiteralE8EF55A3CCCC9D89E93D42E69A1EFA5B7D048B41
 IL2CPP_EXTERN_C String_t* _stringLiteralE9139FCAE57C6107AC90A165D585921AE8B59311;
 IL2CPP_EXTERN_C String_t* _stringLiteralEB534843932D1025EEE09575458F840C63DC1063;
 IL2CPP_EXTERN_C String_t* _stringLiteralEBA43586A02B0963A6F0C87B05A906CED8D3C8EA;
+IL2CPP_EXTERN_C String_t* _stringLiteralEBD71E4BCFD9FA8AF83E5A62CB2F2EBBF789283A;
 IL2CPP_EXTERN_C String_t* _stringLiteralEC24456BF1D0B9CE18660F74F513161368E6B88A;
 IL2CPP_EXTERN_C String_t* _stringLiteralEECEAAC359EDB2E91D0F46F3CA9A65F47527BC5C;
 IL2CPP_EXTERN_C String_t* _stringLiteralF29670F03318E199DEF145F402E106A3EFB3E43D;
@@ -7614,6 +7614,8 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Regex__ctor_m082970AA73B8236360F0CA651FA
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Match_tFBEBCF225BD8EA17BCE6CE3FE5C1BD8E3074105F* Regex_Match_m58565ECF23ACCD2CA77D6F10A6A182B03CF0FF84 (Regex_tE773142C2BE45C5D362B0F815AFF831707A51772* __this, String_t* ___input0, const RuntimeMethod* method) ;
 // System.Boolean System.Text.RegularExpressions.Group::get_Success()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Group_get_Success_m4E0238EE4B1E7F927E2AF13E2E5901BCA92BE62F (Group_t26371E9136D6F43782C487B63C67C5FC4F472881* __this, const RuntimeMethod* method) ;
+// System.Boolean System.String::EndsWith(System.String)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool String_EndsWith_mCD3754F5401E19CE7821CD398986E4EAA6AD87DC (String_t* __this, String_t* ___value0, const RuntimeMethod* method) ;
 // System.Boolean Proyecto26.RequestException::get_IsNetworkError()
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR bool RequestException_get_IsNetworkError_m1E99469DB868249A682360D6812AF364F69B43B8_inline (RequestException_tB79F2199F4A33F1A4334D5AC169AA874B46F80A9* __this, const RuntimeMethod* method) ;
 // System.Void Firebase::SignUp(System.String,System.String,System.String,UnityEngine.Events.UnityAction,UnityEngine.Events.UnityAction`1<Proyecto26.RequestException>)
@@ -8355,8 +8357,6 @@ inline int32_t List_1_get_Count_m1ADC1B77ECCBB77DD8F43121A387AEC04537273F_inline
 {
 	return ((  int32_t (*) (List_1_tC0FCC010411366A6623886AFA93A0B022E62D015*, const RuntimeMethod*))List_1_get_Count_m4407E4C389F22B8CEC282C15D56516658746C383_gshared_inline)(__this, method);
 }
-// System.Boolean System.String::EndsWith(System.String)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool String_EndsWith_mCD3754F5401E19CE7821CD398986E4EAA6AD87DC (String_t* __this, String_t* ___value0, const RuntimeMethod* method) ;
 // System.String System.String::Remove(System.Int32,System.Int32)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* String_Remove_m4D7A58E2124F8D0D8AE3EEDE74B6AD6A863ABA68 (String_t* __this, int32_t ___startIndex0, int32_t ___count1, const RuntimeMethod* method) ;
 // System.Boolean System.String::Contains(System.String)
@@ -10476,7 +10476,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LoginControl_ResetPassword_mD655082B15BD
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&LoginControl_OnPasswordResetFailed_m59CF7F348AA6D5241003266B6DE14F0A6A83E99F_RuntimeMethod_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&UnityAction_1_t10AD12ED4399CB67DA146BF5DFB3302CF43A1A4E_il2cpp_TypeInfo_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&UnityAction_t11A1F3B953B365C072A5DCC32677EE1796A962A7_il2cpp_TypeInfo_var);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral2F38A876C5D70446222DE0A936B914D7287BC101);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral5D3CB0E5BA7EBF07F3D4BAC33A14AAE1FE9AE0F8);
 		s_Il2CppMethodInitialized = true;
 	}
 	{
@@ -10511,8 +10511,8 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LoginControl_ResetPassword_mD655082B15BD
 
 IL_004d:
 	{
-		// ShowMessage("Email not valid!");
-		LoginControl_ShowMessage_mBF61821DD71E909B06C2892901D845B4C55CF231(__this, _stringLiteral2F38A876C5D70446222DE0A936B914D7287BC101, NULL);
+		// ShowMessage("Email not valid! Make sure to use your @ucdavis.edu email address.");
+		LoginControl_ShowMessage_mBF61821DD71E909B06C2892901D845B4C55CF231(__this, _stringLiteral5D3CB0E5BA7EBF07F3D4BAC33A14AAE1FE9AE0F8, NULL);
 		// }
 		return;
 	}
@@ -10525,6 +10525,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool LoginControl_IsValid_m9810D51F342D1C843D
 	{
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Regex_tE773142C2BE45C5D362B0F815AFF831707A51772_il2cpp_TypeInfo_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral84BEF2BBBA709D39E6088E032114AC9F810A5B7A);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralEBD71E4BCFD9FA8AF83E5A62CB2F2EBBF789283A);
 		s_Il2CppMethodInitialized = true;
 	}
 	{
@@ -10535,10 +10536,24 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool LoginControl_IsValid_m9810D51F342D1C843D
 		String_t* L_1 = ___email0;
 		Match_tFBEBCF225BD8EA17BCE6CE3FE5C1BD8E3074105F* L_2;
 		L_2 = Regex_Match_m58565ECF23ACCD2CA77D6F10A6A182B03CF0FF84(L_0, L_1, NULL);
-		// return match.Success;
+		// return match.Success && email.EndsWith("ucdavis.edu");
 		bool L_3;
 		L_3 = Group_get_Success_m4E0238EE4B1E7F927E2AF13E2E5901BCA92BE62F(L_2, NULL);
-		return L_3;
+		if (!L_3)
+		{
+			goto IL_0023;
+		}
+	}
+	{
+		String_t* L_4 = ___email0;
+		bool L_5;
+		L_5 = String_EndsWith_mCD3754F5401E19CE7821CD398986E4EAA6AD87DC(L_4, _stringLiteralEBD71E4BCFD9FA8AF83E5A62CB2F2EBBF789283A, NULL);
+		return L_5;
+	}
+
+IL_0023:
+	{
+		return (bool)0;
 	}
 }
 // System.Void LoginControl::OnPasswordResetCompleted()
@@ -11135,7 +11150,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SignUp_VerifyInput_m6FC1E21963697810BEFA
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral2386E77CF610F786B06A91AF2C1B3FD2282D2745);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral2FEDB549020AF1A6DFFA16802066145ED48ECE1D);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral5612E6131CAE3293027EFFCC907512CA15BE3C3E);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral57452D2F9AC7563CD4D13827BB4835A2868E1D9A);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral5D3CB0E5BA7EBF07F3D4BAC33A14AAE1FE9AE0F8);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral6A3DC03FAB995208C3FADE9A0B2C8AB2D193AF3E);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralB2BA88FD55B6166C4E9E2B1F6008881258DE4A92);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralBAC2C7ED8304C8D20B5CEC855ACB97623732B0DB);
@@ -11198,9 +11213,9 @@ IL_0050:
 		}
 	}
 	{
-		// onInputVerificationFailed.Invoke("Email is not valid!");
+		// onInputVerificationFailed.Invoke("Email not valid! Make sure to use your @ucdavis.edu email address.");
 		UnityEvent_1_tC9859540CF1468306CAB6D758C0A0D95DBCEC257* L_13 = __this->___onInputVerificationFailed_7;
-		UnityEvent_1_Invoke_mA633B48B5D287DA856FB954AC3E4012487E63C15(L_13, _stringLiteral57452D2F9AC7563CD4D13827BB4835A2868E1D9A, UnityEvent_1_Invoke_mA633B48B5D287DA856FB954AC3E4012487E63C15_RuntimeMethod_var);
+		UnityEvent_1_Invoke_mA633B48B5D287DA856FB954AC3E4012487E63C15(L_13, _stringLiteral5D3CB0E5BA7EBF07F3D4BAC33A14AAE1FE9AE0F8, UnityEvent_1_Invoke_mA633B48B5D287DA856FB954AC3E4012487E63C15_RuntimeMethod_var);
 		// return;
 		return;
 	}
