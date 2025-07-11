@@ -1,7 +1,0 @@
-<dialog>
-  <page>Have you come to make a deposit?</page>
-  <say>Do you take USD?</say>
-  <page>U-S-D?</page>
-  <say>United States Dollars.</say>
-  <page>I have no idea what you're talking about...</page>
-</dialog>

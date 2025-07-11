@@ -1,8 +1,0 @@
-<dialog>
-  <page>What can I do for you?</page>
-  <say>Do you want to take this personality test?</say>
-  <page>How long will it take?</page>
-  <say>Not too long!</say>
-  <page>Oh shoot, I have class soon!</page>
-  <page>Sorry! Gotta go!</page>
-</dialog>

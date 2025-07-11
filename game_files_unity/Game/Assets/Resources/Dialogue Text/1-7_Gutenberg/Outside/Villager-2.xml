@@ -1,8 +1,0 @@
-<dialog>
-  <page>Do you have any spare change?</page>
-  <say>I've got a few dollars.</say>
-  <page>A... dollar?</page>
-  <page>You must not be from here...</page>
-  <page>Foreign money is no good to me.</page>
-  <say>Ah, never mind then. </say>
-</dialog>
