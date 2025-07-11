@@ -2,7 +2,7 @@
 
 This project is for the game created for the online course "Introduction to Research" by Dr. Angelique Louie from UC Davis. Done by Game Development and Arts Club at UC Davis in 2017-2018.
 <br> <br>
-The game is created using Unity, played in the browser (WebGL), uses GameSparks for the backend (tracking player progress & grades), and hosted in Github Pages.
+The game is created using Unity, played in the browser (WebGL), uses Firebase for the backend (tracking player progress & grades), and hosted in Github Pages.
 
 ---
 
