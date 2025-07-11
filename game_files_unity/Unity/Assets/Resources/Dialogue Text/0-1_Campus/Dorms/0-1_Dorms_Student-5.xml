@@ -1,0 +1,22 @@
+<dialog>
+  <if var="N:Met Before" case="E" value="R:true">
+    <true>
+      <page>My fellow first year!</page>
+      <finish/>
+    </true>
+    <false>
+      <page>I'm a first year, are you?</page>
+      <set var="N:Met Before" value="R:true"/>
+    </false>
+  </if>
+  <reply>
+    <option>
+      <say>Yeah!</say>
+      <page>Cool!</page>
+    </option>
+    <option>
+      <say>Nope!</say>
+      <page>Liar! This dorm is for first years only!</page>
+    </option>
+  </reply>
+</dialog>

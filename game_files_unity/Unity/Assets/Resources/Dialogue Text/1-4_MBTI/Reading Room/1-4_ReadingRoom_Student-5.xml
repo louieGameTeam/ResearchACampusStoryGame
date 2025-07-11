@@ -1,0 +1,10 @@
+<dialog>
+  <random>
+    <option>
+      <page>Where is that book..?</page>
+    </option>
+    <option>
+      <page>What was it called again?</page>
+    </option>
+  </random>
+</dialog>

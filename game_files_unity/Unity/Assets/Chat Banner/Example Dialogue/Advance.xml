@@ -1,0 +1,17 @@
+﻿<dialog>
+	<reply>
+		<option>
+			<say>Give me a notebook</say>
+			<give item="Notebook"/>
+			<finish/>
+		</option>
+        <option>
+            <say>I don't want a notebook.</say>
+        </option>
+	</reply>
+	<page>Here, have a task advancement...</page>
+  <page>This is one line.
+  This is a second line.</page>
+	<page>It is done.</page>
+    <advance/>
+</dialog>

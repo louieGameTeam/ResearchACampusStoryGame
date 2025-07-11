@@ -1,0 +1,44 @@
+<dialog>
+  <page tag="start">Hey there! </page>
+  <if var="T:current" case="E" value="T:Ch_3-9/TalkToRA1/0">
+    <true>
+      <page>How was your adventure? </page>
+      <say>I don't even know where to start... </say>
+      <page>Nice! That's what I like to hear! </page>
+      <page>It seems like you really learned a lot from ALPHA!</page>
+      <page>Did you manage to get enough information for your paper?</page>
+      <say>I did. How long was I gone?</say>
+      <page>Only a few hours.</page>
+      <page>Isn't time travel great?</page>
+      <say>Do you know anything about ALPHA?</say>
+      <page>Not really...</page>
+      <page>From what I heard the lab was created back in the 60s as a sort of proto-search engine.</page>
+      <page>It was supposed to be a better version of the school’s library search function.</page>
+      <page>But the lab got shut down for whatever reason.</page>
+      <say>After my adventures, I was hoping to get more involved with research.</say>
+      <say>Where should I start?</say>
+      <page>Hmm...</page>
+      <page>My first guess would be to send out an email asking a professor if they have any positions open.</page>
+      <page>Professor Watson in the computer science department just set up an interdisciplinary lab so you could start there. </page>
+      <page>Go send an email on the computer in your dorm room!</page>
+      <page>If you've forgotten, your room is in the north west corner of this building.</page>
+      <advance/>
+    </true>
+  </if>
+  <if var="T:current" case="E" value="T:Ch_3-9/TalkToRA2/0">
+    <true>
+      <page>That was fast!</page>
+      <say>Still no response...</say>
+      <page>Wait, hold on.</page>
+      <page>How many professors did you email?</page>
+      <say>Just professor Watson.</say>
+      <page>No, no!</page>
+      <page>You have to send a ton of emails to different professors!</page>
+      <page>While you're at it, head to the library and ask the librarian about how to correspond as professionally as possible.</page>
+      <page>Professors will be more likely to respond to you if you sound professional. </page>
+      <page>Remember, the library is just north of the dorms!</page>
+      <say>Thank you!</say>
+      <advance/>
+    </true>
+  </if>
+</dialog>

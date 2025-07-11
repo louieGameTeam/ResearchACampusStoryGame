@@ -1,0 +1,137 @@
+﻿<level name="Welcome Back!" scene="Ch_3-9">
+  <move x="40" y="-40"/>
+  <task>
+    <name>Goodbye</name>
+    <description>Talk to ALPHA and say goodbye for now.</description>
+    <steps>
+      <dialogue/>
+    </steps>
+  </task>
+    <task>
+    <name>ExitBS</name>
+    <description>Exit the Library basement.</description>
+    <steps>
+      <dialogue/>
+    </steps>
+  </task>
+  <move x="-171.0" y="-125.5"/>
+  <task>
+    <name>GoToCampus</name>
+    <description>Welcome back to campus!</description>
+    <steps>
+      <location name="OutsideBasementCollider"/>
+    </steps>
+  </task>
+  <task>
+    <name>GoToDorm</name>
+    <description>Find your RA in the dorms.</description>
+    <steps>
+      <location name="DormCollider"/>
+    </steps>
+  </task>
+  <task>
+    <name>TalkToRA1</name>
+    <description>Talk to your RA about the adventure you just had.</description>
+    <steps>
+      <dialogue/>
+    </steps>
+  </task>
+    <task>
+    <name>GoToRoom1</name>
+    <description>Go to your dorm room in the north west corner of the dorms.</description>
+    <steps>
+      <location name="RoomCollider"/>
+    </steps>
+  </task>
+    <task>
+    <name>SendEmail1</name>
+    <description>Send an email to the Professor Watson like your RA told you to.</description>
+    <steps>
+      <dialogue/>
+    </steps>
+  </task>
+   <task>
+    <name>TalkToRA2</name>
+    <description>Update your RA after you send your email.</description>
+    <steps>
+      <dialogue/>
+    </steps>
+  </task> 
+  <task>
+    <name>GoToLB</name>
+    <description>Go to the Library located north of the dorms.</description>
+    <steps>
+      <location name="LibraryCollider"/>
+    </steps>
+  </task>
+  <task>
+    <name>TalkToLB</name>
+    <description>Talk to the librarian to learn more about professional correspondence.</description>
+    <steps>
+      <dialogue/>
+    </steps>
+  </task>
+  <task>
+    <name>SendEmail2</name>
+    <description>Send more emails to multiple professors from either the computer in the library or your dorm computer.</description>
+    <steps>
+      <dialogue/>
+    </steps>
+  </task>
+  <task>
+    <name>GoToAV</name>
+    <description>Head to the student advising office located in the same building as the cafe.</description>
+    <steps>
+      <location name="AdvisingCollider"/>
+    </steps>
+  </task>
+  <task>
+    <name>TalkToAV</name>
+    <description>Talk to the student advisor about how to get a research position.</description>
+    <steps>
+      <dialogue/>
+    </steps>
+  </task>
+    <task>
+    <name>CheckEmail1</name>
+    <description>Check your email to see if you got a response.</description>
+    <steps>
+      <dialogue/>
+    </steps>
+  </task>
+  <task>
+    <name>GoToClassroom</name>
+    <description>Go to the lecture hall to see if a student there already has a research position.</description>
+    <steps>
+      <location name="LectureCollider"/>
+    </steps>
+  </task>
+  <task>
+    <name>TalkToSD</name>
+    <description>Talk to the student about their research position.</description>
+    <steps>
+      <dialogue/>
+    </steps>
+  </task>
+  <task>
+    <name>TalkToPF</name>
+    <description>Talk to the professor about getting a research position.</description>
+    <steps>
+      <dialogue/>
+    </steps>
+  </task>
+  <task>
+    <name>GoToRoom2</name>
+    <description>Go to your dorm room in the north west corner of the dorms.</description>
+    <steps>
+      <location name="RoomCollider"/>
+    </steps>
+  </task>
+    <task>
+    <name>CheckEmail2</name>
+    <description>Check your email to see if you got any responses.</description>
+    <steps>
+      <dialogue/>
+    </steps>
+  </task>
+</level>

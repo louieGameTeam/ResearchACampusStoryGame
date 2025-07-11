@@ -1,0 +1,65 @@
+<dialog>
+  <page tag="start">Shh! We have to whisper!</page>
+  <if var="initialized" value="true">
+    <true>
+      <page>Keep your voice down.</page>
+    </true>
+    <false>
+      <page>What is it that you need?</page>
+      <page>Midterms are coming up soon and I really need to do well in my economics class.</page>
+      <set var="initialized" value="true"/>
+    </false>
+  </if>
+  <if var="T:current" case="E" value="T:Ch_1-4/TestThree/0">
+    <true>
+      <say>I’ve been asked to administer the personality test being developed.</say>
+      <page>Eh, I suppose. </page>
+      <page>I could use a break from studying.</page>
+      <page>
+        <color hex="74f442">[A blank tests has been removed from your inventory]</color>
+      </page>
+      <advance/>
+    </true>
+    <false>
+      <page>I just can’t focus!</page>
+    </false>
+  </if>
+  <if var="T:current" case="E" value="T:Ch_1-4/CollectTests/0">
+    <true>
+      <say>Are you still working?</say>
+      <page>I’m all done, here you go.</page>
+      <page>It was easier than studying!</page>
+      <page>
+        <color hex="74f442">[A completed test has been added to your inventory]</color>
+      </page>
+      <give item="Completed Test"/>
+    </true>
+    <false>
+      <page>Okay… I can do this.</page>
+    </false>
+  </if>
+  <if var="T:current" case="E" value="T:Ch_1-4/ReportResults/0">
+    <true>
+      <page>You again!</page>
+      <page>Tell me you’re here to help me with economics?</page>
+      <say>Nope!</say>
+      <page>Oh, right. The personality test...</page>
+      <say>You are considered an “INFP” type. </say>
+      <say>That stands for Introversion + Intuition + Feeling + Perceiving. </say>
+      <say>You often strive to understand people, and are great at reading emotions.</say>
+      <say>However, you let your own emotions get in the way of your actions and often blame yourself for things out of your control.</say>
+      <page>Hmm, I do want to go into family counseling.</page>
+      <page>I feel like even if I help a single person resolve some conflict in their life then I’ve lived my best life.</page>
+      <page>Anyway, why am I telling you this?</page>
+      <page>
+        <color hex="74f442">[This person's test results have been removed from your inventory]</color>
+      </page>
+      <advance/>
+      <take item="Test Results"/>
+    </true>
+    <false>
+      <page>I’ve really got to buckle down...</page>
+    </false>
+  </if>
+  <page>...</page>
+</dialog>

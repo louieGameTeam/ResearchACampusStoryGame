@@ -1,0 +1,53 @@
+<dialog>
+  <page tag="start">Yes?</page>
+  <if var="initialized" value="true">
+    <false>
+      <say>Hello, I was wondering if I could get some information about your research</say>
+      <page>My research?</page>
+      <page>Hmm...</page>
+      <page>Good timing, actually.</page>
+      <page>I could use your help.</page>
+      <page>Right now, I am in the process of running another round of X-rays to prove this model.</page>
+      <page>I have film being developed in the lab just next door.</page>
+      <page>Can you go get it and bring it to me?</page>
+      <page>I would get it, but I need to write up some of my findings.</page>
+      <reply>
+        <option>
+          <say>Yes, of course!</say>
+          <page>Thank you kindly.</page>
+        </option>
+        <option>
+          <say>Not right now.</say>
+          <page>Hmm... Well, until you bring me the X-rays, I really don't have the time to chat.</page>
+        </option>
+      </reply>
+      <advance/>
+      <set var="initialized" value="true"/>
+    </false>
+  </if>
+  <if var="T:current" case="E" value="T:Ch_1-2/ReturnXRAY/0">
+    <true>
+      <page>Do you have the X-rays?</page>
+      <say>Yes!</say>
+      <take item="X-rays" count="1"/>
+      <page><color hex="74f442">[The X-rays have been removed from your inventory]</color></page>
+      <page>...</page>
+      <page>I see...</page>
+      <page>This is wonderful!</page>
+      <page>I have been meticulously modeling the look of DNA.</page>
+      <page>I think that the helix model is correct, but look!</page>
+      <page>These are asymmetrical!</page>
+      <page>The helix shape is close, but this is it. DNA is a double helix.</page>
+      <page>I need to write to Acta Crystallographica in Copenhagen, now.</page>
+      <page>You see, the backbone of science is <color hex="f47742">repetition</color> and <color hex="f47742">research</color>.</page>
+      <page>Acta Crystallographica will want a lot of proof of this model, so I want to provide them with more than enough proof.</page>
+      <page>We as researchers must be <color hex="f47742">rigorous</color> in our research so that others can replicate our findings.</page>
+      <page>They will want to see these X-rays.</page>
+      <page>Now, I must get back to writing.</page>
+      <page>Thank you for your help!</page>
+      <say>Have a good day.</say>
+      <page>You as well!</page>
+      <advance/>
+    </true>
+  </if>
+</dialog>

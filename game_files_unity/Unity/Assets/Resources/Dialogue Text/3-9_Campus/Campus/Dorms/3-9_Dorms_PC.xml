@@ -1,0 +1,49 @@
+<dialog>
+  <page>...</page>
+  <page>Logging on...</page>
+  <page>...</page>
+  <if var="T:current" case="E" value="T:Ch_3-9/SendEmail1/0">
+    <true>
+      <say>Let's see...</say>
+      <say>...</say>
+      <say>"Hello, I would like to take the job as your research assistant"</say>
+      <say>Sounds good!</say>
+      <say>Send!</say>
+      <advance/>
+    </true>
+  </if>
+  <if var="T:current" case="E" value="T:Ch_3-9/SendEmail2/0">
+    <true>
+      <say>Okay, this time I'll write a better email.</say>
+      <say>...</say>
+      <say>There we are!</say>
+      <say>Let's send that to a few different professors too!</say>
+      <say>Looks good!</say>
+      <say>I should head to the advising office now, like the librarian told me to!</say>
+      <advance/>
+    </true>
+  </if>
+    <if var="T:current" case="E" value="T:Ch_3-9/CheckEmail1/0">
+      <true>
+        <say>Still nothing...</say>
+        <advance/>
+      </true>
+    </if>
+    <if var="T:current" case="E" value="T:Ch_3-9/CheckEmail2/0">
+      <true>
+        <say>I got a response!!</say>
+        <page>Dear Student,</page>
+        <page>Thank you for your interest in being my research assistant.</page>
+        <page>After reviewing your quiz and thinking about your enthusiasm to seek information, I have decided to give you the research position.</page>
+        <page>However, you still need to keep up your GPA and make sure you stay on top of your homework.</page>
+        <page>Congratulations!</page>
+        <say>I did it!</say>
+        <say>I finally did it!</say>
+        <call method="ShowEnding"/>
+        <finish/>
+      </true>
+  </if>
+  <page>...</page>
+  <page>Logging off...</page>
+  <page>...</page>
+</dialog>

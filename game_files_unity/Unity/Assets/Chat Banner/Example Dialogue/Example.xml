@@ -1,0 +1,71 @@
+﻿<dialog>
+  <page tag="start">Hello player! I am an interactive NPC.</page>
+  <if var="initialized" value="true">
+    <true>
+      <page>I remember you! I think I forgot to mention earlier, my dialogue information has the ability to set and read variables, giving me a sort of memory.</page>
+    </true>
+    <false>
+      <page>You must be new around here! Let me tell you a little about how this dialogue works...</page>
+      <set var="initialized" value="true"/>
+    </false>
+  </if>
+  <page>As you can see, pressing space will bring you to my next page of text, in a linear fashion. </page>
+  <page>However, chat can also be interactive, would you like to see?</page>
+  <reply>
+    <option>
+      <say>Yes.</say>
+      <page>Isn't that cool? My responses at this point are entirely dependent on what you just clicked.</page>
+      <page>Player interactive responses can also be nested indefinitely, like this...</page>
+      <reply>
+        <option>
+          <say>Wow that is so cool.</say>
+          <page>See, I told you!</page>
+        </option>
+      </reply>
+    </option>
+    <option>
+      <say>No.</say>
+      <page>Too bad!</page>
+    </option>
+  </reply>
+  <page>At this point, the individual dialogue information for each response path has run out, so the nodal flow has taken us down here.</page>
+  <page>I will take this opportunity to show you the two dialogue termination methods.</page>
+  <page>Chat can either be completed manually, such as at the end of a particular reply, or will automatically terminate when reaching the end of the file.</page>
+  <reply>
+    <option>
+     <say>Wait, don't leave me!</say>
+    </option>
+    <option>
+     <say>Show me manual chat termination!</say>
+     <page>Ok.</page>
+     <finish/>
+    </option>
+  </reply>
+  <page>There is also a goto node that is useful for reaching the same segment of dialogue from multiple entrance points.</page>
+  <page>Want me to show you?</page>
+  <reply>
+    <option>
+      <say>Sure.</say>
+      <goto tag="start"/>
+    </option>
+    <option>
+      <say>No, that's ok.</say>
+    </option>
+  </reply>
+  <page>Also, you may have noticed that dialogue that takes multiple lines will not only make line breaks between words, but if it can't fit all words in one page, it will automatically and recursively push the overflow to another page.</page>
+  <page>I can be pretty random sometimes too, watch me flip this coin...</page>
+  <random>
+    <option>
+      <page>Heads!</page>
+    </option>
+        <option>
+      <page>Tails!</page>
+    </option>
+     <option>
+      <page>All life is suffering.</page>
+    </option>
+  </random>
+  <page>I can also say things with a little more color, like <color hex="00FF00">this</color>. Come back later and I'll probably have some cool effects too!</page>
+  <page>Well that's all I have to show you for now. I sense the end of the file and its impending automatic termination are near...</page>
+  <page>Goodbye player, and good luck if you run into any bugs!</page>
+</dialog>

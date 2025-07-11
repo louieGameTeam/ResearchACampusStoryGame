@@ -1,0 +1,15 @@
+<dialog>
+  <page tag="start">Mmm!</page>
+  <if var="initialized" value="true">
+    <true>
+      <page>My food is getting cold, sorry!</page>
+    </true>
+    <false>
+      <page>The food has been getting better!</page>
+      <page>Or maybe I’m just getting used to it…</page>
+      <say>Do you have the time to take a personality test?</say>
+      <page>Not really, I’m still eating.</page>
+      <set var="initialized" value="true"/>
+    </false>
+  </if>
+</dialog>

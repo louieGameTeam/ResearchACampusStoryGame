@@ -1,0 +1,58 @@
+<dialog>
+  <page tag="start">Yes?</page>
+  <if var="initialized" value="true">
+    <false>
+      <page>*sigh*</page>
+      <page>Oh, sorry. I'm a little preoccupied at the moment...</page>
+      <set var="initialized" value="true"/>
+    </false>
+  </if>
+  <if var="T:current" case="E" value="T:Ch_1-6/HelpLady1/0">
+    <true>
+      <page>*sigh*</page>
+      <say>Do you need any help?</say>
+      <page>Really?</page>
+      <page>You can help me?</page>
+      <say>Sure, what do you need?</say>
+      <page>Well...</page>
+      <page>There is this gallant lord that I've been dying to speak to...</page>
+      <page>But I can't muster up the courage to speak to him.</page>
+      <page>Do you think you can deliver this poem to him?</page>
+      <say>Sure, where is he?</say>
+      <page>He often walks around by the east side of the front gate.</page>
+      <page>He wears the most splendid white armor.</page>
+      <say>Should I say this is from you?</say>
+      <page>Oh...</page>
+      <page>*sigh*</page>
+      <page>You decide! I don't know what to do!</page>
+      <say>Okay, I'm on it.</say>
+      <page>Thank you!</page>
+      <give item="Poem" count="1"/>
+      <page><color hex="74f442">[The poem has been added to your inventory]</color></page>
+      <advance/>
+    </true>
+  </if>
+  <if var="T:current" case="E" value="T:Ch_1-6/ReturnToLady1/0">
+    <true>
+      <say>I have delivered your poem. </say>
+      <page>Oh thank you! </page>
+      <page>What did he say?! </page>
+      <say>Erm...</say>
+      <reply>
+        <option>
+          <say>He said thanks.</say>
+          <page>... That's all?</page>
+          <say>And that "his day was so much brighter now."</say>
+          <page>Oh good!</page>
+        </option>
+        <option>
+          <say>That "his day was so much brighter now."</say>
+          <page>Oh good!</page>
+        </option>
+      </reply>
+      <page>My heart is fluttering with joy now!</page>
+      <page>Thank you again!</page>
+      <advance/>
+    </true>
+  </if>
+</dialog>

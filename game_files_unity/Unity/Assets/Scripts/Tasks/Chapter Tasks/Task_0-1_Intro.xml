@@ -1,0 +1,87 @@
+﻿<level name="Welcome to University!" scene="Ch_0-1">
+  <move x="40" y="-40"/>
+  <task>
+    <name>GoToOA</name>
+    <description>Go to the Office of Admissions in the north-east corner of campus.</description>
+    <steps>
+      <location name="AdmissionsCollider"/>
+    </steps>
+  </task>
+  <task>
+    <name>TalkingToAO</name>
+    <description>Talk to the admissions officer.</description>
+    <steps>
+      <dialogue/>
+    </steps>
+  </task>
+  <task>
+    <name>GoToDorms</name>
+    <description>Go to the dorms in the south-west corner of campus.</description>
+    <steps>
+      <location name="DormCollider"/>
+    </steps>
+  </task>
+  <task>
+    <name>TalkingToRA</name>
+    <description>Talk to the RA.</description>
+    <steps>
+      <dialogue/>
+    </steps>
+  </task>
+  <task>
+    <name>GoToLibrary</name>
+    <description>Go to the library in the north-west corner of campus.</description>
+    <steps>
+      <location name="LibraryCollider"/>
+    </steps>
+  </task>
+  <task>
+    <name>TalkingToLib</name>
+    <description>Talk to the Librarian.</description>
+    <steps>
+      <dialogue/>
+    </steps>
+  </task>
+  <task>
+    <name>Textbook</name>
+    <description>Grab the textbook from the first shelf in the library.</description>
+    <steps>
+      <item name="Textbook" count="1"/>
+    </steps>
+  </task>
+  <task>
+    <name>GoToCafe</name>
+    <description>Go to the cafe in the south-east corner of campus.</description>
+    <steps>
+      <location name="CafeCollider"/>
+    </steps>
+  </task>  
+  <task>
+    <name>TalkingToTA</name>
+    <description>In the cafe, talk to the TA for your class.</description>
+    <steps>
+      <dialogue/>
+    </steps>
+  </task>
+  <task>
+    <name>GoToClass</name>
+    <description>Go to class in the lecture hall north of the cafe.</description>
+    <steps>
+      <location name="ClassroomCollider"/>
+    </steps>
+  </task>
+  <task>
+    <name>TalkingToProf</name>
+    <description>Talk to the Professor.</description>
+    <steps>
+      <dialogue/>
+    </steps>
+  </task>
+  <task>
+    <name>TakeASeat</name>
+    <description>Take a seat and get ready for class.</description>
+    <steps>
+      <dialogue/>
+    </steps>
+  </task>
+</level>

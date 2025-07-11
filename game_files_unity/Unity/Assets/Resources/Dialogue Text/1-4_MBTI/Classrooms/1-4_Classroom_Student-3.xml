@@ -1,0 +1,14 @@
+<dialog>
+  <page tag="start">Hello?</page>
+  <if var="initialized" value="true">
+    <true>
+      <page>Hmm?</page>
+    </true>
+    <false>
+      <say>Hello, do you want to take a personality test?</say>
+      <page>Um, no thanks.</page>
+      <set var="initialized" value="true"/>
+    </false>
+  </if>
+  <page>...</page>
+</dialog>

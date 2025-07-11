@@ -1,0 +1,46 @@
+<dialog>
+  <page tag="start">Welcome to the Admissions Office!</page>
+  <if var="initialized" value="true">
+    <true>
+      <page>Why don't you head to your dorm and get ready for class!</page>
+    </true>
+    <false>
+      <page>Since you're a new student, let me be the first to welcome you to college!</page>
+      <page>You worked really hard to get here!</page>
+      <page>We hope your time here is fun and informative!</page>
+      <page>Let’s see, what I can help you with today?</page>
+      <page>According to your file it seems like you have registered for classes, and you have a dorm room here on campus.</page>
+      <page>Do you know where the dorms are?</page>
+      <reply>
+        <option>
+          <say>No. </say>
+          <page>Your dorm building is in the southwest corner of campus. You got lucky and have a dorm room to yourself!</page>
+        </option>
+        <option>
+          <say>Yes. </say>
+          <page>In the southwest corner of campus, right? You got lucky and have a dorm room to yourself!</page>
+        </option>
+      </reply>
+      <page>It looks like your only class today is an Intro to Research class, held in the Lecture Hall.</page>
+      <page>Make sure to head to your dorms and talk to your RA before you go to class today.</page>
+      <page>Your RA will be able to give you more information about the class and where the lecture hall is.</page>
+      <set var="initialized" value="true"/>
+    </false>
+  </if>
+  <if var="T:current" case="E" value="T:Ch_0-1/TalkingToAO/0">
+    <true>
+      <advance/>
+    </true>
+  </if>
+    <page>Do you need any additional help?</page>
+  <reply>
+    <option>
+      <say>Yes. </say>
+      <page>Go and find your RA in the dorms in the southwest corner of campus!</page>
+    </option>
+    <option>
+      <say>No. </say>
+      <page>Okay! Check back if you have any other questions!</page>
+    </option>
+  </reply>
+  </dialog>

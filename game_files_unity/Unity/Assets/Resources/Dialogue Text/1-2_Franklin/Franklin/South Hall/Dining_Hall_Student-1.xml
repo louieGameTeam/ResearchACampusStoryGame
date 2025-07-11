@@ -1,0 +1,9 @@
+<dialog>
+  <page>Where did my pen get to...</page>
+  <say>What are you working on?</say>
+  <page>I'm just studying for my biology exam.</page>
+  <say>Do you know where Rosalind Franklin is?</say>
+  <page>Who?</page>
+  <say>She's a famous chemist...</say>
+  <page>Oh, well I guess you could try the labs just north of here.</page>
+</dialog>

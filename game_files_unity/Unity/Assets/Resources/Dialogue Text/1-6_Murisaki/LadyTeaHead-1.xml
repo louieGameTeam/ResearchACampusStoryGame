@@ -1,0 +1,25 @@
+<dialog>
+  <page tag="start">...</page>
+  <if var="initialized" value="true">
+    <false>
+      <page>Please leave me be, I'm busy...</page>
+      <set var="initialized" value="true"/>
+    </false>
+  </if>
+  <if var="T:current" case="E" value="T:Ch_1-6/GetChapters/0">
+    <true>
+      <say>Hello. Do you have one of Lady Murasaki’s chapters?</say>
+      <say>She is asking for it to be returned.</say>
+      <page>...</page>
+      <page>...</page>
+      <say>Hello?</say>
+      <page>...</page>
+      <give item="Loose Chapters" count="1"/>
+      <page><color hex="74f442">[The loose chapter has been added to your inventory]</color></page>
+      <page>...</page>
+      <say>Thanks I guess...</say>
+      <advance/>
+    </true>
+  </if>
+  <page>Please leave me be, I'm busy...</page>
+</dialog>

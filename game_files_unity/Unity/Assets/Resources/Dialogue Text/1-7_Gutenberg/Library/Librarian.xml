@@ -1,0 +1,29 @@
+<dialog>
+  <page tag="start">Hello, welcome to the Library.</page>
+  <if var="initialized" value="true">
+    <false>
+      <page>We don't have much compared to other libraries, but what we do have will keep your mind sharp!</page>
+      <set var="initialized" value="true"/>
+    </false>
+  </if>
+  <if var="T:current" case="E" value="T:Ch_1-7/TalkToLB/0">
+    <true>
+      <say>Hello, I was sent here by Johannes Gutenberg to ask more about research publications.</say>
+      <page>Oh wonderful! Not many pupils in this town are interested in such information! Ask away!</page>
+      <say>Could you tell me what exactly a <color hex="f47742">research journal</color> is?</say>
+      <page>A research journal is a sort of a publication usually geared toward a specific field of study.</page>
+      <page>They allow for researchers to write about the work they’ve been doing and allows for other researchers to <color hex="f47742">review</color> the work published.</page>
+      <say>How would I know which is a good journal and which is a bad one?</say>
+      <page>That can be difficult. You often want to pay close attention to the level of scrutiny the work published in the journal is held to.</page>
+      <page><color hex="f47742">Peer-reviewed</color> journals are usually a reliable source, but you should always doubt what is published!</page>
+      <say>How can I determine between science articles in journals and non-science articles?</say>
+      <page>Science articles are normally clear and <color hex="f47742">unambiguous</color>.</page>
+      <page>The results of such scientific works should be <color hex="f47742">reproducible</color>, <color hex="f47742">predictable</color>, and <color hex="f47742">testable</color>... to name a few key features.</page>
+      <page>Non-science articles typically rely on things not measurable, or <color hex="f47742">unquantifiable sources</color>. </page>
+      <advance/>
+      <say>You’ve answered all my questions! Thank you!</say>
+      <page>Not a problem! It was wonderful to chat about such things again. Please come by again and we’ll chat more!</page>
+    </true>
+  </if>
+  <page>Stop by if you have any questions.</page>
+</dialog>

@@ -1,0 +1,38 @@
+<dialog>
+  <page tag="start">Yes, hello?</page>
+  <if var="T:current" case="E" value="T:Ch_1-3/HelpTsarina/0">
+    <true>
+      <page>What a tragedy!</page>
+      <page>An absolute tragedy!</page>
+      <say>What happened?</say>
+      <page>I went to go change into my leather slippers and they’ve vanished!</page>
+      <page>I’ll have to end the evening early so my slippers can be found!</page>
+      <say>I can help you find them.</say>
+      <page>Oh you can?!</page>
+      <page>I would be eternally grateful if you found any information about them!</page>
+      <page>From what I heard, a suspicious man was last seen in the courtyard.</page>
+      <page>No one recognized him, and he didn’t have the gait of a nobleman.</page>
+      <page>Start your search there</page>
+      <say>On it!</say>
+      <advance/>
+    </true>
+  </if>
+  <if var="T:current" case="E" value="T:Ch_1-3/ReturnToTsarina/0">
+    <true>
+      <page>What news do you have?</page>
+      <reply>
+        <option>
+          <say>Your slippers were in the closet all along!</say>
+          <page>How fortuitous!</page>
+        </option>
+        <option>
+          <say>I think your slippers are long gone.</say>
+          <page>What horrible luck!</page>
+          <page>Ah, well. I’ll just have to get another pair made.</page>
+        </option>
+      </reply>
+      <page>Thank you for your diligence in getting to the bottom of this mystery!</page>
+    <advance/>
+    </true>
+  </if>
+</dialog>

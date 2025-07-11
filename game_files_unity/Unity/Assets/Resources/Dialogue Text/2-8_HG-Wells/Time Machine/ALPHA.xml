@@ -1,0 +1,110 @@
+<dialog>
+  <page tag="start">...</page>
+  <if var="initialized" value="true">
+    <true>
+      <page>That was fast!</page>
+      <page tag ="Info">What's next?</page>
+    </true>
+    <false>
+      <page>...</page>
+      <page>...</page>
+      <page>Well...</page>
+      <page>This doesn't seem quite right.</page>
+      <say>What is it?</say>
+      <say>Are we even in ancient Egypt?</say>
+      <page>Of course we are! Look, that's the Nile right there!</page>
+      <say>Then what's the problem?</say>
+      <page>Well it seems that we over shot the ancient part by a few...</page>
+      <say>...</say>
+      <page>Centuries...</page>
+      <say>Are we in the future?!</say>
+      <page>Nothing like that!</page>
+      <page>It's just that we're sometime around the 1920s...</page>
+      <say>ALPHA...</say>
+      <page>Hey, at least we got here in one piece!</page>
+      <say>Which way is town?</say>
+      <page>Leaving so soon??</page>
+      <say>Yes...</say>
+      <page>Well, just head south for a while and there should be a market selling food and drinks!</page>
+      <say>Okay.</say>
+      <say>Do you want anything?</say>
+      <page>...</page>
+      <say>...</say>
+      <page>Why do you hurt me...</page>
+      <page>Do you need anything else?</page>
+      <advance/>
+      <set var="initialized" value="true"/>
+    </false>
+  </if>
+  <if var="T:current" case="E" value="T:Ch_2-8/Leave/0">
+    <true>
+      <say>Where were you?!</say>
+      <page>The time machine was stolen when you went into town!</page>
+      <say>I know! I came back and you were gone!</say>
+      <page>It wasn't my fault!</page>
+      <say>Don't you have some sort of cloaking device or something?!</say>
+      <page>Don't be silly, that doesn't exist!</page>
+      <say>...</say>
+      <say>So you mean it's just been luck that we haven't been spotted before this?</say>
+      <page>Luck, maybe.</page>
+      <page>I'd say it was my good hiding spots!</page>
+      <page>Remember all the cupboards?</page>
+      <say>It all makes sense now...</say>
+      <say>So how did you get away?</say>
+      <page>Oh, I just time traveled away once I got the chance.</page>
+      <say>Wait...</say>
+      <say>...</say>
+      <page>Hmm?</page>
+      <say>Why didn't you just time travel to BEFORE we wasted all of our time here?</say>
+      <page>Oh, huh...</page>
+      <page>Why didn't I think of that?</page>
+      <say>Do you know how much stress I felt searching for you?!</say>
+      <say>Look, look at my hair!</say>
+      <say>It's already turning grey!</say>
+      <page>Huh, would you look at that--it is!</page>
+      <say>Hey!</say>
+      <page>Well, I'm safe. You're safe. Shall we return back to campus then?</page>
+      <say>I think that would be smart...</say>
+      <say>I wouldn't want anyone to steal you again...</say>
+      <page>Oh, did you meet with H.G. Wells?</page>
+      <say>Oh yeah! He was actually pretty helpful in all this.</say>
+      <say>He said all of this sounded like a book.</say>
+      <page>You don't say...</page>
+      <say>Wait, how did you know he was here?</say>
+      <page>Bio-scans!</page>
+      <say>Oh now that works...</say>
+      <page>Well, are you ready to leave?</page>
+      <reply>
+        <option>
+          <say>Yes. </say>
+          <page>Wonderful! </page>
+          <page>Let's get going!</page>
+          <say>Okay!</say>
+          <advance/>
+          <finish/>
+        </option>
+        <option>
+          <say>Not yet.</say>
+          <page>What could you possibly be waiting on!?</page>
+          <page>Let's go before I get stolen again!</page>
+          <say>Good point...</say>
+          <advance/>
+          <finish/>
+        </option>
+      </reply>
+    </true>
+  </if>
+  <reply>
+    <option>
+      <say>Tell me how to get to the market</say>
+      <page>Just head south and you'll reach the market eventually!</page>
+      <say>Oh...</say>
+      <goto tag="Info"/>
+    </option>
+    <option>
+      <say>Never mind.</say>
+      <page>Sure, sure.</page>
+      <finish/>
+    </option>
+  </reply>
+</dialog>

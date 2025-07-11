@@ -1,0 +1,113 @@
+<dialog>
+  <page tag="start">Hmm?</page>
+  <if var="initialized" value="true">
+    <true>
+      <page>Oh hello again!</page>
+    </true>
+    <false>
+      <page>Oh hello there, I don't believe we've met!</page>
+      <page>My name is H.G. Wells!</page>
+      <say>The author?</say>
+      <page>The very one!</page>
+      <page>Say, are you here on an expedition too?</page>
+      <say>You could say that...</say>
+      <page>How wonderful!</page>
+      <set var="initialized" value="true"/>
+    </false>
+  </if>
+  <if var="T:current" case="E" value="T:Ch_2-8/TalkHG1/0">
+    <true>
+      <page>Say...</page>
+      <page>I didn't see you on the ship over, did I?</page>
+      <page>How long have you been here?</page>
+      <page>I try and familiarize myself with all other expeditionaries.</page>
+      <say>I took a different kind of ship.</say>
+      <page>Oh how curious!</page>
+      <say>What are you doing here in Egypt?</say>
+      <page>Well, I'm here researching early Egyptian culture for a book I'm working on.</page>
+      <page>I'm thinking of calling it "A Short History of the World". </page>
+      <page>I plan on having a section about early Egypt and writing. </page>
+      <say>That sounds interesting! </say>
+      <page>Quite!</page>
+      <say>Well, I should get back to my time machine--</say>
+      <page>What?</page>
+      <say>Oh nothing, thank you for chatting!</say>
+      <page>Sure... Anytime.</page>
+      <advance/>
+    </true>
+  </if>
+  <if var="T:current" case="E" value="T:Ch_2-8/TalkHG2/0">
+    <true>
+      <page>You're back!</page>
+      <page>Is everything okay?</page>
+      <say>...</say>
+      <page>Out with it!</page>
+      <say>My, my ship is...</say>
+      <say>Missing...</say>
+      <page>You're sure your party didn't leave without you?</page>
+      <say>No, I'm confident that my traveling companion wouldn't leave me...</say>
+      <say>Besides, there looked to be some sort of a struggle.</say>
+      <say>There were footprints too.</say>
+      <page>Ah, yes... there has also been a string of burglaries.</page>
+      <page>Well, I will do what I can to help a fellow traveler. </page>
+      <page>Tell me, what did this ship of yours look like?</page>
+      <page>How did it sail?</page>
+      <say>Well...</say>
+      <say>That's the thing...</say>
+      <say>Now, you have to believe me when I say that I am in no way crazy.</say>
+      <page>Get on with it!</page>
+      <say>My ship is a...</say>
+      <say>...</say>
+      <say>... Time machine...</say>
+      <page>...</page>
+      <page>...</page>
+      <page>...</page>
+      <page>Yes, okay.</page>
+      <page>But you still haven't answered my question!</page>
+      <page>What did it LOOK like?</page>
+      <say>It's a rectangular cube with a large golden funnel on top and purple windows...</say>
+      <say>It seems small, but it's really much larger on the inside.</say>
+      <page>Okay, I will get the description circulating around the market and try to locate your time machine.</page>
+      <say>Wait, so you believe me?</say>
+      <page>But of course!</page>
+      <page>It's only plausible that, at some point in the future, a time machine will be created and will be used to travel through time!</page>
+      <page>Now, on to more pressing matters.</page>
+      <page>I want you to head into town and try to track down the culprit of this deed.</page>
+      <page>It's likely to have been stolen by the same person who has been stealing everything else.</page>
+      <say>Great idea! Thank you!</say>
+      <page>Don't thank me until we get your time machine back!</page>
+      <page>Off you go now!</page>
+      <advance/>
+    </true>
+  </if>
+  <if var="T:current" case="E" value="T:Ch_2-8/TalkHG3/0">
+    <true>
+      <page>Any luck?</page>
+      <page>I still haven’t heard any thing back regarding the whereabouts of your time machine.</page>
+      <say>I found the thief.</say>
+      <page>Did you now?</page>
+      <page>And?</page>
+      <say>He said that he already sold the time machine...</say>
+      <say>It's to be melted down for scrap metal...</say>
+      <page>Oh... rotten luck.</page>
+      <page>I am terribly sorry my young friend.</page>
+      <page>I know it must be impossible to process being stuck here in a foreign time period.</page>
+      <page>However, we must come to grips with the reality of the situation.</page>
+      <page>You are more than welcome to join my expedition, I'm sure you could learn a lot from these researchers.</page>
+      <say>You've got a point...</say>
+      <page>Come now, we won't abandon you!</page>
+      <page>In fact, I will make sure that you come back to Great Britain after this expedition is over.</page>
+      <page>You can become my pupil even!</page>
+      <page>A sharp mind like yours shouldn't be left to rot out here is the desert.</page>
+      <say>Thank you for your offer.</say>
+      <say>Is there anything I can do to repay your kindness?</say>
+      <page>Well, now that you mention it, I have misplaced my journal.</page>
+      <page>I may have dropped it while investigating the scene of the theft.</page>
+      <page>Could you perhaps go and retrieve it for me?</page>
+      <say>Sure.</say>
+      <page>Smashing. When you return we can start drafting my next book!</page>
+      <page>These events have lit a futuristic spark inside me!</page>
+      <advance/>
+    </true>
+  </if>
+</dialog>

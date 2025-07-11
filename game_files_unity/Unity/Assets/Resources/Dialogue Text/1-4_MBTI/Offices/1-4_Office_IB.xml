@@ -1,0 +1,97 @@
+<dialog>
+  <page tag="start">Hello.</page>
+  <if var="initialized" value="true">
+    <true>
+      <page>Hmm?</page>
+    </true>
+    <false>
+      <page>My apologies, I’m really quite busy.</page>
+      <say>Are you Isabel Briggs Myers?</say>
+      <page>I am, do you need something?</page>
+      <say>I wanted to learn more about your research.</say>
+      <page>Oh, I always have time for inquiring minds!</page>
+      <page>My mother, Katherine, and I are here gathering some data for the personality type test we’ve been developing.</page>
+      <page>This test is designed to categorize your personality so that you might perform better in your life. </page>
+      <page>I read an article a short time ago describing a psychological test designed in such a way to assist former soldiers from World War II to readjust into standard life.</page>
+      <page>However, after working with that test for a number of years I was disappointed with how ineffective it was at predicting job performance.</page>
+      <page>So, my mother and I are developing a new test, inspired by the works of Carl Jung.</page>
+      <page>I’ve written hundreds of questions so far just trying to get the right ones!</page>
+      <page>It’s my dream that, long after I’m gone, my work will go on helping people.</page>
+      <set var="initialized" value="true"/>
+    </false>
+  </if>
+  <if var="T:current" case="E" value="T:Ch_1-4/TalkToIB/0">
+    <true>
+      <page>Have you already spoken to my mother, Katherine?</page>
+      <say>Yes. </say>
+      <page>Oh, then you must be our new assistant!</page>
+      <page>Have you administered the tests yet?</page>
+      <say>Yep! </say>
+      <page>Excellent, I'm thinking everyone has had the chance to finish taking the test.</page>
+      <page>Go and pick up the tests and we'll go over them.</page>
+      <advance/>
+    </true>
+    <false>
+      <page>Have you had the chance to speak to my mother, Katherine Briggs?</page>
+      <page>Her office is just down the hall.</page>
+    </false>
+  </if>
+  <if var="T:current" case="E" value="T:Ch_1-4/GiveToIB/0">
+    <true>
+      <page>Have you collected the tests?</page>
+      <say>I did. </say>
+      <page>Good, now lets look over the results.</page>
+      <say>Okay! </say>
+      <page>
+        <color hex="74f442">[The completed tests have been removed from your inventory]</color>
+      </page>
+      <page>Let’s see, test number one.</page>
+      <page>Tester one appears to be a professor. </page>
+      <page>…</page>
+      <page>…</page>
+      <page>…</page>
+      <page>It looks like their key traits are enthusiasm, logical though, intuition, and adaptable.</page>
+      <page>I would classify this person as being the Extraversion + Intuition + Thinking + Perceiving type.</page>
+      <page>I’ll let you try and determine the next one.</page>
+      <page>Tester two appears to be a student.</page>
+      <page>…</page>
+      <page>According to the results this person seems to be critical, factual, pragmatic, and stable.</page>
+      <page>They also seem to be introverted and judging.</page>
+      <page tag ="Test">What type would you classify this as?</page>
+      <reply>
+        <option>
+          <say>Introversion + Sensing + Thinking + Judging </say>
+          <page>Absolutely. This is your typical ISTJ type.</page>
+          <goto tag="Proceed"/>
+        </option>
+        <option>
+          <say>Extraversion + Intuition + Feeling + Perceiving </say>
+          <page>Not quite. This person is not an ENFP type.</page>
+          <goto tag="Test"/>
+        </option>
+        <option>
+          <say>Extraversion + Intuition + Thinking + Judging </say>
+          <page>Close, but not quite. This person isn’t an ENTJ type.</page>
+          <goto tag="Test"/>
+        </option>
+      </reply>
+      <page tag ="Proceed">There are about 16 types of personalities that I’ve been able to categorize so far, so this might take a while.</page>
+      <page>I’ll quickly assess these tests and then you can go and share the results with the subjects.</page>
+      <page>…</page>
+      <page>…</page>
+      <page>…</page>
+      <page>Done!</page>
+      <page>It’s much easier for a professional like myself to analyze this data.</page>
+      <page>Here is a master sheet of all the subjects and their respective personality types.</page>
+      <page>Go share the results with the people you gave the tests to.</page>
+      <page>
+        <color hex="74f442">[The master sheet of personality types has been added to your inventory]</color>
+      </page>
+      <advance/>
+    </true>
+    <false>
+      <page>We have a lot of work to do so please don't dawdle.</page>
+    </false>
+  </if>
+  <page>...</page>
+</dialog>

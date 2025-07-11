@@ -1,0 +1,38 @@
+<dialog>
+  <page tag="start">Hello! How can I help you today? </page>
+  <if var="initialized" value="true">
+    <false>
+      <page>Welcome to student advising!</page>
+      <page>No one is waiting so I can take walk ins if you need assistance.</page>
+      <set var="initialized" value="true"/>
+    </false>
+  </if>
+  <if var="T:current" case="E" value="T:Ch_3-9/TalkToAV/0">
+    <true>
+      <say>I was wondering if you can help me with getting a research position?</say>
+      <page>Oh! You are interested in getting involved with research?</page>
+      <say>Yes, but I don’t know what else I need to do.</say>
+      <page>Did you send emails to some of the professors?</page>
+      <say>I did, but I haven’t heard back yet...</say>
+      <page>Hmm...</page>
+      <page>Alright, well, let me see what I can find.</page>
+      <page>...</page>
+      <page>It seems that most of the research positions are given to upperclassmen first.</page>
+      <page>But there may be a spot open somewhere.</page>
+      <page>...</page>
+      <page>Apparently the “Intro to Research” professor has a listing for an open position.</page>
+      <page>Are you familiar with her?</page>
+      <say>I am!</say>
+      <page>Great! I would try there.</page>
+      <page>Wait a moment...</page>
+      <page>It appears that there is a student who is currently working in the “Intro to Research” professor's lab.</page>
+      <page>You should talk to her in order to get a better feel for what the lab is like!</page>
+      <page>She's probably somewhere in the lecture hall!</page>
+      <say>Thank you!</say>
+      <page>Before you go and talk to her, why don't you check your emails first?</page>
+      <say>Good thinking!</say>
+      <advance/>
+    </true>
+  </if>
+  <page>Stop in any time!</page>
+</dialog>

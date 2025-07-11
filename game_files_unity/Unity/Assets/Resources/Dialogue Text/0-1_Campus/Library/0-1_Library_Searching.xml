@@ -1,0 +1,13 @@
+<dialog>
+  <random>
+    <option>
+      <page>How do you even search for books...</page>
+    </option>
+    <option>
+      <page>Hmm...</page>
+    </option>
+    <option>
+      <page>Wait, what was the book title again?</page>
+    </option>
+  </random>
+</dialog>

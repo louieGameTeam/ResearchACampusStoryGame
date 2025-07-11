@@ -1,0 +1,67 @@
+<dialog>
+  <page tag="start">Yes, hello?</page>
+  <if var="initialized" value="true">
+    <true>
+      <page>Hmm? I need to get back to this.</page>
+    </true>
+    <false>
+      <say>Are you Alexander Pushkin?</say>
+      <page>Why yes, I am.</page>
+      <say>I just had a few questions, do you have a few minutes?</say>
+      <page>I wish I could say yes, but I have quite a deadline before me.</page>
+      <set var="initialized" value="true"/>
+    </false>
+  </if>
+  <if var="T:current" case="E" value="T:Ch_1-3/TalkToAP/0">
+    <true>
+      <page>Actually... if you could run this draft over to-</page>
+      <page>...</page>
+      <page>Wait -</page>
+      <page>...</page>
+      <page>Where did it go?</page>
+      <page>I’ve lost the draft of my paper...</page>
+      <page>I bet it was that fanatical girl who was just in here.</page>
+      <page>Do you think you could retrieve the paper from her on my behalf?</page>
+      <page>She is a touch... intense.</page>
+      <page>Please retrieve my paper and give it to Nikolai Gogol in the ballroom.</page>
+      <page>You should be able to persuade him by telling him I am a fan of his work, Evenings on a Farm Near Dikanka. I would like to offer him a page in my paper to write more.</page>
+      <page>Then I’ll have some time to answer your questions.</page>
+      <page>Now where was I..?</page>
+      <page>...</page>
+      <advance/>
+    </true>
+  </if>
+  <if var="T:current" case="E" value="T:Ch_1-3/ReturnToAP/0">
+    <true>
+      <say>Nikolai Gogol said he’d contribute to your paper!</say>
+      <page>Wonderful!</page>
+      <page>Thank you again for your help.</page>
+      <page><color hex="74f442">[Pushkin's draft of The Contemporary has been removed from your inventory]</color></page>
+      <page>Now what was it that you wanted to ask?</page>
+      <say>I just had a few questions, do you have a few minutes?</say>
+      <page>Another interview? I have a few minute to spare now, what are you interested in knowing?</page>
+      <say>What made you choose to write?</say>
+      <page>Well, that’s quite a question...</page>
+      <page>What makes the artist paint?</page>
+      <page>What makes the opera singer perform?</page>
+      <page>It is the best way I can express myself, my ideas.</page>
+      <page>I have always been tremendously interested in the written word.</page>
+      <say>Would you say that <color hex="f47742">interest</color> in a subject is fundamental to pursuing a career in that field?</say>
+      <page>Absolutely.</page>
+      <page>Yet, that isn’t the only thing that drives one’s success in a given field.</page>
+      <page><color hex="f47742">Aptitude</color>, or the ability to perform well within a field is tremendously valuable.</page>
+      <page>Don’t let me lead you astray--it hasn’t always been as simple as putting pen to paper for me.</page>
+      <page>Russian, as beautiful of a language as any other, has its limitations.</page>
+      <page>I’m forced to explore the use of other words, words loaned from other languages if you would, to supplement my writing as needed.</page>
+      <say>So interests have to be tempered with aptitude?</say>
+      <page>Most certainly.</page>
+      <page>Yet, as with any career, these things must also be a <color hex="f47742">priority</color>.</page>
+      <page>You must always ask yourself, "how does this line of work mesh with the priorities in my life?"</page>
+      <page>You wouldn’t expect a good doctor to prioritize free time over seeing patients, now would you?</page>
+      <say>Thank you! I’ve learned a lot!</say>
+      <say>Your perfect job is at sweet spot between <color hex="f47742">interests</color>, <color hex="f47742">aptitude</color> and <color hex="f47742">priorities</color>.</say>
+      <page>How succinct!</page>
+      <advance/>
+    </true>
+  </if>
+</dialog>

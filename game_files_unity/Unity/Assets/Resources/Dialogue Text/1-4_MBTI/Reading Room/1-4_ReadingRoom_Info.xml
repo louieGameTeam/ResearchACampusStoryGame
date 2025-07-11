@@ -1,0 +1,33 @@
+<dialog>
+  <page tag ="Info">Hello there, what can I help you find?</page>
+  <reply>
+    <option>
+      <say>Reading Room</say>
+      <page>We’re currently in the reading room.</page>
+      <goto tag="Info"/>
+    </option>
+    <option>
+      <say>Classrooms</say>
+      <page>The classrooms are just through the hall right behind you.</page>
+      <page>In the west wing of this building.</page>
+      <goto tag="Info"/>
+    </option>
+    <option>
+      <say>Offices</say>
+      <page>The offices are just through the hall behind this desk.</page>
+      <page>In the east wing of this building.</page>
+      <goto tag="Info"/>
+    </option>
+    <option>
+      <say>Dining Hall</say>
+      <page>If you go through the doorway and head left, then you’ll be able to find it!</page>
+      <page>South-west of your current location.</page>
+      <goto tag="Info"/>
+    </option>
+    <option>
+      <say>Never mind.</say>
+      <page>Stop by if you need anything!</page>
+      <finish/>
+    </option>
+  </reply>
+</dialog>

@@ -1,0 +1,10 @@
+<dialog>
+  <page tag="start">Congratulations on getting into University!<color hex="92bfdd"> [press enter to continue]</color></page>
+  <page>The next four years are going to be filled with amazing opportunities for you to find out what you want to do.</page>
+  <page>Don’t let them slip by!</page>
+  <page>Oh! I forgot to mention!</page>
+  <page>You not only got into an esteemed University…</page>
+  <page>You got into an esteemed <color hex="44c4ff">research</color> University!</page>
+  <page>Nice work!</page>
+  <page>So why don’t you follow me and we’ll figure out exactly what it means to be studying at a research University!</page>
+</dialog>

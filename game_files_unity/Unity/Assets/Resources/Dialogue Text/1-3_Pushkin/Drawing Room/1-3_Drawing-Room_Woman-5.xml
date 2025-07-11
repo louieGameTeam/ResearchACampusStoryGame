@@ -1,0 +1,20 @@
+<dialog>
+  <page tag="start">Yes?</page>
+  <if var="initialized" value="true">
+    <true>
+      <page>I'm keeping my eye on you...</page>
+    </true>
+    <false>
+      <page>What are you doing in here? Were you hiding in the closet?</page>
+      <page>Um...</page>
+      <set var="initialized" value="true"/>
+    </false>
+  </if>
+  <if var="T:current" case="E" value="T:Ch_1-3/TalkToPartygoers/0">
+    <true>
+      <say>I’m just looking for Alexander Pushkin and got turned around...</say>
+      <page>Well he’s certainly not in the ladies drawing room… He’s probably in the study. Just through that room.</page>
+      <advance/>
+    </true>
+  </if>
+</dialog>

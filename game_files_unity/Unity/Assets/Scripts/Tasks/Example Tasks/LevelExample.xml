@@ -1,0 +1,34 @@
+﻿<level name="Intro" scene="Campus_02">  
+  <task>
+    <name>Talking</name>
+    <description>Talk to this guy.</description>
+    <steps>
+      <dialogue/>
+    </steps>
+  </task>
+  <task>
+    <name>Location</name>
+    <description>Move to this location.</description>
+    <steps>
+      <location name="Test"/>
+    </steps>
+    <completion>
+      <give name="Pencil" count="2"/>
+      <take name="Pen"/>
+    </completion>
+  </task>
+  <task>
+    <name>Item</name>
+    <description>Get these items.</description>
+    <steps>
+      <item name="Notebook" count="1"/>
+    </steps>
+  </task>
+  <task>
+    <name>Manual</name>
+    <description>Do this other thing.</description>
+    <steps>
+      <manual count="1"/>
+    </steps>
+  </task>
+</level>

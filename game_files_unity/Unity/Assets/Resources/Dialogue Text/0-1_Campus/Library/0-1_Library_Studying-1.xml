@@ -1,0 +1,10 @@
+<dialog>
+  <random>
+    <option>
+      <page>Shhh!</page>
+    </option>
+    <option>
+      <page>I'm trying to study!</page>
+    </option>
+  </random>
+</dialog>

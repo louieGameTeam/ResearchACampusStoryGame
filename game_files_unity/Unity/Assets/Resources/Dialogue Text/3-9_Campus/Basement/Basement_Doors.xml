@@ -1,0 +1,18 @@
+<dialog>
+  <page>These stairs lead to campus. </page>
+  <if var="T:current" case="E" value="T:Ch_3-9/ExitBS/0">
+    <true>
+      <page>Exit the basement?</page>
+      <reply>
+        <option>
+          <say>Yes</say>
+          <say>Let's go! </say>
+          <advance/>
+        </option>
+        <option>
+          <say>No</say>
+        </option>
+      </reply>
+    </true>
+  </if>
+</dialog>

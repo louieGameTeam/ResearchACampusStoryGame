@@ -1,0 +1,252 @@
+<dialog>
+  <page tag="start">Welcome to the Library!</page>
+  <if var="initialized" value="true">
+    <true>
+      <page>Stop by if you need anything else!</page>
+    </true>
+    <false>
+      <page>What can I do for you?</page>
+      <set var="initialized" value="true"/>
+    </false>
+  </if>
+  <if var="T:current" case="E" value="T:Ch_3-9/TalkToLB/0">
+    <true>
+      <say>I'm trying to get a research position, but my RA told me that I need to send a lot of emails to multiple professors.</say>
+      <say>Can you help me draft a professional email?</say>
+      <page>Absolutely! That's one of the reasons I'm here!</page>
+      <page>Do keep in mind though...</page>
+      <page>Professors are quite busy, so don’t get discouraged if they don’t respond quickly...</page>
+      <page>If at all!</page>
+      <page>When this happens, don’t be afraid to send multiple emails!</page>
+      <say>Really?</say>
+      <page>Yeah!</page>
+      <page>Before you go sending a ton of emails though, can I see the original email you sent?</page>
+      <reply>
+        <option>
+          <say>Yeah, let me bring it up on my phone.</say>
+        </option>
+        <option>
+          <say>I guess...</say>
+        </option>
+      </reply>
+      <page>...</page>
+      <say>Here it is.</say>
+      <page>Great!</page>
+      <page>Hmm...</page>
+      <page>All you wrote was: “Hello, I would like to take the job as your research assistant”?</page>
+      <reply>
+        <option>
+          <say>Yeah!</say>
+        </option>
+        <option>
+          <say>Short and sweet!</say>
+        </option>
+      </reply>
+      <page>That’s NEVER going to get a reply!</page>
+      <say>Why not?</say>
+      <page>Well...</page>
+      <page>Professors get a ton of emails and usually won’t respond to someone who may waste any of their time.</page>
+      <page>You basically have to show the Professor that you take them seriously.</page>
+      <page>If you do that then they’ll take YOU seriously!</page>
+      <reply>
+        <option>
+          <say>I never thought of that...</say>
+        </option>
+        <option>
+          <say>Hmm...</say>
+        </option>
+      </reply>
+      <page>Let's draft a new email!</page>
+      <reply>
+        <option>
+          <say>Okay!</say>
+        </option>
+        <option>
+          <say>I don't really want to...</say>
+          <page>Come on!</page>
+          <reply>
+            <option>
+              <say>Okay...</say>
+            </option>
+            <option>
+              <say>No thanks!</say>
+              <page>It's important to take the opportunities you come across!</page>
+              <page>You never know when you'll get a chance like this again.</page>
+              <reply>
+                <option>
+                  <say>I guess you've got a point...</say>
+                </option>
+              </reply>
+            </option>
+          </reply>
+        </option>
+      </reply>
+      <page>Let's get started!</page>
+      <page tag="email_header">How do you want to start the email?</page>
+      <if var="header_wrong" value="true">
+        <true>
+          <reply>
+            <option>
+              <say>"Dear Professor Watson"</say>
+              <page>Great start!</page>
+            </option>
+            <option>
+              <say>"Hey Professor Watson"</say>
+              <page>It's a little casual, but I'm sure it's fine.</page>
+            </option>
+            <option>
+              <say>"Professor Watson"</say>
+              <page>Sounds good!</page>
+            </option>
+            <option>
+              <say>[HELP]</say>
+              <page>It’s important to address a professor with the respect they deserve.</page>
+              <page>Professors are less likely to take you seriously if you don’t take them seriously!</page>
+              <goto tag="email_header"/>
+            </option>
+          </reply>
+        </true>
+        <false>
+          <reply>
+            <option>
+              <say>"Dear Professor Watson"</say>
+              <page>Great start!</page>
+            </option>
+            <option>
+              <say>"Hey Professor Watson"</say>
+              <page>It's a little casual, but I'm sure it's fine.</page>
+            </option>
+            <option>
+              <say>"Professor Watson"</say>
+              <page>Sounds good!</page>
+            </option>
+            <option>
+              <say>"Hello"</say>
+              <page>Hmm...</page>
+              <page>It's too casual.</page>
+              <page>Why don't you make another choice?</page>
+              <set var="header_wrong" value="true"/>
+              <goto tag="email_header"/>
+            </option>
+            <option>
+              <say>[HELP]</say>
+              <page>It’s important to address a professor with the respect they deserve.</page>
+              <page>Professors are less likely to take you seriously if you don’t take them seriously!</page>
+              <goto tag="email_header"/>
+            </option>
+          </reply>
+        </false>
+      </if>
+      <page tag="email_body">Now for the body of the email.</page>
+      <reply>
+        <option>
+          <say>State interest.</say>
+          <page>Perfect! Your introduction should always include why you’re interested in the project.</page>
+          <page>Research projects can be pretty competitive...</page>
+          <page>So it’s good to show the professor that you’re actually interested in the project itself.</page>
+        </option>
+        <option>
+          <say>Ask for position.</say>
+          <page>Easy there! You should at least introduce yourself first!</page>
+          <goto tag="email_body"/>
+        </option>
+        <option>
+          <say>Ask to meet.</say>
+          <page>Maybe you should make it clear why you want to meet with Professor Watson first.</page>
+          <goto tag="email_body"/>
+        </option>
+        <option>
+          <say>[HELP]</say>
+          <page>By establishing the purpose of your email...</page>
+          <page>You let the professor know what the rest of your email will be about.</page>
+          <page>It’s good to be direct about your purpose!</page>
+          <goto tag="email_body"/>
+        </option>
+      </reply>
+      <page tag="email_qual">After you state your interest, what do you think we should do next?</page>
+      <reply>
+        <option>
+          <say>Ask for position.</say>
+          <page>Maybe you should state what makes you qualified first!</page>
+          <goto tag="email_qual"/>
+        </option>
+        <option>
+          <say>Ask to meet.</say>
+          <page>This would probably be best towards the end of the email.</page>
+          <goto tag="email_qual"/>
+        </option>
+        <option>
+          <say>State qualifications.</say>
+          <page>Yeah!</page>
+          <page>It’s a good idea to show the professor that you’re qualified for the position.</page>
+        </option>
+        <option>
+          <say>[HELP]</say>
+          <page>After the purpose of the email has been established...</page>
+          <page>We need some details about you to flesh out how you’d be an asset to the professor’s team.</page>
+          <goto tag="email_qual"/>
+        </option>
+      </reply>
+      <page tag="email_meet">What's left to do?</page>
+      <reply>
+        <option>
+          <say>Ask for position.</say>
+          <page>You’d probably be more successful if you met with the professor before asking for the position.</page>
+          <goto tag="email_meet"/>
+        </option>
+        <option>
+          <say>Close email.</say>
+          <page>Maybe not just yet.</page>
+          <page>While you have stated your interest and your qualifications, it might be best to set up a meeting with the professor next.</page>
+          <goto tag="email_meet"/>
+        </option>
+        <option>
+          <say>Ask to meet.</say>
+          <page>Perfect!</page>
+          <page>Asking what time works best for a meeting is a great way to make sure you’re being courteous to the Professor’s schedule.</page>
+          <page>It also shows that you’re serious about the position and are being proactive.</page>
+        </option>
+        <option>
+          <say>[HELP]</say>
+          <page>We’ve established the purpose of the email...</page>
+          <page>But it’s always good to encourage the professor to respond to your email by asking a question.</page>
+          <goto tag="email_meet"/>
+        </option>
+      </reply>
+      <page tag="email_close">How should we end the email?</page>
+      <reply>
+        <option>
+          <say>"Regards,"</say>
+          <page>A generic, professional, closing is always wise.</page>
+        </option>
+        <option>
+          <say>"Thank you for your time,"</say>
+          <page>Not bad!</page>
+          <page>Thanking the professor for their time is a very polite way to close an email.</page>
+        </option>
+        <option>
+          <say>"Love,"</say>
+          <page>Maybe this relationship is moving too fast...</page>
+          <goto tag="email_close"/>
+        </option>
+        <option>
+          <say>[HELP]</say>
+          <page>A professional closing is always recommended when corresponding with a professor.</page>
+          <goto tag="email_close"/>
+        </option>
+      </reply>
+      <page>Okay, let's check out this email now...</page>
+      <page>...</page>
+      <page>...</page>
+      <page>...</page>
+      <page>Perfect!</page>
+      <page>This is sure to get their attention now!</page>
+      <page>Go to the computer in the computer lab here in the library, or use your personal computer, and send this off!</page>
+      <page>Don’t forget though...</page>
+      <page>Don’t be afraid to email a few different Professors!</page>
+      <page>Just make sure you tailor each email for each position!</page>
+      <page>After you send the emails, go talk to the advisor. She might be able to help you with locating more potential opportunities!</page>
+      <advance/>
+    </true>
+  </if>
+</dialog>
