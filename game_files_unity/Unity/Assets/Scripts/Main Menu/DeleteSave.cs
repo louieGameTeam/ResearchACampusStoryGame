@@ -14,8 +14,9 @@ public class DeleteSave : MonoBehaviour {
 
 
     void Awake () {
-        if (GameObject.Find("DeleteSave-1") != null || !MainMenu.demoMode)
-            DestroyImmediate(gameObject);
+        if (GameObject.Find("DeleteSave-1") != null || !MainMenu.demoMode) {
+            Destroy(gameObject);
+        }
         else {
             DontDestroyOnLoad(gameObject);
             name = "DeleteSave-1";

@@ -13,7 +13,6 @@ public static class Serialization
 
     public static SaveData cached;
     private static bool saving = false;
-
     public static GameLog log;
     public static float lastTime = 0;
     public static void Serialize(string path, SaveData obj) {
@@ -62,7 +61,6 @@ public static class Serialization
         }
         return log;
     }
-
 
 
     public static object Deserialize(string path) {

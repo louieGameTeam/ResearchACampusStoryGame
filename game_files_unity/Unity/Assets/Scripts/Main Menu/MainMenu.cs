@@ -40,7 +40,6 @@ public class MainMenu : MonoBehaviour {
 	private List<Level> levels;
 
 	void Awake () {
-
         if (isOffline) {
             transform.Find("Main/Buttons/Bottom/Logout").gameObject.SetActive(false);
         }
@@ -122,7 +121,7 @@ public class MainMenu : MonoBehaviour {
     }
 
     public void LoadLevelSelect() {
-
+        Tasks.FetchGameSave();
         List<float> schedule = LoginControl.schedule;
         if (isOffline || schedule == null) {
             levelSchedule = Tasks.levels.Count;
@@ -177,11 +176,9 @@ public class MainMenu : MonoBehaviour {
 				list.GetChild (i).GetComponent<Button> ().interactable = true;
         else if (index <= levelSchedule - 1 && !Tasks.game.finished)
             list.GetChild(lastPlayable).GetComponent<Button>().interactable = true;
-		
     }
 
 	public void StartGame (int index) {
-
         Serialization.lastTime = Time.realtimeSinceStartup;
 
         if (Tasks.levels.IndexOf(Tasks.currentLevel) != index) {

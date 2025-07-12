@@ -130,8 +130,7 @@ public class LoginControl : MonoBehaviour
         }
     }
 
-    public void OnLogInClick()
-    {
+    public void OnLogInClick() {
         this.message.enabled = false;
         firebase.SignIn(email.text, password.text, LoginComplete, LogInFailed);
     }
@@ -145,20 +144,14 @@ public class LoginControl : MonoBehaviour
 
         firebase.GetData(data => {
             Serialization.cached = data;
-            if (Serialization.log != null) {
-                MainPage();
-            }
         }, () => {
             //If no player data, redirect back to main menu and sort there
             ShowMessage("Server missing data!");
-            MainPage();
         });
 
         firebase.GetProgress(data => {
             Serialization.log = data;
-            if (Serialization.cached != null) {
-                MainPage();
-            }
+            MainPage();
         }, () => {
             ShowMessage("Server missing data!");
         });

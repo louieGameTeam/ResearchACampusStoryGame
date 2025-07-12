@@ -7,8 +7,6 @@ using System.Globalization;
 
 
 public static class Tasks  {
-
-
     public static Game game {
         get {
             if (privateGame == null) {
@@ -38,8 +36,19 @@ public static class Tasks  {
             game.finished = true;
     }
 
+    public static void FetchGameSave() {
+        SaveData sd = SaveData.ReadGameSave();
+        if (sd == null || (sd != null && string.IsNullOrEmpty(sd.taskProgress))) {
+            privateGame = new Game();
+        } else {
+            privateGame = new Game(sd.taskProgress);
+        }
+
+    }
+
     // Manually increment the progress on the current step
-    public static void Advance() {
+    public static void Advance()
+    {
         game.currentLevel.currentTask.currentStep.Advance();
     }
 
