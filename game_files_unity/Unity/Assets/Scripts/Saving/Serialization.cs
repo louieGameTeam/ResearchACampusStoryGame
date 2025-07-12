@@ -279,7 +279,7 @@ public class GameLog {
     }
 }
 
-// Wrapper for the player counter, which keeps track a cumulative total of
+// Wrapper for the player counter, which keeps a cumulative total of
 // the number of students who have signed up to play the game
 [System.Serializable]
 public class PlayerCounter

@@ -17,35 +17,6 @@ namespace CharacterCreation
 
         public CharacterSetting cs;
 
-        //void OnValidate()
-        //{
-        //    if (!isPlayer)
-        //    {
-        //        foreach (var location in cs.locations)
-        //            foreach (var layer in location.version.layers)
-        //                foreach (var direction in layer.directions)
-        //                    foreach (var frame in direction.frames)
-        //                    {
-        //                        if (frame != null && frame.sprite != null)
-        //                        {
-        //                            var f = Wardrobe.Singleton.frames.FirstOrDefault(x => x.sprite == frame.sprite);
-        //                            if (f != null)
-        //                            {
-        //                                frame.id = f.id;
-        //                            }
-        //                            else
-        //                            {
-        //                                frame.id = Guid.NewGuid().ToString();
-        //                                Wardrobe.Singleton.frames.Add(new Wardrobe.FrameData(frame.id, frame.sprite));
-        //                            }
-        //                        }
-        //                    }
-
-        //        UnityEditor.EditorUtility.SetDirty(this);
-        //        UnityEditor.EditorUtility.SetDirty(Wardrobe.Singleton);
-        //    }
-        //}
-
         public void Awake()
         {
             InitializeCharacter();

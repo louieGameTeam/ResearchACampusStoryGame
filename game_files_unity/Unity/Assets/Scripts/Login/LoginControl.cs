@@ -136,40 +136,30 @@ public class LoginControl : MonoBehaviour
         firebase.SignIn(email.text, password.text, LoginComplete, LogInFailed);
     }
 
-    private void LoginComplete()
-    {
+    private void LoginComplete() {
         // Always grab schedule data on successful login
-        firebase.GetSchedule(schedule =>
-        {
+        firebase.GetSchedule(schedule => {
             LoginControl.schedule = schedule;
             scheduleTime = Time.realtimeSinceStartup;
         });
 
-        firebase.GetData(data =>
-        {
+        firebase.GetData(data => {
             Serialization.cached = data;
-            if (Serialization.log != null)
-            {
+            if (Serialization.log != null) {
                 MainPage();
             }
-        },
-        () =>
-        {
+        }, () => {
             //If no player data, redirect back to main menu and sort there
             ShowMessage("Server missing data!");
             MainPage();
         });
 
-        firebase.GetProgress(data =>
-        {
+        firebase.GetProgress(data => {
             Serialization.log = data;
-            if (Serialization.cached != null)
-            {
+            if (Serialization.cached != null) {
                 MainPage();
             }
-        },
-        () =>
-        {
+        }, () => {
             ShowMessage("Server missing data!");
         });
     }

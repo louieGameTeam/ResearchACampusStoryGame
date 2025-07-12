@@ -47,11 +47,6 @@ public class MainMenu : MonoBehaviour {
 	}
 
     private void Start() {
-
-        // For debugging
-        //Tasks.game = new Game("7");
-        //Debug.Log(Tasks.game.ToString());
-
         pages = new List<RectTransform>();
         LoadLevelSelect();
         Audio.StopMusic();
