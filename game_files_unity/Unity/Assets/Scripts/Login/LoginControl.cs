@@ -108,6 +108,13 @@ public class LoginControl : MonoBehaviour
         });
         SaveData sd = SaveData.CreateInitialSave(new SaveData.UserInfo(signUpData.firstName.text, signUpData.lastName.text, signUpData.email.text));
         Serialization.Serialize(SaveData.filePath, sd);
+
+        // Increment the player count to reflect the newly registered player
+        PlayerCounter oldCount = new PlayerCounter(0);
+        firebase.GetPlayerCounter(count => {
+            oldCount = count;
+            firebase.IncrementPlayerCounter(oldCount, () => {});
+        }, () => {});
     }
 
     private void SignUpFailed(Proyecto26.RequestException exception)

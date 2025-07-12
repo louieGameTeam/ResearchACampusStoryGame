@@ -16,71 +16,30 @@ public static class Serialization
 
     public static GameLog log;
     public static float lastTime = 0;
-    public static void Serialize(string path, SaveData obj)
-    {
-	// Debug.Log("Attempt Serialize");
-        if (!MainMenu.isOffline)
-        {
+    public static void Serialize(string path, SaveData obj) {
+        if (!MainMenu.isOffline) {
             if (saving) return;
             saving = true;
 
-            string json = JsonUtility.ToJson(obj);
-
-            int index = Tasks.levels.IndexOf(Tasks.currentLevel);
             log = UpdateGamelog(log);
-            Firebase.instance.SaveData(obj, () =>
-            {
+            Firebase.instance.SaveData(obj, () => {
                 log = UpdateGamelog(log);
-                for (int i = 0; i < Tasks.levels.Count; i++)
-                {
+                for (int i = 0; i < Tasks.levels.Count; i++) {
                     float newProgress = Tasks.levels[i].progress;
-                    if (newProgress > log.log[i].progress)
-                    {
+                    if (newProgress > log.log[i].progress) {
                         log.log[i].lastProgress = Firebase.instance.currentTime.ToString("M/d/yyyy h:mm:ss tt", CultureInfo.GetCultureInfo("en-US"));
-                        // Debug.Log($"SERIALIZED STRING: {Firebase.instance.currentTime.ToString("M/d/yyyy h:mm:ss tt", CultureInfo.GetCultureInfo("en-US"))}");
                     }
                     log.log[i].progress = newProgress;
                 }
 
-                Firebase.instance.SaveProgress(log, () =>
-                {
+                Firebase.instance.SaveProgress(log, () => {
                     cached = obj;
                 });
 
             });
-            saving = false; // Needed in case save fails once (i.e. momentary network drop). Otherwise will never attempt to save again.
-            //new LogEventRequest()
-            //    .SetEventKey("GET_DATE")
-            //    .Send((response) =>
-            //    {
-            //        long? epoch = response.ScriptData.GetLong("DATE");
-            //        long ticks = (long)epoch * 10000;
-            //        ticks += new System.DateTime(1970, 1, 1).Ticks;
-            //        System.DateTime time = new System.DateTime(ticks, System.DateTimeKind.Utc);
-            //        time = time.ToLocalTime();
-
-            //        for (int i = 0; i < Tasks.levels.Count; i++)
-            //        {
-            //            float newProgress = Tasks.levels[i].progress;
-            //            if (newProgress > log.log[i].progress)
-            //                log.log[i].lastProgress = time.ToString("G");
-            //            log.log[i].progress = newProgress;
-            //        }
-            //        string prog = JsonUtility.ToJson(log, true);
-
-            //        new LogEventRequest()
-            //        .SetEventKey("SAVE")
-            //        .SetEventAttribute("DAT", json)
-            //        .SetEventAttribute("PROGRESS", prog)
-            //        .Send((response1) => { saving = false; });
-            //        cached = obj;
-            //    }
-            //);
-
+            saving = false; // Needed in case SaveData fails (i.e. a momentary network drop). Otherwise will never attempt to save again.
         }
-        else
-        {
-
+        else {
             FileStream file = File.Open(path, FileMode.Create);
             SurrogateFormatter().Serialize(file, obj);
             file.Close();
@@ -88,21 +47,17 @@ public static class Serialization
         }
     }
 
-    private static GameLog UpdateGamelog(GameLog log)
-    {
-        if (log == null || log.log.Count == 0)
-        {
+    private static GameLog UpdateGamelog(GameLog log) {
+        if (log == null || log.log.Count == 0) {
             log = new GameLog();
-            foreach (Level item in Tasks.levels)
-            {
+            foreach (Level item in Tasks.levels) {
                 log.log.Add(new LevelLog(item.name, 0, 0, string.Empty));
             }
         }
         float toAdd = Time.realtimeSinceStartup - lastTime;
         lastTime = Time.realtimeSinceStartup;
         int index = Tasks.levels.IndexOf(Tasks.currentLevel);
-        if (index < log.log.Count && index >= 0)
-        {
+        if (index < log.log.Count && index >= 0) {
             log.log[index].seconds += toAdd;
         }
         return log;
@@ -110,19 +65,14 @@ public static class Serialization
 
 
 
-    public static object Deserialize(string path)
-    {
+    public static object Deserialize(string path) {
         object result = null;
-        if (!MainMenu.isOffline)
-        {
+        if (!MainMenu.isOffline) {
             result = cached;
         }
-        else
-        {
-
+        else {
             bool SaveExists = File.Exists(path);
-            if (SaveExists)
-            {
+            if (SaveExists) {
                 FileStream file = File.Open(path, FileMode.Open);
                 result = SurrogateFormatter().Deserialize(file);
                 file.Close();
@@ -133,9 +83,7 @@ public static class Serialization
         return result;
     }
 
-    private static BinaryFormatter SurrogateFormatter()
-    {
-
+    private static BinaryFormatter SurrogateFormatter() {
         BinaryFormatter bf = new BinaryFormatter();
         SurrogateSelector ss = new SurrogateSelector();
 
@@ -154,12 +102,8 @@ public static class Serialization
 
 
 // Serialization Surrogate for UnityEngine.Color
-sealed class ColorSerializationSurrogate : ISerializationSurrogate
-{
-
-    public void GetObjectData(object obj, SerializationInfo info, StreamingContext context)
-    {
-
+sealed class ColorSerializationSurrogate : ISerializationSurrogate {
+    public void GetObjectData(object obj, SerializationInfo info, StreamingContext context) {
         Color col = (Color)obj;
         info.AddValue("r", col.r);
         info.AddValue("g", col.g);
@@ -167,9 +111,7 @@ sealed class ColorSerializationSurrogate : ISerializationSurrogate
         info.AddValue("a", col.a);
     }
 
-    public object SetObjectData(object obj, SerializationInfo info, StreamingContext context, ISurrogateSelector selector)
-    {
-
+    public object SetObjectData(object obj, SerializationInfo info, StreamingContext context, ISurrogateSelector selector) {
         Color col = (Color)obj;
         col.r = (float)info.GetValue("r", typeof(float));
         col.g = (float)info.GetValue("g", typeof(float));
@@ -327,13 +269,33 @@ public class LevelLog
 }
 
 [System.Serializable]
-public class GameLog
-{
+public class GameLog {
 
     public List<LevelLog> log;
 
     public GameLog()
     {
         log = new List<LevelLog>();
+    }
+}
+
+// Wrapper for the player counter, which keeps track a cumulative total of
+// the number of students who have signed up to play the game
+[System.Serializable]
+public class PlayerCounter
+{
+    public int counter;
+    public PlayerCounter(int players) {
+        counter = players;
+    }
+
+    public static PlayerCounter operator +(PlayerCounter left, PlayerCounter right) {
+        PlayerCounter summed = new PlayerCounter(left.counter);
+        summed.counter += right.counter;
+        return summed;
+    }
+    
+    public static PlayerCounter operator +(PlayerCounter left, int right) {
+        return left + new PlayerCounter(right);
     }
 }

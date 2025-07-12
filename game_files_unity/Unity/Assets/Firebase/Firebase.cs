@@ -38,6 +38,7 @@ public class Firebase : MonoBehaviour
 
     string progressLink => string.Format(databaseLink, "students/" + user.localId + "/progress");
     string dataLink => string.Format(databaseLink, "students/" + user.localId + "/data");
+    string counterLink => string.Format(databaseLink, "studentCounter");
 
     const string dateFormat = "MM/dd/yyyy hh:mm tt";
 
@@ -103,43 +104,50 @@ public class Firebase : MonoBehaviour
         });
     }
 
-    public void GetSchedule(UnityAction<List<float>> onReceived)
-    {
+    public void GetSchedule(UnityAction<List<float>> onReceived) {
         RestClient.Get<Schedule>(scheduleLink).Then(res =>
         {
             onReceived.Invoke(res.floatDates);
         }).Catch(response => print(response.Message));
     }
 
-    public void SaveData(SaveData data, UnityAction onComplete)
-    {
+    public void SaveData(SaveData data, UnityAction onComplete) {
         RestClient.Put<SaveData>(dataLink, data).Then(data => onComplete.Invoke()).Catch(rejected => Debug.Log(rejected.Message));
     }
 
-    public void SaveProgress(GameLog gameLog, UnityAction onComplete)
-    {
+    public void SaveProgress(GameLog gameLog, UnityAction onComplete) {
         RestClient.Put<GameLog>(progressLink, gameLog).Then(log => onComplete.Invoke()).Catch(rejected => Debug.Log(rejected.Message));
+    }
+
+    public void IncrementPlayerCounter(PlayerCounter oldCount, UnityAction onComplete) {
+        RestClient.Put<PlayerCounter>(counterLink, oldCount + 1).Then(counter => onComplete.Invoke()).Catch(rejected => Debug.Log(rejected.Message));
     }
 
     public void GetData(UnityAction<SaveData> onReceived, UnityAction onFailed)
     {
         RestClient.Get<SaveData>(dataLink).Then(data => onReceived.Invoke(data)).
-            Catch(rejected =>
-            {
+            Catch(rejected => {
                 Debug.LogError(rejected.Message);
                 onFailed.Invoke();
             });
     }
 
-    public void GetProgress(UnityAction<GameLog> onReceived, UnityAction onFailed)
-    {
+    public void GetProgress(UnityAction<GameLog> onReceived, UnityAction onFailed) {
         RestClient.Get<GameLog>(progressLink).Then(log => onReceived.Invoke(log)).
-            Catch(rejected =>
-            {
+            Catch(rejected => {
                 Debug.LogError(rejected.Message);
                 onFailed.Invoke();
             });
     }
+
+    public void GetPlayerCounter(UnityAction<PlayerCounter> onReceived, UnityAction onFailed) {
+        RestClient.Get<PlayerCounter>(counterLink).Then(counter => onReceived.Invoke(counter)).
+            Catch(rejected => {
+                Debug.LogError(rejected.Message);
+                onFailed.Invoke();
+            });
+    }
+
 
     [SerializeField]
     class Schedule
