@@ -29,7 +29,7 @@ public class LoginControl : MonoBehaviour
 
     public static string sid;
     public static bool loggedIn { get; private set; }
-    public static List<float> schedule;
+    public static List<float> schedule; // seconds until level is unlocked (one element for each level)
     public static float scheduleTime = 0;
 
 

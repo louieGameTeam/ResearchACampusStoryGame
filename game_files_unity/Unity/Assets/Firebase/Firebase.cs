@@ -44,8 +44,7 @@ public class Firebase : MonoBehaviour
 
     User user = new User();
     SignInData signInData = new SignInData();
-    public TimeSpan PSTOffset = new TimeSpan(-7, 0, 0);
-    public System.DateTime currentTime => DateTime.UtcNow + PSTOffset;
+    public System.DateTime currentTime => DateTime.UtcNow;
     
     void Awake()
     {
@@ -175,7 +174,7 @@ public class Firebase : MonoBehaviour
                     DateTime startTime;
                     DateTime.TryParseExact(date, dateFormat, null, DateTimeStyles.None, out startTime);
 
-                    long elapsedTicks = (startTime - Firebase.instance.PSTOffset).Ticks - DateTime.UtcNow.Ticks;
+                    long elapsedTicks = startTime.Ticks - DateTime.UtcNow.Ticks;
                     TimeSpan elapsedSpan = new TimeSpan(elapsedTicks);
                     result.Add((float)elapsedSpan.TotalSeconds);
                 }
