@@ -5,9 +5,9 @@ using System.Collections.Generic;
 using System.Globalization;
 using UnityEngine;
 using UnityEngine.Events;
+using Newtonsoft.Json;
 
-public class Firebase : MonoBehaviour
-{
+public class Firebase : MonoBehaviour {
     static Firebase _instance;
 
     public static Firebase instance
@@ -39,13 +39,14 @@ public class Firebase : MonoBehaviour
     string progressLink => string.Format(databaseLink, "students/" + user.localId + "/progress");
     string dataLink => string.Format(databaseLink, "students/" + user.localId + "/data");
     string counterLink => string.Format(databaseLink, "studentCounter");
+    string timeLink => string.Format(databaseLink, "time/timestamp");
 
     const string dateFormat = "MM/dd/yyyy hh:mm tt";
 
     User user = new User();
     SignInData signInData = new SignInData();
     public System.DateTime currentTime => DateTime.UtcNow;
-    
+
     void Awake()
     {
         if (instance != this)
@@ -103,22 +104,25 @@ public class Firebase : MonoBehaviour
         });
     }
 
-    public void GetSchedule(UnityAction<List<float>> onReceived) {
-        RestClient.Get<Schedule>(scheduleLink).Then(res =>
-        {
+    public void GetSchedule(UnityAction<List<float>> onReceived)
+    {
+        RestClient.Get<Schedule>(scheduleLink).Then(res => {
             onReceived.Invoke(res.floatDates);
         }).Catch(response => print(response.Message));
     }
 
-    public void SaveData(SaveData data, UnityAction onComplete) {
+    public void SaveData(SaveData data, UnityAction onComplete)
+    {
         RestClient.Put<SaveData>(dataLink, data).Then(data => onComplete.Invoke()).Catch(rejected => Debug.Log(rejected.Message));
     }
 
-    public void SaveProgress(GameLog gameLog, UnityAction onComplete) {
+    public void SaveProgress(GameLog gameLog, UnityAction onComplete)
+    {
         RestClient.Put<GameLog>(progressLink, gameLog).Then(log => onComplete.Invoke()).Catch(rejected => Debug.Log(rejected.Message));
     }
 
-    public void IncrementPlayerCounter(PlayerCounter oldCount, UnityAction onComplete) {
+    public void IncrementPlayerCounter(PlayerCounter oldCount, UnityAction onComplete)
+    {
         RestClient.Put<PlayerCounter>(counterLink, oldCount + 1).Then(counter => onComplete.Invoke()).Catch(rejected => Debug.Log(rejected.Message));
     }
 
@@ -131,7 +135,8 @@ public class Firebase : MonoBehaviour
             });
     }
 
-    public void GetProgress(UnityAction<GameLog> onReceived, UnityAction onFailed) {
+    public void GetProgress(UnityAction<GameLog> onReceived, UnityAction onFailed)
+    {
         RestClient.Get<GameLog>(progressLink).Then(log => onReceived.Invoke(log)).
             Catch(rejected => {
                 Debug.LogError(rejected.Message);
@@ -139,7 +144,8 @@ public class Firebase : MonoBehaviour
             });
     }
 
-    public void GetPlayerCounter(UnityAction<PlayerCounter> onReceived, UnityAction onFailed) {
+    public void GetPlayerCounter(UnityAction<PlayerCounter> onReceived, UnityAction onFailed)
+    {
         RestClient.Get<PlayerCounter>(counterLink).Then(counter => onReceived.Invoke(counter)).
             Catch(rejected => {
                 Debug.LogError(rejected.Message);
@@ -147,6 +153,34 @@ public class Firebase : MonoBehaviour
             });
     }
 
+    public void getCurrentTimeUTC(UnityAction<DateTime> onComplete) {
+                
+        // Firebase server timestamp - PUT was working with this format
+        string payload = "{\".sv\":\"timestamp\"}";
+        
+        RestClient.Put(timeLink, payload).Then(response => 
+        {            
+            RestClient.Get(timeLink).Then(response => {
+
+                // Parse as long (Unix timestamp in milliseconds)
+                long.TryParse(response.Text, out long timestamp);
+                DateTime utc = DateTimeOffset.FromUnixTimeMilliseconds(timestamp).UtcDateTime;
+
+                // Clean up the timestamp after getting it
+                RestClient.Delete(timeLink).Then(_ => {}).
+                    Catch(deleteError => {
+                        Debug.Log(deleteError.Message);
+                    });
+
+                onComplete.Invoke(utc);
+            }).Catch(rejected => {
+                Debug.Log(rejected.Message);
+            });   
+        }).Catch(rejected => {
+            Debug.Log(rejected.Message);
+        });
+    }
+    
 
     [SerializeField]
     class Schedule
@@ -164,17 +198,14 @@ public class Firebase : MonoBehaviour
             DateTime.UtcNow.ToString(dateFormat)
         };
 
-        public List<float> floatDates
-        {
-            get
-            {
+        public List<float> floatDates {
+            get {
                 List<float> result = new List<float>();
-                foreach (var date in dates)
-                {
+                foreach (var date in dates) {
                     DateTime startTime;
                     DateTime.TryParseExact(date, dateFormat, null, DateTimeStyles.None, out startTime);
 
-                    long elapsedTicks = startTime.Ticks - DateTime.UtcNow.Ticks;
+                    long elapsedTicks = startTime.Ticks - (DateTime.UtcNow - LoginControl.realTimeOffset).Ticks;
                     TimeSpan elapsedSpan = new TimeSpan(elapsedTicks);
                     result.Add((float)elapsedSpan.TotalSeconds);
                 }
@@ -205,4 +236,5 @@ public class Firebase : MonoBehaviour
         public string refreshToken;
         public string expiresIn;
     }
+
 }

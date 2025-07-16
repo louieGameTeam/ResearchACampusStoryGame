@@ -127,15 +127,16 @@ public class MainMenu : MonoBehaviour {
             levelSchedule = Tasks.levels.Count;
         }
         else {
-            bool notFound = false;
-            for (int i = 0; i < schedule.Count; i++) {
-                if (notFound) continue;
+            for (int i = 0; i < schedule.Count; i++)
+            {
                 float elapsed = Time.realtimeSinceStartup - LoginControl.scheduleTime;
                 float remaining = schedule[i] - elapsed;
-                if (remaining < 0)
+                if (remaining < 0) {
                     levelSchedule = i + 1;
-                else
-                    notFound = true;
+                }
+                else {
+                    break;
+                }
             }
         }
 

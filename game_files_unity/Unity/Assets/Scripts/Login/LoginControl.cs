@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using System;
+using System.Globalization; // cultureinfo for time datetime formatting
 using Proyecto26;
 using System.Text.RegularExpressions;
 using UnityEngine.Events;
@@ -31,11 +32,13 @@ public class LoginControl : MonoBehaviour
     public static bool loggedIn { get; private set; }
     public static List<float> schedule; // seconds until level is unlocked (one element for each level)
     public static float scheduleTime = 0;
+    public static TimeSpan realTimeOffset = new TimeSpan(0); // If a user's machine is out of sync with real time, this contains the offset to put it back in line
 
 
     void Awake()
     {
         loginButton.onClick.AddListener(OnLogInClick);
+        setRealTimeOffset();
         signUpData.Initialize(OnSignUpClick, SignUpVerificationFailed);
 
         resetButton.onClick.AddListener(ResetPassword);
@@ -130,7 +133,8 @@ public class LoginControl : MonoBehaviour
         }
     }
 
-    public void OnLogInClick() {
+    public void OnLogInClick()
+    {
         this.message.enabled = false;
         firebase.SignIn(email.text, password.text, LoginComplete, LogInFailed);
     }
@@ -168,6 +172,13 @@ public class LoginControl : MonoBehaviour
         {
             ShowMessage("Network connection error!");
         }
+    }
+    
+    private void setRealTimeOffset()
+    {
+        firebase.getCurrentTimeUTC(time => {
+            LoginControl.realTimeOffset = DateTimeOffset.UtcNow - time;
+        });
     }
 
     void ShowMessage(string message)
