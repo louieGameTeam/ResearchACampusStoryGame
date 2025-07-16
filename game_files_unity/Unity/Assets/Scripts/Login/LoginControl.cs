@@ -34,10 +34,8 @@ public class LoginControl : MonoBehaviour
     public static float scheduleTime = 0;
     public static TimeSpan realTimeOffset = new TimeSpan(0); // If a user's machine is out of sync with real time, this contains the offset to put it back in line
 
-
     void Awake() {
         loginButton.onClick.AddListener(OnLogInClick);
-        setRealTimeOffset();
         signUpData.Initialize(OnSignUpClick, SignUpVerificationFailed);
 
         resetButton.onClick.AddListener(ResetPassword);
@@ -82,14 +80,12 @@ public class LoginControl : MonoBehaviour
         }
     }
 
-    void OnSignUpClick(string email, string password, string fullName)
-    {
+    void OnSignUpClick(string email, string password, string fullName) {
         this.message.enabled = false;
         firebase.SignUp(email, password, fullName, SignUpComplete, SignUpFailed);
     }
 
-    private void SignUpComplete()
-    {
+    private void SignUpComplete() {
         // First-time sign-up/login, grab schedule
         firebase.GetSchedule(schedule =>
         {
@@ -113,8 +109,7 @@ public class LoginControl : MonoBehaviour
         }, () => {});
     }
 
-    private void SignUpFailed(Proyecto26.RequestException exception)
-    {
+    private void SignUpFailed(Proyecto26.RequestException exception) {
         this.message.enabled = true;
         if (exception.IsHttpError)
         {
@@ -126,36 +121,42 @@ public class LoginControl : MonoBehaviour
         }
     }
 
-    public void OnLogInClick()
-    {
+    public void OnLogInClick() {
+        loginButton.enabled = false; // disabling to prevent server spamming
+        password.enabled = false; // disabling to prevent server spamming
         this.message.enabled = false;
         firebase.SignIn(email.text, password.text, LoginComplete, LogInFailed);
     }
 
     private void LoginComplete() {
-        // Always grab schedule data on successful login
-        firebase.GetSchedule(schedule => {
-            LoginControl.schedule = schedule;
-            scheduleTime = Time.realtimeSinceStartup;
-        });
+        setRealTimeOffset(() => {
+            // Always grab schedule data on successful login
+            firebase.GetSchedule(schedule => {
+                LoginControl.schedule = schedule;
+                scheduleTime = Time.realtimeSinceStartup;
+            });
 
-        firebase.GetData(data => {
-            Serialization.cached = data;
-        }, () => {
-            //If no player data, redirect back to main menu and sort there
-            ShowMessage("Server missing data!");
-        });
+            firebase.GetData(data => {
+                Serialization.cached = data;
+            }, () => {
+                //If no player data, redirect back to main menu and sort there
+                ShowMessage("Server missing data!");
+                loginButton.enabled = true;
+                password.enabled = true;
+            });
 
-        firebase.GetProgress(data => {
-            Serialization.log = data;
-            MainPage();
-        }, () => {
-            ShowMessage("Server missing data!");
+            firebase.GetProgress(data => {
+                Serialization.log = data;
+                MainPage();
+            }, () => {
+                ShowMessage("Server missing data!");
+                loginButton.enabled = true;
+                password.enabled = true;
+            });
         });
     }
 
-    private void LogInFailed(Proyecto26.RequestException exception)
-    {
+    private void LogInFailed(Proyecto26.RequestException exception) {
         this.message.enabled = true;
         if (exception.IsHttpError)
         {
@@ -165,23 +166,24 @@ public class LoginControl : MonoBehaviour
         {
             ShowMessage("Network connection error!");
         }
+        loginButton.enabled = true;
+        password.enabled = true;
     }
     
-    private void setRealTimeOffset()
-    {
+    private void setRealTimeOffset(System.Action onComplete = null) {
         firebase.getCurrentTimeUTC(time => {
             LoginControl.realTimeOffset = DateTimeOffset.UtcNow - time;
+            onComplete?.Invoke();
         });
     }
 
-    void ShowMessage(string message)
-    {
+    void ShowMessage(string message) {
         this.message.enabled = true;
         this.message.text = message;
     }
 
-    void MainPage()
-    {
+    void MainPage() {
+        loginButton.interactable = true;
         UnityEngine.SceneManagement.SceneManager.LoadScene("MainMenu");
     }
 
