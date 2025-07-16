@@ -37,7 +37,7 @@ public class LoginControl : MonoBehaviour
 
     void Awake() {
         loginButton.onClick.AddListener(OnLogInClick);
-        // setRealTimeOffset();
+        setRealTimeOffset();
         signUpData.Initialize(OnSignUpClick, SignUpVerificationFailed);
 
         resetButton.onClick.AddListener(ResetPassword);
