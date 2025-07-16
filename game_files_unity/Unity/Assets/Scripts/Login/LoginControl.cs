@@ -35,10 +35,9 @@ public class LoginControl : MonoBehaviour
     public static TimeSpan realTimeOffset = new TimeSpan(0); // If a user's machine is out of sync with real time, this contains the offset to put it back in line
 
 
-    void Awake()
-    {
+    void Awake() {
         loginButton.onClick.AddListener(OnLogInClick);
-        setRealTimeOffset();
+        // setRealTimeOffset();
         signUpData.Initialize(OnSignUpClick, SignUpVerificationFailed);
 
         resetButton.onClick.AddListener(ResetPassword);
@@ -48,32 +47,26 @@ public class LoginControl : MonoBehaviour
             MainPage();
     }
 
-    void SignUpVerificationFailed(string message)
-    {
+    void SignUpVerificationFailed(string message) {
         ShowMessage(message);
     }
 
-    private void ResetPassword()
-    {
+    private void ResetPassword() {
         message.enabled = false;
-        if (IsValid(email.text))
-        {
+        if (IsValid(email.text)) {
             firebase.ResetPassword(email.text, OnPasswordResetCompleted, OnPasswordResetFailed);
         }
-        else
-        {
+        else {
             ShowMessage("Email not valid! Make sure to use your @ucdavis.edu email address.");
         }
     }
 
-    public static bool IsValid(string email)
-    {
+    public static bool IsValid(string email) {
         Regex regex = new Regex(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$");
         Match match = regex.Match(email);
         return match.Success && email.EndsWith("ucdavis.edu");
     }
-    private void OnPasswordResetCompleted()
-    {
+    private void OnPasswordResetCompleted() {
         ShowMessage("Reset link sent to your email!");
     }
 
