@@ -45,7 +45,7 @@ public class Firebase : MonoBehaviour {
 
     User user = new User();
     SignInData signInData = new SignInData();
-    public System.DateTime currentTime => DateTime.UtcNow;
+    public System.DateTime currentTime => DateTime.UtcNow - LoginControl.realTimeOffset;
 
     void Awake()
     {
@@ -169,6 +169,10 @@ public class Firebase : MonoBehaviour {
             Debug.Log(rejected.Message);
         });
     }
+
+    public bool IsPacificDaylightTime() {
+        return Schedule.IsPacificDaylightTime(currentTime);
+    }
     
 
     [SerializeField]
@@ -204,7 +208,7 @@ public class Firebase : MonoBehaviour {
             }
         }
 
-        private bool IsPacificDaylightTime(DateTime date) {
+        public static bool IsPacificDaylightTime(DateTime date) {
             // PST uses DST from second Sunday in March to first Sunday in November
             int year = date.Year;
 

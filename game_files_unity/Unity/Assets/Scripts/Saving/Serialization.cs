@@ -20,13 +20,17 @@ public static class Serialization
             if (saving) return;
             saving = true;
 
+            int offsetHours = Firebase.instance.IsPacificDaylightTime() ? -7 : -8;
             log = UpdateGamelog(log);
             Firebase.instance.SaveData(obj, () => {
                 log = UpdateGamelog(log);
                 for (int i = 0; i < Tasks.levels.Count; i++) {
                     float newProgress = Tasks.levels[i].progress;
                     if (newProgress > log.log[i].progress) {
-                        log.log[i].lastProgress = Firebase.instance.currentTime.ToString("M/d/yyyy h:mm:ss tt", CultureInfo.GetCultureInfo("en-US"));
+                        var lastProgressPacific = Firebase.instance.currentTime.AddHours(offsetHours);
+                        Debug.Log($"Last progress UTC: {Firebase.instance.currentTime}");
+                        Debug.Log($"Last progress Pacific: {Firebase.instance.currentTime.AddHours(offsetHours)}");
+                        log.log[i].lastProgress = lastProgressPacific.ToString("M/d/yyyy h:mm:ss tt", CultureInfo.GetCultureInfo("en-US"));
                     }
                     log.log[i].progress = newProgress;
                 }

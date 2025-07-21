@@ -135,24 +135,24 @@ public class LoginControl : MonoBehaviour
             firebase.GetSchedule(schedule => {
                 LoginControl.schedule = schedule;
                 scheduleTime = Time.realtimeSinceStartup;
-            });
+                firebase.GetData(data => {
+                    Serialization.cached = data;
+                }, () => {
+                    //If no player data, redirect back to main menu and sort there
+                    ShowMessage("Server missing data!");
+                    loginButton.enabled = true;
+                    password.enabled = true;
+                });
 
-            firebase.GetData(data => {
-                Serialization.cached = data;
-            }, () => {
-                //If no player data, redirect back to main menu and sort there
-                ShowMessage("Server missing data!");
-                loginButton.enabled = true;
-                password.enabled = true;
-            });
+                firebase.GetProgress(data => {
+                    Serialization.log = data;
+                    MainPage();
+                }, () => {
+                    ShowMessage("Server missing data!");
+                    loginButton.enabled = true;
+                    password.enabled = true;
+                });
 
-            firebase.GetProgress(data => {
-                Serialization.log = data;
-                MainPage();
-            }, () => {
-                ShowMessage("Server missing data!");
-                loginButton.enabled = true;
-                password.enabled = true;
             });
         });
     }
