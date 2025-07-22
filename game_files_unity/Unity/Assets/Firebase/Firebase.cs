@@ -172,10 +172,8 @@ public class Firebase : MonoBehaviour {
     
 
     [SerializeField]
-    class Schedule
-    {
-        public List<string> dates = new List<string>()
-        {
+    class Schedule {
+        public List<string> dates = new List<string>() {
             DateTime.UtcNow.ToString(dateFormat),
             DateTime.UtcNow.ToString(dateFormat),
             DateTime.UtcNow.ToString(dateFormat),
@@ -193,14 +191,33 @@ public class Firebase : MonoBehaviour {
                 foreach (var date in dates) {
                     DateTime startTime;
                     DateTime.TryParseExact(date, dateFormat, null, DateTimeStyles.None, out startTime);
-
+                    
+                    // Hardcoded PST offset (-8 hours) and PDT offset (-7 hours)
+                    int offsetHours = IsPacificDaylightTime(startTime) ? -7 : -8;
+                    startTime = startTime.AddHours(-offsetHours);
+                    
                     long elapsedTicks = startTime.Ticks - (DateTime.UtcNow - LoginControl.realTimeOffset).Ticks;
                     TimeSpan elapsedSpan = new TimeSpan(elapsedTicks);
                     result.Add((float)elapsedSpan.TotalSeconds);
                 }
-
                 return result;
             }
+        }
+
+        private bool IsPacificDaylightTime(DateTime date) {
+            // PST uses DST from second Sunday in March to first Sunday in November
+            int year = date.Year;
+
+            // Calculate second Sunday in March
+            DateTime dstStart = new DateTime(year, 3, 1);
+            dstStart = dstStart.AddDays((14 - (int)dstStart.DayOfWeek) % 7);
+
+            // Calculate first Sunday in November
+            DateTime dstEnd = new DateTime(year, 11, 1);
+            dstEnd = dstEnd.AddDays((7 - (int)dstEnd.DayOfWeek) % 7);
+
+            // Check if date is between DST start and end
+            return date >= dstStart && date < dstEnd;
         }
     }
 

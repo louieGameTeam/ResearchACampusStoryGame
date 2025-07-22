@@ -86,27 +86,28 @@ public class LoginControl : MonoBehaviour
     }
 
     private void SignUpComplete() {
-        // First-time sign-up/login, grab schedule
-        firebase.GetSchedule(schedule =>
-        {
-            LoginControl.schedule = schedule;
-            scheduleTime = Time.realtimeSinceStartup;
+        setRealTimeOffset(() => {
+            // First-time sign-up/login, grab schedule
+            firebase.GetSchedule(schedule => {
+                LoginControl.schedule = schedule;
+                scheduleTime = Time.realtimeSinceStartup;
 
-            Serialization.cached = new SaveData();
-            Serialization.cached.userInfo = new SaveData.UserInfo(signUpData.firstName.text, signUpData.lastName.text, signUpData.email.text);
+                Serialization.cached = new SaveData();
+                Serialization.cached.userInfo = new SaveData.UserInfo(signUpData.firstName.text, signUpData.lastName.text, signUpData.email.text);
 
-            Serialization.log = new GameLog();
-            MainPage();
+                Serialization.log = new GameLog();
+                MainPage();
+            });
+            SaveData sd = SaveData.CreateInitialSave(new SaveData.UserInfo(signUpData.firstName.text, signUpData.lastName.text, signUpData.email.text));
+            Serialization.Serialize(SaveData.filePath, sd);
+
+            // Increment the player count to reflect the newly registered player
+            PlayerCounter oldCount = new PlayerCounter(0);
+            firebase.GetPlayerCounter(count => {
+                oldCount = count;
+                firebase.IncrementPlayerCounter(oldCount, () => {});
+            }, () => {});
         });
-        SaveData sd = SaveData.CreateInitialSave(new SaveData.UserInfo(signUpData.firstName.text, signUpData.lastName.text, signUpData.email.text));
-        Serialization.Serialize(SaveData.filePath, sd);
-
-        // Increment the player count to reflect the newly registered player
-        PlayerCounter oldCount = new PlayerCounter(0);
-        firebase.GetPlayerCounter(count => {
-            oldCount = count;
-            firebase.IncrementPlayerCounter(oldCount, () => {});
-        }, () => {});
     }
 
     private void SignUpFailed(Proyecto26.RequestException exception) {
