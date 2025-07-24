@@ -43,9 +43,9 @@ public class Dialog {
         }
     }
     private static Dictionary<string, string> playerPropertiesPrivate;
-
+	
     // Determines whether or not this chat session can be exited using the escape key
-    [HideInInspector] public bool escapable = true;
+	[HideInInspector] public bool escapable = true;
 
 	// The Chattable object that this dialog instance represents
 	[HideInInspector] public Chattable host;

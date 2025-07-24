@@ -43,7 +43,9 @@ public class LevelScriptEditor : Editor
 		myTarget.npcHead = EditorGUILayout.ObjectField("NPC Icon", (Object)myTarget.npcHead, typeof(RectTransform), true) as RectTransform;
         myTarget.playerHead = EditorGUILayout.ObjectField("Player Icon", (Object)myTarget.playerHead, typeof(RectTransform), true) as RectTransform;
         myTarget.npcName = EditorGUILayout.ObjectField("NPC Name", (Object)myTarget.npcName, typeof(Text), true) as Text;
+		myTarget.playerName = EditorGUILayout.ObjectField("Player Name", (Object)myTarget.playerName, typeof(Text), true) as Text;
         myTarget.npcName.font = myTarget.textFont;
+		myTarget.playerName.font = myTarget.textFont;
         EditorGUI.indentLevel--;
 
 		myTarget.playAudio = EditorGUILayout.Toggle ("Play Audio", myTarget.playAudio);
@@ -90,6 +92,9 @@ public class ChatManager : MonoBehaviour {
 
     // Text object that displays the name of the chattable object during chat
     public Text npcName;
+
+	// Text object that displays the player's name during chat
+	public Text playerName;
 
 	// Animation controller that shows and hides the chat banner
 	public Animator anim;
@@ -160,6 +165,7 @@ public class ChatManager : MonoBehaviour {
         if (clip != null) audioSource.clip = clip;
 
         CharacterSetting cs = FindObjectOfType<PlayerControl>().GetComponent<Character>().cs;
+		playerName.text = cs.name;
         GenerateIcon(cs, playerHead);
 
         chatting = null;
@@ -199,7 +205,7 @@ public class ChatManager : MonoBehaviour {
 
 		ChatManager cm = GetCM();
         if (cm.npcHead.childCount > 0)
-		    DestroyImmediate(cm.npcHead.GetChild(0).gameObject);
+			DestroyImmediate(cm.npcHead.GetChild(0).gameObject);
 		Image icon = cm.npcHead.GetComponent<Image>();
         icon.enabled = false;
 		if (dialog.host.isNPC) {
@@ -332,11 +338,13 @@ public class ChatManager : MonoBehaviour {
         cm.playerHead.gameObject.SetActive(false);
         cm.npcHead.gameObject.SetActive(false);
         cm.npcName.gameObject.SetActive(false);
+		cm.playerName.gameObject.SetActive(false);
         if (type == Dialog.NodeType.Page) {
             cm.npcHead.gameObject.SetActive(true);
             cm.npcName.gameObject.SetActive(true);
         } else if (type == Dialog.NodeType.Reply || type == Dialog.NodeType.Say) {
             cm.playerHead.gameObject.SetActive(true);
+			cm.playerName.gameObject.SetActive(true);
         }
 	}
 
