@@ -41,7 +41,7 @@ public class Firebase : MonoBehaviour {
     string counterLink => string.Format(databaseLink, "studentCounter");
     string timeLink => string.Format(databaseLink, "time/" + user.localId + "/timestamp"); // Use localId so that multiple users logging in at once is okay
 
-    const string dateFormat = "MM/dd/yyyy hh:mm tt";
+    const string dateFormat = "MM/dd/yyyy h:mm tt";
 
     User user = new User();
     SignInData signInData = new SignInData();
