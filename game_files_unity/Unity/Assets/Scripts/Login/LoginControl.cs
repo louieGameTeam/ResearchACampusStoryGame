@@ -130,6 +130,7 @@ public class LoginControl : MonoBehaviour
     }
 
     private void LoginComplete() {
+        ShowMessage("Loading Save Data...");
         setRealTimeOffset(() => {
             // Always grab schedule data on successful login
             firebase.GetSchedule(schedule => {
@@ -137,22 +138,21 @@ public class LoginControl : MonoBehaviour
                 scheduleTime = Time.realtimeSinceStartup;
                 firebase.GetData(data => {
                     Serialization.cached = data;
+                    firebase.GetProgress(data => {
+                        Serialization.log = data;
+                        MainPage();
+                    }, () => {
+                        ShowMessage("Server missing data!");
+                        loginButton.enabled = true;
+                        password.enabled = true;
+                    });
+
                 }, () => {
                     //If no player data, redirect back to main menu and sort there
                     ShowMessage("Server missing data!");
                     loginButton.enabled = true;
                     password.enabled = true;
                 });
-
-                firebase.GetProgress(data => {
-                    Serialization.log = data;
-                    MainPage();
-                }, () => {
-                    ShowMessage("Server missing data!");
-                    loginButton.enabled = true;
-                    password.enabled = true;
-                });
-
             });
         });
     }
