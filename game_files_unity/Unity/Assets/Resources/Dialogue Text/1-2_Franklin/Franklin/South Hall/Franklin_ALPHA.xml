@@ -6,6 +6,9 @@
       <page tag ="Info">What's next?</page>
     </true>
     <false>
+      <if var="T:current" case="E" value="T:Ch_1-2/TalkToALPHA2/0">
+        <true> <goto tag="level_complete"/> </true>
+      </if>
       <page>...</page>
       <page>Calibrating...</page>
       <page>...</page>
@@ -44,7 +47,7 @@
   </if>
   <if var="T:current" case="E" value="T:Ch_1-2/TalkToALPHA2/0">
     <true>
-      <page>Have you gathered enough information about Rosalind Franklin?</page>
+      <page tag="level_complete">Have you gathered enough information about Rosalind Franklin?</page>
       <reply>
         <option>
           <say>Yes. </say>

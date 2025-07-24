@@ -17,7 +17,7 @@
       <page>Do you need help with something?</page>
       <say>I'm looking for the textbook for my Intro to Research class. </say>
       <page>Just one moment, let me look that up.</page>
-      <page>We should have a copy of that on the first shelf.</page>
+      <page>We should have a copy of that on the first (northernmost) shelf.</page>
       <say>Thanks! </say>
       <page>No problem!</page>
       <advance/>

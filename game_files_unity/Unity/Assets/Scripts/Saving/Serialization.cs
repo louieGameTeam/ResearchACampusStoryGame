@@ -28,8 +28,6 @@ public static class Serialization
                     float newProgress = Tasks.levels[i].progress;
                     if (newProgress > log.log[i].progress) {
                         var lastProgressPacific = Firebase.instance.currentTime.AddHours(offsetHours);
-                        Debug.Log($"Last progress UTC: {Firebase.instance.currentTime}");
-                        Debug.Log($"Last progress Pacific: {Firebase.instance.currentTime.AddHours(offsetHours)}");
                         log.log[i].lastProgress = lastProgressPacific.ToString("M/d/yyyy h:mm:ss tt", CultureInfo.GetCultureInfo("en-US"));
                     }
                     log.log[i].progress = newProgress;

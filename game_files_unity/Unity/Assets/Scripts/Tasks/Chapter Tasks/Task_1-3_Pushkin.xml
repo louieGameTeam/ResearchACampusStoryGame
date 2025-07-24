@@ -9,7 +9,7 @@
   </task>
   <task>
     <name>TalkToPartygoers</name>
-    <description>Talk to some party goers to find out where Alexander Pushkin is.</description>
+    <description>Talk to some party goers in the first room to find out where Alexander Pushkin is.</description>
     <steps>
       <dialogue/>
     </steps>
