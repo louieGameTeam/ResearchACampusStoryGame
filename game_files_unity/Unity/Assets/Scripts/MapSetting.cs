@@ -94,15 +94,13 @@ public class MapSetting : MonoBehaviour {
             rt.offsetMax = size / 2f;
             Vector2 destination = item.coordinate;
             Rect rect = current.region;
-            /* Disable Fast Travelling
             label.GetComponent<Button>().onClick.AddListener(() => {
                 if (PlayerControl.teleportBlocked) return;
-                //BlackFade.StartFade(false, 0.5f, () => {
+                // BlackFade.StartFade(false, 0.5f, () => {
                     player.position = destination;
                     UpdateYAH();
-                //});
-            });
-            */
+                });
+            // });
         }
     }
 
