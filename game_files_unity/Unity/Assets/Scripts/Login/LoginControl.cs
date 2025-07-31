@@ -92,14 +92,14 @@ public class LoginControl : MonoBehaviour
                 LoginControl.schedule = schedule;
                 scheduleTime = Time.realtimeSinceStartup;
 
-                Serialization.cached = new SaveData();
-                Serialization.cached.userInfo = new SaveData.UserInfo(signUpData.firstName.text, signUpData.lastName.text, signUpData.email.text);
+                Saving.cached = new SaveData();
+                Saving.cached.userInfo = new SaveData.UserInfo(signUpData.firstName.text, signUpData.lastName.text, signUpData.email.text);
 
-                Serialization.log = new GameLog();
+                Saving.log = new GameLog();
                 MainPage();
             });
             SaveData sd = SaveData.CreateInitialSave(new SaveData.UserInfo(signUpData.firstName.text, signUpData.lastName.text, signUpData.email.text));
-            Serialization.Serialize(SaveData.filePath, sd);
+            Saving.Save(sd);
 
             // Increment the player count to reflect the newly registered player
             PlayerCounter oldCount = new PlayerCounter(0);
@@ -137,9 +137,9 @@ public class LoginControl : MonoBehaviour
                 LoginControl.schedule = schedule;
                 scheduleTime = Time.realtimeSinceStartup;
                 firebase.GetData(data => {
-                    Serialization.cached = data;
+                    Saving.cached = data;
                     firebase.GetProgress(data => {
-                        Serialization.log = data;
+                        Saving.log = data;
                         MainPage();
                     }, () => {
                         ShowMessage("Server missing data!");

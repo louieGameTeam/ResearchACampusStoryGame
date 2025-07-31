@@ -74,7 +74,9 @@ public class MainMenu : MonoBehaviour {
         if (target == levelsGrid) {
             SaveData sd = SaveData.ReadGameSave();
             if (sd == null || sd.character == null || sd.character.locations == null) {
-                sd.character = null;
+                if (sd != null) {
+                    sd.character = null;
+                }
                 BlackFade.LoadScene("CharacterCreation");
                 return;
             }
@@ -180,7 +182,7 @@ public class MainMenu : MonoBehaviour {
     }
 
 	public void StartGame (int index) {
-        Serialization.lastTime = Time.realtimeSinceStartup;
+        Saving.lastTime = Time.realtimeSinceStartup;
 
         if (Tasks.levels.IndexOf(Tasks.currentLevel) != index) {
             Tasks.game = new Game(index.ToString());

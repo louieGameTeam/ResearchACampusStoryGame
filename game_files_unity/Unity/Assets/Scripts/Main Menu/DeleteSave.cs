@@ -37,7 +37,7 @@ public class DeleteSave : MonoBehaviour {
 
         if (currentPresses >= numOfPresses) {
             currentPresses = 0;
-            System.IO.File.Delete(SaveData.filePath);
+            System.IO.File.Delete(Serialization.path);
             SaveData.cachedSave = null;
             UnityEngine.SceneManagement.SceneManager.LoadScene("MainMenu");
             Debug.LogWarning("Save file deleted at " + Time.realtimeSinceStartup);

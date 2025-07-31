@@ -7,8 +7,6 @@ using CharacterCreation;
 [System.Serializable]
 public class SaveData {
 
-    public static string fileName = "SaveData.ucd";
-    public static string filePath = Path.Combine(Application.persistentDataPath, fileName);
 
     public static SaveData cachedSave;
 
@@ -79,9 +77,11 @@ public class SaveData {
 
     public static SaveData WriteGameSave () {
         SaveData sd = ReadGameSave();
-        if (sd == null) sd = new SaveData();
+        if (sd == null) { 
+            sd = new SaveData();
+        }
         sd.BuildGameSave();
-        Serialization.Serialize(filePath, sd);
+        Saving.Save(sd);
         return sd;
     }
 
@@ -98,12 +98,12 @@ public class SaveData {
             return null;    
         sd.character = cs;
 
-        Serialization.Serialize(SaveData.filePath, sd);
+        Saving.Save(sd);
         return sd;
     }
 
     public static SaveData ReadGameSave () {
-        return (SaveData)Serialization.Deserialize(filePath);
+        return (SaveData) Saving.GetSave();
     }
 
     public static SaveData CreateInitialSave(UserInfo newUserInfo)
@@ -158,5 +158,16 @@ public class SaveData {
             this.lastName = lastName;
             this.email = email;
         }
+    }
+}
+
+// The serializer sucks and can't serialize nested dictionaries without a wrapper class, ergo this
+[System.Serializable]
+public class SerializableNestedDictionary<T1, T2> {
+    public Dictionary<T1, T2> dictionary;
+
+    public SerializableNestedDictionary(Dictionary<T1, T2> d)
+    {
+        dictionary = d;
     }
 }

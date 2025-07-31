@@ -8,76 +8,26 @@ using CharacterCreation;
 using Proyecto26;
 using UnityEngine.Events;
 
-public static class Serialization
-{
+public static class Serialization {
 
-    public static SaveData cached;
-    private static bool saving = false;
-    public static GameLog log;
-    public static float lastTime = 0;
-    public static void Serialize(string path, SaveData obj) {
-        if (!MainMenu.isOffline) {
-            if (saving) return;
-            saving = true;
+    public static string fileName = "SaveData.ucd";
+    public static string path = Path.Combine(Application.persistentDataPath, fileName);
 
-            int offsetHours = Firebase.instance.IsPacificDaylightTime() ? -7 : -8;
-            log = UpdateGamelog(log);
-            Firebase.instance.SaveData(obj, () => {
-                log = UpdateGamelog(log);
-                for (int i = 0; i < Tasks.levels.Count; i++) {
-                    float newProgress = Tasks.levels[i].progress;
-                    if (newProgress > log.log[i].progress) {
-                        var lastProgressPacific = Firebase.instance.currentTime.AddHours(offsetHours);
-                        log.log[i].lastProgress = lastProgressPacific.ToString("M/d/yyyy h:mm:ss tt", CultureInfo.GetCultureInfo("en-US"));
-                    }
-                    log.log[i].progress = newProgress;
-                }
+    public static void Serialize(SaveData obj) {
+        FileStream file = File.Open(path, FileMode.Create);
+        SurrogateFormatter().Serialize(file, obj);
+        file.Close();
+        file.Dispose();
+    }
 
-                Firebase.instance.SaveProgress(log, () => {
-                    cached = obj;
-                });
-
-            });
-            saving = false; // Needed in case SaveData fails (i.e. a momentary network drop). Otherwise will never attempt to save again.
-        }
-        else {
-            FileStream file = File.Open(path, FileMode.Create);
-            SurrogateFormatter().Serialize(file, obj);
+    public static object Deserialize() {
+        object result = null;
+        bool SaveExists = File.Exists(path);        
+        if (SaveExists) {
+            FileStream file = File.Open(path, FileMode.Open);
+            result = SurrogateFormatter().Deserialize(file);
             file.Close();
             file.Dispose();
-        }
-    }
-
-    private static GameLog UpdateGamelog(GameLog log) {
-        if (log == null || log.log.Count == 0) {
-            log = new GameLog();
-            foreach (Level item in Tasks.levels) {
-                log.log.Add(new LevelLog(item.name, 0, 0, string.Empty));
-            }
-        }
-        float toAdd = Time.realtimeSinceStartup - lastTime;
-        lastTime = Time.realtimeSinceStartup;
-        int index = Tasks.levels.IndexOf(Tasks.currentLevel);
-        if (index < log.log.Count && index >= 0) {
-            log.log[index].seconds += toAdd;
-        }
-        return log;
-    }
-
-
-    public static object Deserialize(string path) {
-        object result = null;
-        if (!MainMenu.isOffline) {
-            result = cached;
-        }
-        else {
-            bool SaveExists = File.Exists(path);
-            if (SaveExists) {
-                FileStream file = File.Open(path, FileMode.Open);
-                result = SurrogateFormatter().Deserialize(file);
-                file.Close();
-                file.Dispose();
-            }
         }
 
         return result;
@@ -122,19 +72,16 @@ sealed class ColorSerializationSurrogate : ISerializationSurrogate {
 }
 
 // Serialization Surrogate for UnityEngine.Vector2
-sealed class Vector2SerializationSurrogate : ISerializationSurrogate
-{
+sealed class Vector2SerializationSurrogate : ISerializationSurrogate {
 
-    public void GetObjectData(object obj, SerializationInfo info, StreamingContext context)
-    {
+    public void GetObjectData(object obj, SerializationInfo info, StreamingContext context) {
 
         Vector2 v = (Vector2)obj;
         info.AddValue("x", v.x);
         info.AddValue("y", v.y);
     }
 
-    public object SetObjectData(object obj, SerializationInfo info, StreamingContext context, ISurrogateSelector selector)
-    {
+    public object SetObjectData(object obj, SerializationInfo info, StreamingContext context, ISurrogateSelector selector) {
 
         Vector2 v = (Vector2)obj;
         v.x = (float)info.GetValue("x", typeof(float));
@@ -144,18 +91,15 @@ sealed class Vector2SerializationSurrogate : ISerializationSurrogate
 }
 
 // Serialization Surrogate for Item
-sealed class ItemSerializationSurrogate : ISerializationSurrogate
-{
+sealed class ItemSerializationSurrogate : ISerializationSurrogate {
 
-    public void GetObjectData(object obj, SerializationInfo info, StreamingContext context)
-    {
+    public void GetObjectData(object obj, SerializationInfo info, StreamingContext context) {
 
         Item item = (Item)obj;
         info.AddValue("item", Inventory.globalItems.IndexOf(item));
     }
 
-    public object SetObjectData(object obj, SerializationInfo info, StreamingContext context, ISurrogateSelector selector)
-    {
+    public object SetObjectData(object obj, SerializationInfo info, StreamingContext context, ISurrogateSelector selector) {
 
         Item item = (Item)obj;
         int index = info.GetInt32("item");
@@ -167,11 +111,9 @@ sealed class ItemSerializationSurrogate : ISerializationSurrogate
 }
 
 // Serialization Surrogate for System.Collections.Generics.Dictionary<T1, T2>
-sealed class DictionarySerializationSurrogate<T1, T2> : ISerializationSurrogate
-{
+sealed class DictionarySerializationSurrogate<T1, T2> : ISerializationSurrogate {
 
-    public void GetObjectData(object obj, SerializationInfo info, StreamingContext context)
-    {
+    public void GetObjectData(object obj, SerializationInfo info, StreamingContext context) {
         Dictionary<T1, T2> d = (Dictionary<T1, T2>)obj;
         T1[] keys = new T1[d.Keys.Count];
         d.Keys.CopyTo(keys, 0);
@@ -181,13 +123,11 @@ sealed class DictionarySerializationSurrogate<T1, T2> : ISerializationSurrogate
         info.AddValue("values", values);
     }
 
-    public object SetObjectData(object obj, SerializationInfo info, StreamingContext context, ISurrogateSelector selector)
-    {
+    public object SetObjectData(object obj, SerializationInfo info, StreamingContext context, ISurrogateSelector selector) {
         Dictionary<T1, T2> d = new Dictionary<T1, T2>();
         T1[] keys = (T1[])info.GetValue("keys", typeof(T1[]));
         T2[] values = (T2[])info.GetValue("values", typeof(T2[]));
-        for (int i = 0; i < keys.Length; i++)
-        {
+        for (int i = 0; i < keys.Length; i++) {
             d.Add(keys[i], values[i]);
         }
         return d;
@@ -196,24 +136,19 @@ sealed class DictionarySerializationSurrogate<T1, T2> : ISerializationSurrogate
 }
 
 // Serialization Surrogate for CharacterCreation.Version instances from the Wardrobe asset
-sealed class VersionSerializationSurrogate : ISerializationSurrogate
-{
+sealed class VersionSerializationSurrogate : ISerializationSurrogate {
 
-    public void GetObjectData(object obj, SerializationInfo info, StreamingContext context)
-    {
+    public void GetObjectData(object obj, SerializationInfo info, StreamingContext context) {
 
         Version ver = (Version)obj;
         Wardrobe w = Wardrobe.Singleton;
 
         int hash = ver.GetHashCode();
         //Debug.Log(hash + "  " + Time.time);
-        for (int i = 0; i < w.locations.Length; i++)
-        {
-            for (int j = 0; j < w.locations[i].versions.Count; j++)
-            {
+        for (int i = 0; i < w.locations.Length; i++) {
+            for (int j = 0; j < w.locations[i].versions.Count; j++) {
                 Version v = w.locations[i].versions[j];
-                if (v.GetHashCode() == hash)
-                {
+                if (v.GetHashCode() == hash) {
                     //Debug.Log("MATCH: " + v.GetHashCode());
                     info.AddValue("location", i);
                     info.AddValue("version", j);
@@ -224,8 +159,7 @@ sealed class VersionSerializationSurrogate : ISerializationSurrogate
         Debug.LogWarning("This shouldn't happen");
     }
 
-    public object SetObjectData(object obj, SerializationInfo info, StreamingContext context, ISurrogateSelector selector)
-    {
+    public object SetObjectData(object obj, SerializationInfo info, StreamingContext context, ISurrogateSelector selector) {
 
         int location = info.GetInt32("location");
         int version = info.GetInt32("version");
@@ -234,68 +168,5 @@ sealed class VersionSerializationSurrogate : ISerializationSurrogate
         ver = Wardrobe.Singleton.locations[location].versions[version];
 
         return ver;
-    }
-}
-
-// The serializer sucks and can't serialize nested dictionaries without a wrapper class, ergo this
-[System.Serializable]
-public class SerializableNestedDictionary<T1, T2>
-{
-    public Dictionary<T1, T2> dictionary;
-
-    public SerializableNestedDictionary(Dictionary<T1, T2> d)
-    {
-        dictionary = d;
-    }
-}
-
-
-[System.Serializable]
-public class LevelLog
-{
-
-    public string level = string.Empty;
-    public float seconds = 0;
-    public float progress = 0;
-    public string lastProgress = string.Empty;
-
-    public LevelLog(string lvlName, float elapsed, float percent, string date)
-    {
-        level = lvlName;
-        seconds = elapsed;
-        progress = percent;
-        lastProgress = date;
-    }
-}
-
-[System.Serializable]
-public class GameLog {
-
-    public List<LevelLog> log;
-
-    public GameLog()
-    {
-        log = new List<LevelLog>();
-    }
-}
-
-// Wrapper for the player counter, which keeps a cumulative total of
-// the number of students who have signed up to play the game
-[System.Serializable]
-public class PlayerCounter
-{
-    public int counter;
-    public PlayerCounter(int players) {
-        counter = players;
-    }
-
-    public static PlayerCounter operator +(PlayerCounter left, PlayerCounter right) {
-        PlayerCounter summed = new PlayerCounter(left.counter);
-        summed.counter += right.counter;
-        return summed;
-    }
-    
-    public static PlayerCounter operator +(PlayerCounter left, int right) {
-        return left + new PlayerCounter(right);
     }
 }
