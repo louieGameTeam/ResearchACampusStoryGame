@@ -1,10 +1,7 @@
-﻿using System.Collections;
-using System.Xml;
+﻿using System.Xml;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Globalization;
-
-
 
 public static class Tasks  {
     public static Game game {

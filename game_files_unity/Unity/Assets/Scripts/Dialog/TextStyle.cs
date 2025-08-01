@@ -1,11 +1,8 @@
-﻿using System.Collections;
-using System.Xml;
+﻿using System.Xml;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
-
 
 // Style information for a character, contains all applied effects
 public class TextStyle : ICloneable {

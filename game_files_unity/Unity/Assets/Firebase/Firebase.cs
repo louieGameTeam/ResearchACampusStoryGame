@@ -1,11 +1,9 @@
 using Proyecto26;
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Globalization;
 using UnityEngine;
 using UnityEngine.Events;
-using Newtonsoft.Json;
 
 public class Firebase : MonoBehaviour {
     static Firebase _instance;
@@ -147,7 +145,7 @@ public class Firebase : MonoBehaviour {
     }
 
     public void getCurrentTimeUTC(UnityAction<DateTime> onComplete) {
-        // Firebase server timestamp - PUT was working with this format
+        // Firebase server timestamp
         string payload = "{\".sv\":\"timestamp\"}";
         
         RestClient.Put(timeLink, payload).Then(response => {            

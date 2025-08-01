@@ -1,9 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
-using System.IO;
 using System.Globalization;
-using Proyecto26;
-using UnityEngine.Events;
 
 public static class Saving {
 

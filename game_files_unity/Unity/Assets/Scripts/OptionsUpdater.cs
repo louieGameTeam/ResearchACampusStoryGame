@@ -1,8 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using CharacterCreation;
-using System.IO;
 using UnityEngine.UI;
 
 public class OptionsUpdater : MonoBehaviour {

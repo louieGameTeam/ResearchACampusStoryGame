@@ -3,10 +3,7 @@ using UnityEngine;
 using System.Runtime.Serialization;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
-using System.Globalization;
 using CharacterCreation;
-using Proyecto26;
-using UnityEngine.Events;
 
 public static class Serialization {
 

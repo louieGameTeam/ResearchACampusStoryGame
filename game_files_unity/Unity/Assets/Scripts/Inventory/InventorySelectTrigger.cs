@@ -1,6 +1,4 @@
 ﻿using UnityEngine;
-using System.Collections;
-using UnityEngine.UI;
 using UnityEngine.EventSystems; // Required when using Event data.
 
 /* Checks if Inventory List is selected

@@ -6,8 +6,6 @@ using UnityEngine.UI;
 using System.Xml;
 using CharacterCreation;
 
-
-
 #if UNITY_EDITOR
 using UnityEditor;
 

@@ -62,7 +62,7 @@
   <if var="T:current" case="E" value="T:Ch_1-6/ReturnToMS1/0">
     <true>
       <page>Have you collected my works together?</page>
-      <say>Yes, here they are!.</say>
+      <say>Yes, here they are!</say>
       <take item="Loose Chapters" count="4"/>
       <page><color hex="74f442">[The loose chapters have been removed from your inventory]</color></page>
       <page>Thank you very much.</page>

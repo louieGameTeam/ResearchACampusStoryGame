@@ -1,10 +1,7 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.EventSystems;
 using System;
-using System.Globalization; // cultureinfo for time datetime formatting
 using Proyecto26;
 using System.Text.RegularExpressions;
 using UnityEngine.Events;
