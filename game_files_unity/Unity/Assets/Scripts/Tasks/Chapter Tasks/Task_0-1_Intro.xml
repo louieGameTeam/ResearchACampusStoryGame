@@ -44,7 +44,7 @@
   </task>
   <task>
     <name>Textbook</name>
-    <description>Grab the textbook from the first shelf in the library.</description>
+    <description>Grab the textbook from the first (northernmost) shelf in the library.</description>
     <steps>
       <item name="Textbook" count="1"/>
     </steps>
